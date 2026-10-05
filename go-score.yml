@@ -1,0 +1,58 @@
+name: Go Score
+
+on:
+  schedule:
+    # GitHub uses UTC. These are 5 AM, 11 AM, 5 PM and 11 PM Hawaii time.
+    - cron: "0 3,9,15,21 * * *"
+  workflow_dispatch: {}          # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write                # save forecast history + model cache back to the repo
+  pages: write
+  id-token: write
+
+concurrency:
+  group: go-score
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Go Score
+        env:
+          HCDP_API_TOKEN: ${{ secrets.HCDP_API_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          mkdir -p site
+          python go_score.py --out site/index.html --notify
+
+      - name: Save forecast history and model cache
+        run: |
+          git config user.name "go-score-bot"
+          git config user.email "go-score-bot@users.noreply.github.com"
+          git add forecast_history cache 2>/dev/null || true
+          git commit -m "Forecast snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing new to save"
+          git push || echo "push skipped"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  publish:
+    needs: score
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
