@@ -1,4 +1,3 @@
-# never upload your Mesonet token - it lives in GitHub Secrets instead
 hcdp_token.txt
 .venv/
 __pycache__/
