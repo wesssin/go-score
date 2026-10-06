@@ -1,366 +1,366 @@
-date,weekday,window,fails,channel_wind_avg_kt,channel_wind_max_kt,models_differ_kt,wind_chop_max_ft,waves_max_ft,period_min_s,day_before_avg_kt,small_craft_advisory,molokai_obs_avg_kt,molokai_obs_max_kt,window_2,window_3
-2025-10-05,Sun,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.3 kt; wind chop 2.8 ft; period down to 8 s; Small Craft Advisory,14.3,19.3,1.4,2.8,5.4,8,10.3,yes,11.0,15,no,no
-2025-10-06,Mon,no,wind 11 kt at P FAD 5 AM; windy day before (14 kt),6.3,10.8,1.0,0.5,4.1,9,14.3,,6.1,9,no,no
-2025-10-07,Tue,yes,,3.8,7.1,2.2,0.3,3.5,9,6.3,,3.4,8,yes,yes
-2025-10-08,Wed,yes,,6.9,9.0,2.7,0.4,3.1,9,3.8,,6.7,10,yes,no
-2025-10-09,Thu,yes,,7.7,9.6,2.9,0.7,3.5,10,6.9,,8.7,12,yes,no
-2025-10-10,Fri,yes,,4.3,6.8,2.7,0.3,4.3,10,7.7,,5.4,11,yes,yes
-2025-10-11,Sat,no,wind 11 kt at Kaiwi mid-channel 8 AM; period down to 8 s,7.9,10.8,0.3,0.9,4.1,8,4.3,,6.3,9,yes,no
-2025-10-12,Sun,no,wind 11 kt at Kaiwi mid-channel 5 AM; period down to 9 s,6.2,11.3,2.8,0.9,4.9,9,7.9,,3.9,10,yes,no
-2025-10-13,Mon,yes,,4.6,9.4,3.6,1.2,4.8,10,6.2,,7.0,10,yes,no
-2025-10-14,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 8.0 kt; wind chop 2.0 ft; period down to 8 s; Small Craft Advisory,8.0,15.0,3.4,2.0,4.9,8,4.6,yes,9.1,13,no,no
-2025-10-15,Wed,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; wind chop 3.0 ft; period down to 7 s,12.6,17.9,2.7,3.0,5.2,7,8.0,,11.2,14,no,no
-2025-10-16,Thu,no,wind 15 kt at Makapuu corner 11 AM; channel average 10.4 kt; models differ by 5 kt; wind chop 2.4 ft; period down to 8 s; windy day before (13 kt),10.4,15.0,5.1,2.4,5.6,8,12.6,,10.5,14,no,no
-2025-10-17,Fri,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 3.8 ft; period down to 7 s,13.6,20.7,3.5,3.8,5.6,7,10.4,,12.2,17,no,no
-2025-10-18,Sat,no,wind 22 kt at Kaiwi mid-channel 6 AM; channel average 16.0 kt; wind chop 3.8 ft; period down to 7 s; windy day before (14 kt),16.0,21.5,2.8,3.8,5.6,7,13.6,,13.3,17,no,no
-2025-10-19,Sun,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 13.7 kt; wind chop 3.7 ft; period down to 7 s; windy day before (16 kt),13.7,19.2,1.1,3.7,5.2,7,16.0,,13.1,19,no,no
-2025-10-20,Mon,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.4 ft; period down to 6 s; windy day before (14 kt),12.4,19.4,3.1,3.4,4.8,6,13.7,,10.9,15,no,no
-2025-10-21,Tue,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 16.4 kt; wind chop 3.8 ft; period down to 6 s; windy day before (12 kt),16.4,20.5,2.8,3.8,4.7,6,12.4,,11.7,18,no,no
-2025-10-22,Wed,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 5.0 ft; period down to 6 s; windy day before (16 kt),15.8,23.4,2.7,5.0,5.9,6,16.4,,12.5,19,no,no
-2025-10-23,Thu,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 16.7 kt; wind chop 4.6 ft; period down to 6 s; windy day before (16 kt); Small Craft Advisory,16.7,21.7,2.4,4.6,5.7,6,15.8,yes,12.9,16,no,no
-2025-10-24,Fri,no,wind 24 kt at Kaiwi mid-channel 1 PM; channel average 18.0 kt; wind chop 5.5 ft; waves 6.4 ft; period down to 6 s; windy day before (17 kt); Small Craft Advisory,18.0,24.1,2.8,5.5,6.4,6,16.7,yes,14.3,20,no,no
-2025-10-25,Sat,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 17.1 kt; wind chop 4.4 ft; waves 6.1 ft; period down to 7 s; windy day before (18 kt); Small Craft Advisory,17.1,23.3,1.4,4.4,6.1,7,18.0,yes,14.8,19,no,no
-2025-10-26,Sun,no,wind 19 kt at Kaiwi mid-channel 9 AM; channel average 15.0 kt; models differ by 6 kt; wind chop 4.0 ft; period down to 6 s; windy day before (17 kt); Small Craft Advisory,15.0,19.5,6.0,4.0,5.7,6,17.1,yes,12.6,18,no,no
-2025-10-27,Mon,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 12.0 kt; wind chop 3.7 ft; period down to 6 s; windy day before (15 kt),12.0,16.4,3.1,3.7,5.6,6,15.0,,9.2,11,no,no
-2025-10-28,Tue,no,wind 17 kt at Kaiwi mid-channel 7 AM; channel average 11.8 kt; wind chop 2.4 ft; period down to 7 s; windy day before (12 kt),11.8,17.1,3.2,2.4,4.3,7,12.0,,8.7,14,no,no
-2025-10-29,Wed,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.5 ft; period down to 8 s; windy day before (12 kt),10.4,15.5,3.2,2.5,4.4,8,11.8,,10.2,15,no,no
-2025-10-30,Thu,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.2 ft; period down to 7 s,13.7,18.4,2.7,3.2,5.0,7,10.4,,12.5,17,no,no
-2025-10-31,Fri,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.7 kt; wind chop 3.3 ft; period down to 7 s; windy day before (14 kt),12.7,18.5,2.5,3.3,4.5,7,13.7,,11.8,16,no,no
-2025-11-01,Sat,no,wind 16 kt at Kaiwi mid-channel 9 AM; channel average 11.9 kt; wind chop 3.3 ft; period down to 7 s; windy day before (13 kt),11.9,16.3,1.8,3.3,5.0,7,12.7,,9.9,13,no,no
-2025-11-02,Sun,no,waves 6.2 ft; period down to 9 s; windy day before (12 kt); Small Craft Advisory,5.6,8.5,2.1,1.1,6.2,9,11.9,yes,5.3,8,no,no
-2025-11-03,Mon,no,wind 13 kt at Kaiwi mid-channel 2 PM; waves 6.0 ft; period down to 8 s,7.7,13.1,1.1,1.1,6.0,8,5.6,,4.6,10,no,no
-2025-11-04,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 2.3 ft; period down to 7 s,10.8,16.3,2.5,2.3,5.1,7,7.7,,12.4,16,no,no
-2025-11-05,Wed,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 13.3 kt; wind chop 3.6 ft; period down to 6 s; Small Craft Advisory,13.3,18.1,1.9,3.6,5.2,6,10.8,yes,10.8,14,no,no
-2025-11-06,Thu,no,period down to 7 s; windy day before (13 kt),5.6,9.8,2.2,1.0,4.9,7,13.3,,7.0,10,no,no
-2025-11-07,Fri,no,period down to 8 s,3.5,7.3,0.5,0.4,4.4,8,5.6,,4.5,9,no,no
-2025-11-08,Sat,no,wind 11 kt at Bank N ledge 2 PM; channel average 8.1 kt,8.1,11.1,1.9,0.7,3.8,10,3.5,,8.4,13,yes,no
-2025-11-09,Sun,no,wind 24 kt at Bank N ledge 12 PM; channel average 20.1 kt; models differ by 4 kt; wind chop 5.4 ft; waves 7.8 ft; period down to 8 s; Small Craft Advisory,20.1,24.0,4.5,5.4,7.8,8,8.1,yes,14.4,20,no,no
-2025-11-10,Mon,no,wind 25 kt at Kaiwi mid-channel 2 PM; channel average 17.2 kt; wind chop 5.7 ft; waves 9.4 ft; period down to 9 s; windy day before (20 kt); Small Craft Advisory,17.2,24.6,3.0,5.7,9.4,9,20.1,yes,12.4,19,no,no
-2025-11-11,Tue,no,wind 25 kt at Kaiwi mid-channel 6 AM; channel average 19.0 kt; wind chop 6.3 ft; waves 9.1 ft; period down to 8 s; windy day before (17 kt); Small Craft Advisory,19.0,25.2,3.5,6.3,9.1,8,17.2,yes,13.8,18,no,no
-2025-11-12,Wed,no,wind 26 kt at Kaiwi mid-channel 12 PM; channel average 20.2 kt; wind chop 6.8 ft; waves 8.9 ft; period down to 8 s; windy day before (19 kt); Small Craft Advisory,20.2,26.1,3.9,6.8,8.9,8,19.0,yes,12.9,15,no,no
-2025-11-13,Thu,no,wind 24 kt at Kaiwi mid-channel 12 PM; channel average 19.3 kt; wind chop 6.9 ft; waves 8.7 ft; period down to 7 s; windy day before (20 kt); Small Craft Advisory,19.3,24.4,3.4,6.9,8.7,7,20.2,yes,13.5,22,no,no
-2025-11-14,Fri,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 17.1 kt; wind chop 5.5 ft; waves 7.5 ft; period down to 7 s; windy day before (19 kt); Small Craft Advisory,17.1,21.9,2.8,5.5,7.5,7,19.3,yes,13.9,17,no,no
-2025-11-15,Sat,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s; windy day before (17 kt),10.0,15.7,1.7,2.6,5.2,7,17.1,,8.8,13,no,no
-2025-11-16,Sun,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.7 kt; wind chop 2.4 ft; period down to 8 s,9.7,13.5,3.1,2.4,4.5,8,10.0,,8.8,13,no,no
-2025-11-17,Mon,no,wind 15 kt at Kaiwi mid-channel 10 AM; channel average 10.8 kt; wind chop 2.1 ft; period down to 7 s,10.8,15.4,3.7,2.1,4.7,7,9.7,,8.2,13,no,no
-2025-11-18,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.4 kt; wind chop 1.9 ft; period down to 7 s,9.4,15.3,3.2,1.9,4.1,7,10.8,,9.5,15,no,no
-2025-11-19,Wed,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.8 kt; wind chop 4.1 ft; period down to 6 s; Small Craft Advisory,16.8,21.7,2.3,4.1,5.2,6,9.4,yes,10.9,19,no,no
-2025-11-20,Thu,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.4 kt; models differ by 5 kt; wind chop 5.3 ft; waves 7.8 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,15.4,19.8,4.9,5.3,7.8,7,16.8,yes,11.5,14,no,no
-2025-11-21,Fri,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.3 kt; wind chop 2.6 ft; period down to 7 s; windy day before (15 kt),10.3,15.0,2.3,2.6,5.8,7,15.4,,9.9,14,no,no
-2025-11-22,Sat,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 9.6 kt; wind chop 1.8 ft; period down to 7 s,9.6,16.1,1.1,1.8,5.2,7,10.3,,8.7,11,no,no
-2025-11-23,Sun,no,wind 16 kt at Kaiwi mid-channel 12 PM; channel average 10.9 kt; models differ by 4 kt; wind chop 3.2 ft; period down to 7 s,10.9,16.4,4.2,3.2,5.5,7,9.6,,10.6,15,no,no
-2025-11-24,Mon,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 10.4 kt; wind chop 1.9 ft; period down to 7 s,10.4,15.7,3.6,1.9,5.0,7,10.9,,5.3,11,no,no
-2025-11-25,Tue,no,period down to 7 s,5.2,8.8,0.9,0.5,4.1,7,10.4,,5.0,9,no,no
-2025-11-26,Wed,no,period down to 7 s,4.4,7.2,2.2,0.4,4.8,7,5.2,,5.6,10,no,no
-2025-11-27,Thu,yes,,5.0,7.6,3.2,0.5,5.2,9,4.4,,4.3,12,yes,yes
-2025-11-28,Fri,no,period down to 8 s,5.0,9.0,4.0,1.0,5.1,8,5.0,,4.7,9,no,no
-2025-11-29,Sat,no,period down to 8 s; Small Craft Advisory,2.2,3.8,0.9,0.0,4.1,8,5.0,yes,3.8,8,no,no
-2025-11-30,Sun,no,waves 7.9 ft; Small Craft Advisory,5.2,6.9,2.0,0.1,7.9,10,2.2,yes,4.8,9,no,no
-2025-12-01,Mon,no,waves 7.0 ft; Small Craft Advisory,2.5,5.2,0.7,0.1,7.0,10,5.2,yes,3.5,7,no,no
-2025-12-02,Tue,no,period down to 8 s,4.4,6.8,1.9,0.1,4.7,8,2.5,,2.8,6,no,no
-2025-12-03,Wed,no,period down to 8 s,3.6,5.5,1.6,0.1,4.3,8,4.4,,3.8,7,no,no
-2025-12-04,Thu,no,period down to 7 s,4.4,9.7,0.7,0.5,5.1,7,3.6,,3.1,7,no,no
-2025-12-05,Fri,no,wind 16 kt at Makapuu corner 2 PM; channel average 10.5 kt; models differ by 4 kt; wind chop 4.5 ft; waves 6.9 ft; period down to 7 s; Small Craft Advisory,10.5,16.1,4.4,4.5,6.9,7,4.4,yes,10.4,14,no,no
-2025-12-06,Sat,no,wind 14 kt at Makapuu corner 10 AM; channel average 9.8 kt; models differ by 5 kt; wind chop 2.2 ft; waves 6.2 ft; period down to 7 s,9.8,13.8,5.0,2.2,6.2,7,10.5,,5.8,8,no,no
-2025-12-07,Sun,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.1 kt; models differ by 4 kt; wind chop 2.1 ft; period down to 6 s,10.1,14.9,4.4,2.1,5.1,6,9.8,,10.4,18,no,no
-2025-12-08,Mon,no,wind 14 kt at Kaiwi mid-channel 12 PM; channel average 9.4 kt; wind chop 2.4 ft; period down to 6 s,9.4,14.3,1.8,2.4,4.5,6,10.1,,9.7,15,no,no
-2025-12-09,Tue,no,period down to 8 s,5.1,8.0,3.6,0.6,4.2,8,9.4,,4.3,8,no,no
-2025-12-10,Wed,no,wind 12 kt at Kaiwi mid-channel 2 PM,7.6,12.5,2.4,0.7,5.1,10,5.1,,7.7,15,no,no
-2025-12-11,Thu,no,wind 11 kt at Kaiwi mid-channel 5 AM,8.0,11.4,2.4,1.1,5.2,10,7.6,,5.5,9,yes,no
-2025-12-12,Fri,yes,,4.5,6.5,2.8,0.4,5.2,10,8.0,,4.3,7,yes,yes
-2025-12-13,Sat,no,wind 17 kt at Kaiwi mid-channel 1 PM; channel average 14.2 kt; wind chop 2.7 ft; period down to 6 s,14.2,16.8,2.4,2.7,4.3,6,4.5,,14.7,21,no,no
-2025-12-14,Sun,no,wind 12 kt at Bank N ledge 5 AM; period down to 6 s; windy day before (14 kt),7.9,11.6,1.2,1.4,5.1,6,14.2,,11.9,17,no,no
-2025-12-15,Mon,no,wind 16 kt at Kaiwi mid-channel 11 AM; channel average 13.2 kt; models differ by 4 kt; wind chop 3.0 ft; waves 7.2 ft; period down to 8 s,13.2,16.2,4.4,3.0,7.2,8,7.9,,14.6,17,no,no
-2025-12-16,Tue,no,wind 18 kt at P FAD 2 PM; channel average 12.8 kt; models differ by 5 kt; wind chop 3.4 ft; period down to 6 s; windy day before (13 kt),12.8,18.2,5.1,3.4,5.7,6,13.2,,9.8,15,no,no
-2025-12-17,Wed,no,wind 19 kt at Kaiwi mid-channel 10 AM; channel average 16.2 kt; wind chop 4.3 ft; waves 7.5 ft; period down to 6 s; windy day before (13 kt); Small Craft Advisory,16.2,18.8,3.3,4.3,7.5,6,12.8,yes,16.8,20,no,no
-2025-12-18,Thu,no,wind 12 kt at Kaiwi mid-channel 5 AM; channel average 8.9 kt; waves 6.8 ft; period down to 8 s; windy day before (16 kt); Small Craft Advisory,8.9,11.9,1.0,1.2,6.8,8,16.2,yes,11.9,15,no,no
-2025-12-19,Fri,no,period down to 8 s,6.5,8.6,2.6,1.4,5.6,8,8.9,,5.6,8,no,no
-2025-12-20,Sat,no,models differ by 4 kt; period down to 8 s,4.8,6.8,4.2,0.7,5.4,8,6.5,,3.9,7,no,no
-2025-12-21,Sun,no,wind 13 kt at Makapuu corner 2 PM; channel average 9.0 kt; wind chop 2.0 ft; period down to 9 s,9.0,13.5,2.1,2.0,5.1,9,4.8,,7.4,13,no,no
-2025-12-22,Mon,no,wind 15 kt at Kaiwi mid-channel 1 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s,10.0,15.4,2.2,2.6,5.4,7,9.0,,8.8,13,no,no
-2025-12-23,Tue,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 17.0 kt; models differ by 5 kt; wind chop 4.9 ft; waves 7.0 ft; period down to 7 s; Small Craft Advisory,17.0,22.5,4.7,4.9,7.0,7,10.0,yes,13.3,20,no,no
-2025-12-24,Wed,no,wind 19 kt at Kaiwi mid-channel 6 AM; channel average 14.2 kt; models differ by 4 kt; wind chop 4.1 ft; waves 7.0 ft; period down to 7 s; windy day before (17 kt),14.2,19.0,4.4,4.1,7.0,7,17.0,,10.9,16,no,no
-2025-12-25,Thu,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; models differ by 5 kt; wind chop 4.0 ft; waves 6.6 ft; period down to 7 s; windy day before (14 kt),13.0,18.8,5.0,4.0,6.6,7,14.2,,11.6,19,no,no
-2025-12-26,Fri,no,wind 15 kt at Makapuu corner 2 PM; channel average 8.9 kt; models differ by 6 kt; wind chop 3.0 ft; waves 6.1 ft; period down to 8 s; windy day before (13 kt),8.9,14.7,6.3,3.0,6.1,8,13.0,,7.1,12,no,no
-2025-12-27,Sat,no,wind 11 kt at P FAD 5 AM; period down to 7 s,4.5,11.0,2.4,0.7,5.8,7,8.9,,5.6,11,no,no
-2025-12-28,Sun,no,period down to 8 s,3.7,6.1,2.7,0.4,4.7,8,4.5,,3.8,7,yes,no
-2025-12-29,Mon,no,wind 10 kt at Makapuu corner 11 AM; period down to 8 s,6.4,10.4,1.1,0.7,5.4,8,3.7,,6.5,13,yes,no
-2025-12-30,Tue,no,wind 14 kt at Makapuu corner 11 AM; channel average 9.6 kt; wind chop 1.7 ft; waves 6.2 ft; period down to 7 s,9.6,14.5,2.4,1.7,6.2,7,6.4,,10.3,15,no,no
-2025-12-31,Wed,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 13.2 kt; wind chop 3.2 ft; waves 6.4 ft; period down to 7 s,13.2,18.6,2.2,3.2,6.4,7,9.6,,9.0,12,no,no
-2026-01-01,Thu,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 2.9 ft; period down to 7 s; windy day before (13 kt),12.4,17.3,2.3,2.9,4.7,7,13.2,,11.5,16,no,no
-2026-01-02,Fri,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 16.0 kt; wind chop 5.1 ft; waves 6.6 ft; period down to 6 s; windy day before (12 kt); Small Craft Advisory,16.0,21.4,3.0,5.1,6.6,6,12.4,yes,14.0,21,no,no
-2026-01-03,Sat,no,wind 12 kt at Kaiwi mid-channel 5 AM; wind chop 1.6 ft; period down to 7 s; windy day before (16 kt),5.5,12.4,2.0,1.6,5.8,7,16.0,,4.1,6,no,no
-2026-01-04,Sun,no,period down to 8 s,4.9,8.1,3.0,0.2,5.3,8,5.5,,3.4,9,yes,no
-2026-01-05,Mon,no,wind 20 kt at Makapuu corner 2 PM; channel average 12.2 kt; models differ by 5 kt; wind chop 4.4 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,12.2,19.8,5.0,4.4,7.5,7,4.9,yes,8.2,15,no,no
-2026-01-06,Tue,no,wind 18 kt at Makapuu corner 12 PM; channel average 12.9 kt; wind chop 4.3 ft; waves 8.6 ft; period down to 7 s; windy day before (12 kt); Small Craft Advisory,12.9,18.3,2.0,4.3,8.6,7,12.2,yes,8.3,13,no,no
-2026-01-07,Wed,no,wind 14 kt at Makapuu corner 5 AM; wind chop 1.6 ft; waves 7.0 ft; period down to 7 s; windy day before (13 kt),7.1,13.8,3.5,1.6,7.0,7,12.9,,6.9,13,no,no
-2026-01-08,Thu,no,period down to 8 s,2.9,6.0,2.1,0.1,5.1,8,7.1,,3.9,9,no,no
-2026-01-09,Fri,no,period down to 9 s,2.6,4.4,1.0,0.1,4.1,9,2.9,,4.4,9,yes,no
-2026-01-10,Sat,no,period down to 9 s; Small Craft Advisory,2.8,4.3,0.9,0.0,4.6,9,2.6,yes,3.5,7,no,no
-2026-01-11,Sun,no,waves 6.2 ft; Small Craft Advisory,5.0,9.5,3.8,0.4,6.2,10,2.8,yes,5.8,10,no,no
-2026-01-12,Mon,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 8.8 kt; models differ by 4 kt; wind chop 2.0 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,8.8,18.8,4.3,2.0,6.4,7,5.0,yes,9.3,14,no,no
-2026-01-13,Tue,no,wind 14 kt at P FAD 5 AM; channel average 9.7 kt; wind chop 1.7 ft; waves 8.4 ft; Small Craft Advisory,9.7,14.4,1.6,1.7,8.4,9,8.8,yes,8.6,11,no,no
-2026-01-14,Wed,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 14.0 kt; wind chop 3.9 ft; waves 6.6 ft; period down to 6 s; Small Craft Advisory,14.0,20.7,2.5,3.9,6.6,6,9.7,yes,10.3,21,no,no
-2026-01-15,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 11.7 kt; wind chop 3.3 ft; waves 7.9 ft; period down to 7 s; windy day before (14 kt); Small Craft Advisory,11.7,19.6,3.2,3.3,7.9,7,14.0,yes,6.9,15,no,no
-2026-01-16,Fri,no,wind 23 kt at Bank N ledge 5 AM; channel average 17.9 kt; wind chop 5.1 ft; waves 10.4 ft; period down to 8 s; windy day before (12 kt); Small Craft Advisory,17.9,22.7,3.3,5.1,10.4,8,11.7,yes,12.2,15,no,no
-2026-01-17,Sat,no,wind 21 kt at Bank N ledge 6 AM; channel average 15.5 kt; wind chop 3.6 ft; waves 7.2 ft; period down to 7 s; windy day before (18 kt); Small Craft Advisory,15.5,21.1,3.0,3.6,7.2,7,17.9,yes,11.7,16,no,no
-2026-01-18,Sun,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 9.1 kt; wind chop 2.4 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,9.1,19.1,3.3,2.4,5.2,7,15.5,yes,5.4,13,no,no
-2026-01-19,Mon,no,period down to 7 s,5.1,8.6,3.8,1.2,5.2,7,9.1,,4.9,8,no,no
-2026-01-20,Tue,no,period down to 7 s,4.9,8.0,3.4,1.0,4.3,7,5.1,,3.9,9,no,no
-2026-01-21,Wed,no,wind 23 kt at Kaiwi mid-channel 7 AM; channel average 16.3 kt; models differ by 6 kt; wind chop 3.8 ft; waves 7.9 ft; period down to 7 s; Small Craft Advisory,16.3,22.6,6.3,3.8,7.9,7,4.9,yes,12.8,16,no,no
-2026-01-22,Thu,no,wind 14 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 1.5 ft; period down to 9 s; windy day before (16 kt),9.1,13.8,1.5,1.5,5.4,9,16.3,,7.4,12,no,no
-2026-01-23,Fri,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 1.5 ft; waves 6.2 ft; period down to 8 s,10.8,15.0,0.9,1.5,6.2,8,9.1,,9.1,13,no,no
-2026-01-24,Sat,no,wind 10 kt at Kaiwi mid-channel 5 AM; period down to 8 s,5.7,10.5,0.9,0.6,4.7,8,10.8,,3.4,8,no,no
-2026-01-25,Sun,no,period down to 8 s,2.6,6.2,0.5,0.1,3.4,8,5.7,,4.4,9,yes,no
-2026-01-26,Mon,no,period down to 8 s,6.9,9.9,2.4,0.3,3.4,8,2.6,,4.5,11,yes,no
-2026-01-27,Tue,yes,,4.6,7.3,1.6,0.1,4.1,11,6.9,,5.6,11,yes,yes
-2026-01-28,Wed,yes,,3.0,6.0,1.9,0.1,4.4,11,4.6,,3.5,8,yes,yes
-2026-01-29,Thu,no,wind 10 kt at Kaiwi mid-channel 2 PM,5.9,10.0,0.6,0.1,3.6,10,3.0,,6.6,11,yes,no
-2026-01-30,Fri,no,waves 6.7 ft; Small Craft Advisory,5.0,6.9,2.9,0.8,6.7,11,5.9,yes,7.0,11,no,no
-2026-01-31,Sat,no,wind 13 kt at Bank N ledge 5 AM; wind chop 2.6 ft; waves 8.1 ft; Small Craft Advisory,7.8,13.4,0.5,2.6,8.1,10,5.0,yes,5.1,6,no,no
-2026-02-01,Sun,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 1.5 ft; period down to 9 s,7.7,13.4,1.6,1.5,5.6,9,7.8,,9.6,15,no,no
-2026-02-02,Mon,no,wind 24 kt at Kaiwi mid-channel 2 PM; channel average 19.7 kt; wind chop 5.4 ft; waves 6.4 ft; period down to 6 s; Small Craft Advisory,19.7,23.9,2.5,5.4,6.4,6,7.7,yes,19.3,23,no,no
-2026-02-03,Tue,no,wind 14 kt at P FAD 5 AM; waves 10.1 ft; period down to 8 s; windy day before (20 kt); Small Craft Advisory,7.4,14.4,1.6,1.1,10.1,8,19.7,yes,8.6,11,no,no
-2026-02-04,Wed,no,wind 10 kt at P FAD 5 AM; waves 8.9 ft; Small Craft Advisory,5.7,10.3,1.0,1.0,8.9,10,7.4,yes,4.9,8,no,no
-2026-02-05,Thu,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.1 kt; models differ by 4 kt; waves 6.5 ft; period down to 8 s; Small Craft Advisory,9.1,14.8,4.2,1.4,6.5,8,5.7,yes,9.4,14,no,no
-2026-02-06,Fri,no,wind 10 kt at Hawaii Kai exit 1 PM; period down to 9 s,6.5,10.1,2.0,0.9,4.9,9,9.1,,7.4,12,yes,no
-2026-02-07,Sat,no,wind 23 kt at Bank N ledge 12 PM; channel average 16.8 kt; wind chop 3.9 ft; waves 7.3 ft; period down to 8 s; Small Craft Advisory,16.8,23.2,0.4,3.9,7.3,8,6.5,yes,8.7,14,no,no
-2026-02-08,Sun,no,wind 32 kt at Kaiwi mid-channel 10 AM; channel average 25.0 kt; wind chop 8.4 ft; waves 9.3 ft; period down to 6 s; windy day before (17 kt); Small Craft Advisory,25.0,31.9,3.5,8.4,9.3,6,16.8,yes,18.0,22,no,no
-2026-02-09,Mon,no,wind 28 kt at Kaiwi mid-channel 2 PM; channel average 22.3 kt; models differ by 5 kt; wind chop 8.0 ft; waves 9.6 ft; period down to 7 s; windy day before (25 kt); Small Craft Advisory,22.3,28.3,5.2,8.0,9.6,7,25.0,yes,14.1,17,no,no
-2026-02-10,Tue,no,wind 26 kt at Kaiwi mid-channel 1 PM; channel average 20.5 kt; models differ by 6 kt; wind chop 8.4 ft; waves 10.1 ft; period down to 7 s; windy day before (22 kt); Small Craft Advisory,20.5,26.3,5.5,8.4,10.1,7,22.3,yes,14.8,18,no,no
-2026-02-11,Wed,no,wind 26 kt at Kaiwi mid-channel 5 AM; channel average 19.6 kt; models differ by 5 kt; wind chop 7.9 ft; waves 9.1 ft; period down to 7 s; windy day before (21 kt); Small Craft Advisory,19.6,25.6,5.1,7.9,9.1,7,20.5,yes,14.1,18,no,no
-2026-02-12,Thu,no,wind 20 kt at Makapuu corner 1 PM; channel average 14.9 kt; models differ by 7 kt; wind chop 5.3 ft; waves 6.8 ft; period down to 7 s; windy day before (20 kt); Small Craft Advisory,14.9,19.5,6.8,5.3,6.8,7,19.6,yes,9.3,15,no,no
-2026-02-13,Fri,no,wind 16 kt at Makapuu corner 1 PM; channel average 11.1 kt; models differ by 5 kt; wind chop 3.0 ft; waves 7.2 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,11.1,16.4,4.5,3.0,7.2,7,14.9,yes,8.3,17,no,no
-2026-02-14,Sat,no,wind 20 kt at Kaiwi mid-channel 12 PM; channel average 15.0 kt; models differ by 5 kt; wind chop 5.0 ft; waves 7.2 ft; period down to 7 s; windy day before (11 kt); Small Craft Advisory,15.0,20.0,5.1,5.0,7.2,7,11.1,yes,12.0,20,no,no
-2026-02-15,Sun,no,wind 27 kt at Kaiwi mid-channel 2 PM; channel average 16.7 kt; models differ by 6 kt; wind chop 7.8 ft; waves 9.1 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,16.7,26.6,6.0,7.8,9.1,7,15.0,yes,13.8,23,no,no
-2026-02-16,Mon,no,wind 25 kt at Kaiwi mid-channel 12 PM; channel average 19.7 kt; models differ by 5 kt; wind chop 6.5 ft; waves 8.7 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,19.7,25.0,4.6,6.5,8.7,7,16.7,yes,17.7,23,no,no
-2026-02-17,Tue,no,wind 24 kt at Kaiwi mid-channel 8 AM; channel average 19.6 kt; models differ by 7 kt; wind chop 7.5 ft; waves 10.0 ft; period down to 7 s; windy day before (20 kt); Small Craft Advisory,19.6,24.1,7.3,7.5,10.0,7,19.7,yes,15.5,20,no,no
-2026-02-18,Wed,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.4 kt; models differ by 6 kt; wind chop 5.8 ft; waves 8.3 ft; period down to 7 s; windy day before (20 kt); Small Craft Advisory,16.4,22.4,5.7,5.8,8.3,7,19.6,yes,10.3,19,no,no
-2026-02-19,Thu,no,wind 22 kt at Kaiwi mid-channel 10 AM; channel average 16.5 kt; models differ by 5 kt; wind chop 6.0 ft; waves 8.7 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,16.5,22.0,5.2,6.0,8.7,7,16.4,yes,11.0,15,no,no
-2026-02-20,Fri,no,wind 16 kt at Makapuu corner 12 PM; channel average 10.1 kt; models differ by 5 kt; wind chop 2.4 ft; waves 6.8 ft; period down to 8 s; windy day before (16 kt); Small Craft Advisory,10.1,16.0,4.6,2.4,6.8,8,16.5,yes,10.6,16,no,no
-2026-02-21,Sat,no,wind 11 kt at P FAD 6 AM; period down to 8 s; Small Craft Advisory,5.8,10.8,1.1,0.9,5.8,8,10.1,yes,3.9,9,no,no
-2026-02-22,Sun,no,wind 12 kt at P FAD 2 PM; period down to 8 s,5.9,11.8,1.5,1.0,4.5,8,5.8,,5.2,12,yes,no
-2026-02-23,Mon,no,wind 22 kt at Bank N ledge 12 PM; channel average 18.3 kt; wind chop 5.0 ft; waves 8.0 ft; period down to 7 s; Small Craft Advisory,18.3,22.1,2.6,5.0,8.0,7,5.9,yes,11.5,15,no,no
-2026-02-24,Tue,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 15.3 kt; wind chop 4.1 ft; waves 8.6 ft; period down to 9 s; windy day before (18 kt); Small Craft Advisory,15.3,20.4,2.9,4.1,8.6,9,18.3,yes,12.3,17,no,no
-2026-02-25,Wed,no,wind 21 kt at Bank N ledge 6 AM; channel average 16.4 kt; wind chop 4.5 ft; waves 7.8 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,16.4,20.8,2.0,4.5,7.8,7,15.3,yes,12.9,17,no,no
-2026-02-26,Thu,no,wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.4 kt; models differ by 5 kt; wind chop 1.7 ft; period down to 7 s; windy day before (16 kt),9.4,13.3,4.5,1.7,5.8,7,16.4,,6.3,10,no,no
-2026-02-27,Fri,no,period down to 8 s,3.8,8.2,1.5,1.0,4.5,8,9.4,,5.8,12,no,no
-2026-02-28,Sat,no,period down to 8 s,3.8,7.0,1.8,0.5,3.7,8,3.8,,5.1,10,no,no
-2026-03-01,Sun,no,period down to 8 s,4.0,8.8,1.1,0.7,5.3,8,3.8,,3.5,6,yes,no
-2026-03-02,Mon,no,wind 14 kt at Kaiwi mid-channel 11 AM; channel average 8.8 kt; wind chop 1.6 ft; period down to 8 s,8.8,14.3,2.7,1.6,4.7,8,4.0,,6.9,10,no,no
-2026-03-03,Tue,no,wind 20 kt at Kaiwi mid-channel 9 AM; channel average 15.8 kt; wind chop 4.3 ft; period down to 6 s,15.8,20.4,3.8,4.3,5.8,6,8.8,,12.7,18,no,no
-2026-03-04,Wed,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 10.9 kt; wind chop 3.5 ft; waves 6.2 ft; period down to 6 s; windy day before (16 kt),10.9,17.7,3.2,3.5,6.2,6,15.8,,9.4,14,no,no
-2026-03-05,Thu,no,models differ by 4 kt; period down to 7 s,4.5,7.8,4.4,0.1,5.4,7,10.9,,6.1,13,no,no
-2026-03-06,Fri,no,wind 10 kt at Makapuu corner 2 PM; period down to 7 s,5.5,10.1,3.1,0.9,4.8,7,4.5,,5.7,10,no,no
-2026-03-07,Sat,no,wind 15 kt at Makapuu corner 1 PM; channel average 9.4 kt; wind chop 2.4 ft; period down to 7 s; Small Craft Advisory,9.4,14.8,2.7,2.4,6.0,7,5.5,yes,9.0,14,no,no
-2026-03-08,Sun,no,wind 14 kt at Makapuu corner 2 PM; channel average 9.6 kt; wind chop 2.9 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,9.6,13.8,2.2,2.9,7.5,7,9.4,yes,8.2,12,no,no
-2026-03-09,Mon,no,wind 12 kt at P FAD 11 AM; wind chop 1.6 ft; period down to 8 s,6.9,11.8,1.5,1.6,5.7,8,9.6,,4.9,8,no,no
-2026-03-10,Tue,no,wind 15 kt at P FAD 1 PM; channel average 10.1 kt; wind chop 2.4 ft; period down to 8 s,10.1,14.9,1.8,2.4,5.2,8,6.9,,5.2,10,no,no
-2026-03-11,Wed,no,wind 19 kt at Kaiwi mid-channel 1 PM; channel average 14.5 kt; wind chop 4.2 ft; waves 6.6 ft; period down to 7 s,14.5,19.5,3.4,4.2,6.6,7,10.1,,10.2,18,no,no
-2026-03-12,Thu,no,wind 16 kt at P FAD 1 PM; channel average 11.0 kt; wind chop 2.3 ft; waves 6.0 ft; period down to 8 s; windy day before (14 kt),11.0,16.1,2.4,2.3,6.0,8,14.5,,8.7,13,no,no
-2026-03-13,Fri,no,wind 30 kt at Kaiwi mid-channel 2 PM; channel average 23.2 kt; models differ by 7 kt; wind chop 12.0 ft; waves 12.7 ft; period down to 6 s; windy day before (11 kt); Small Craft Advisory,23.2,29.8,6.7,12.0,12.7,6,11.0,yes,20.7,29,no,no
-2026-03-14,Sat,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 19.3 kt; wind chop 8.5 ft; waves 11.4 ft; period down to 8 s; windy day before (23 kt); Small Craft Advisory,19.3,23.0,3.1,8.5,11.4,8,23.2,yes,13.2,17,no,no
-2026-03-15,Sun,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 15.4 kt; wind chop 3.4 ft; waves 9.6 ft; period down to 8 s; windy day before (19 kt); Small Craft Advisory,15.4,20.7,3.0,3.4,9.6,8,19.3,yes,14.8,18,no,no
-2026-03-16,Mon,no,waves 8.4 ft; period down to 9 s; windy day before (15 kt),6.1,8.6,2.0,0.3,8.4,9,15.4,,7.1,10,no,no
-2026-03-17,Tue,no,wind 11 kt at Bank N ledge 11 AM; models differ by 5 kt,7.5,10.8,4.9,0.3,5.9,9,6.1,,5.2,8,no,no
-2026-03-18,Wed,yes,,4.8,7.4,2.8,0.1,5.3,12,7.5,,2.4,8,yes,yes
-2026-03-19,Thu,no,wind 13 kt at P FAD 1 PM; wind chop 2.0 ft,7.9,13.2,2.6,2.0,4.8,10,4.8,,4.7,9,no,no
-2026-03-20,Fri,no,wind 20 kt at Kaiwi mid-channel 5 AM; channel average 16.7 kt; wind chop 5.8 ft; waves 7.3 ft; period down to 7 s,16.7,19.8,3.7,5.8,7.3,7,7.9,,15.8,18,no,no
-2026-03-21,Sat,no,wind 19 kt at Kaiwi mid-channel 7 AM; channel average 12.6 kt; wind chop 4.9 ft; waves 7.5 ft; period down to 8 s; windy day before (17 kt); Small Craft Advisory,12.6,19.3,2.5,4.9,7.5,8,16.7,yes,8.6,15,no,no
-2026-03-22,Sun,no,windy day before (13 kt),5.6,8.9,2.2,1.0,5.9,10,12.6,,6.1,10,no,no
-2026-03-23,Mon,no,wind 19 kt at P FAD 1 PM; channel average 12.8 kt; wind chop 2.4 ft,12.8,18.6,3.3,2.4,5.0,9,5.6,,8.3,12,no,no
-2026-03-24,Tue,no,wind 22 kt at Bank N ledge 2 PM; channel average 17.1 kt; wind chop 4.7 ft; period down to 7 s; windy day before (13 kt); Small Craft Advisory,17.1,21.7,1.9,4.7,5.8,7,12.8,yes,12.5,16,no,no
-2026-03-25,Wed,no,wind 22 kt at Bank N ledge 12 PM; channel average 18.1 kt; wind chop 5.1 ft; waves 6.4 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,18.1,21.7,3.0,5.1,6.4,7,17.1,yes,13.6,17,no,no
-2026-03-26,Thu,no,wind 17 kt at P FAD 1 PM; channel average 13.4 kt; wind chop 3.1 ft; period down to 8 s; windy day before (18 kt),13.4,16.5,1.9,3.1,5.9,8,18.1,,10.6,13,no,no
-2026-03-27,Fri,no,wind 18 kt at P FAD 2 PM; channel average 13.5 kt; wind chop 3.5 ft; period down to 8 s; windy day before (13 kt); Small Craft Advisory,13.5,18.1,2.0,3.5,5.6,8,13.4,yes,10.1,14,no,no
-2026-03-28,Sat,no,wind 22 kt at P FAD 2 PM; channel average 16.8 kt; wind chop 5.0 ft; waves 6.2 ft; period down to 7 s; windy day before (14 kt); Small Craft Advisory,16.8,22.4,2.5,5.0,6.2,7,13.5,yes,12.0,16,no,no
-2026-03-29,Sun,no,wind 22 kt at Bank N ledge 5 AM; channel average 17.7 kt; wind chop 4.6 ft; waves 6.9 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,17.7,21.9,1.9,4.6,6.9,7,16.8,yes,11.5,15,no,no
-2026-03-30,Mon,no,wind 21 kt at Bank N ledge 6 AM; channel average 17.7 kt; wind chop 4.3 ft; waves 7.4 ft; period down to 8 s; windy day before (18 kt); Small Craft Advisory,17.7,21.3,2.4,4.3,7.4,8,17.7,yes,12.5,15,no,no
-2026-03-31,Tue,no,wind 22 kt at Kaiwi mid-channel 1 PM; channel average 17.9 kt; wind chop 4.5 ft; waves 7.7 ft; period down to 8 s; windy day before (18 kt); Small Craft Advisory,17.9,22.0,3.2,4.5,7.7,8,17.7,yes,11.8,16,no,no
-2026-04-01,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.7 ft; waves 6.6 ft; period down to 8 s; windy day before (18 kt),13.7,20.1,1.0,3.7,6.6,8,17.9,,10.2,15,no,no
-2026-04-02,Thu,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 14.8 kt; wind chop 3.4 ft; period down to 8 s; windy day before (14 kt),14.8,20.0,1.4,3.4,6.0,8,13.7,,9.8,14,no,no
-2026-04-03,Fri,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.4 kt; wind chop 3.0 ft; period down to 8 s; windy day before (15 kt),14.4,18.7,1.9,3.0,5.1,8,14.8,,9.3,13,no,no
-2026-04-04,Sat,no,wind 17 kt at Kaiwi mid-channel 8 AM; channel average 13.2 kt; wind chop 2.4 ft; period down to 8 s; windy day before (14 kt),13.2,17.2,3.2,2.4,4.5,8,14.4,,9.4,13,no,no
-2026-04-05,Sun,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.6 kt; wind chop 2.7 ft; period down to 8 s; windy day before (13 kt),9.6,14.1,3.8,2.7,3.9,8,13.2,,9.1,12,no,no
-2026-04-06,Mon,no,wind 11 kt at Kaiwi mid-channel 10 AM; period down to 9 s,6.8,10.5,1.8,0.9,3.8,9,9.6,,4.9,8,yes,no
-2026-04-07,Tue,yes,,4.4,8.8,3.7,0.9,4.2,11,6.8,,5.4,11,yes,no
-2026-04-08,Wed,no,wind 12 kt at Kaiwi mid-channel 2 PM,6.4,12.0,2.2,1.4,5.8,12,4.4,,6.3,11,no,no
-2026-04-09,Thu,no,wind 20 kt at P FAD 6 AM; channel average 13.8 kt; models differ by 6 kt; wind chop 4.7 ft; waves 7.7 ft; period down to 8 s; Small Craft Advisory,13.8,19.7,5.8,4.7,7.7,8,6.4,yes,8.8,14,no,no
-2026-04-10,Fri,no,wind 24 kt at P FAD 11 AM; channel average 17.5 kt; models differ by 5 kt; wind chop 4.4 ft; waves 7.3 ft; period down to 8 s; windy day before (14 kt); Small Craft Advisory,17.5,23.8,5.2,4.4,7.3,8,13.8,yes,10.2,14,no,no
-2026-04-11,Sat,no,waves 6.6 ft; period down to 8 s; windy day before (18 kt),4.7,8.8,0.5,0.9,6.6,8,17.5,,10.1,12,no,no
-2026-04-12,Sun,no,wind 10 kt at Bank N ledge 10 AM,5.7,10.1,3.6,0.1,5.5,9,4.7,,3.9,6,yes,no
-2026-04-13,Mon,no,wind 10 kt at P FAD 6 AM; wind chop 1.6 ft,7.4,10.3,2.5,1.6,4.3,10,5.7,,7.7,12,yes,no
-2026-04-14,Tue,yes,,3.2,5.6,1.6,0.3,4.4,11,7.4,,6.2,9,yes,yes
-2026-04-15,Wed,yes,,4.9,7.7,1.6,0.3,4.5,11,3.2,,4.0,8,yes,yes
-2026-04-16,Thu,yes,,5.6,8.5,0.8,0.5,4.5,11,4.9,,5.3,11,yes,no
-2026-04-17,Fri,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.2 kt; wind chop 2.7 ft; period down to 8 s,11.2,17.2,2.9,2.7,4.3,8,5.6,,10.7,14,no,no
-2026-04-18,Sat,no,wind 17 kt at Kaiwi mid-channel 7 AM; channel average 9.9 kt; wind chop 2.2 ft; period down to 8 s; windy day before (11 kt),9.9,17.2,4.0,2.2,4.3,8,11.2,,11.8,19,no,no
-2026-04-19,Sun,no,wind 14 kt at Kaiwi mid-channel 5 AM; channel average 8.3 kt; wind chop 1.9 ft; period down to 7 s,8.3,13.7,3.2,1.9,3.9,7,9.9,,5.4,9,no,no
-2026-04-20,Mon,no,period down to 8 s,3.8,6.1,3.1,0.1,3.2,8,8.3,,5.3,10,yes,no
-2026-04-21,Tue,yes,,3.2,4.7,2.1,0.0,3.7,10,3.8,,5.8,10,yes,yes
-2026-04-22,Wed,no,wind 10 kt at Kaiwi mid-channel 2 PM,5.1,10.2,1.7,0.2,5.9,11,3.2,,4.6,9,yes,no
-2026-04-23,Thu,no,wind 15 kt at Bank N ledge 2 PM; channel average 9.9 kt; wind chop 1.6 ft,9.9,15.1,2.2,1.6,4.9,9,5.1,,9.2,13,no,no
-2026-04-24,Fri,no,wind 19 kt at Bank N ledge 2 PM; channel average 13.1 kt; wind chop 2.8 ft; period down to 8 s,13.1,18.7,1.4,2.8,4.5,8,9.9,,10.7,15,no,no
-2026-04-25,Sat,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 14.0 kt; wind chop 3.3 ft; period down to 7 s; windy day before (13 kt),14.0,19.2,2.0,3.3,5.2,7,13.1,,10.8,16,no,no
-2026-04-26,Sun,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s; windy day before (14 kt),10.0,14.7,3.2,2.6,4.5,7,14.0,,9.4,14,no,no
-2026-04-27,Mon,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.5 kt; wind chop 2.5 ft; period down to 7 s,9.5,13.7,3.1,2.5,4.3,7,10.0,,9.2,14,no,no
-2026-04-28,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.7 kt; wind chop 1.9 ft; period down to 7 s,10.7,15.0,1.1,1.9,3.8,7,9.5,,10.0,15,no,no
-2026-04-29,Wed,no,wind 20 kt at Bank N ledge 2 PM; channel average 15.6 kt; wind chop 3.6 ft; period down to 6 s,15.6,20.5,1.8,3.6,5.0,6,10.7,,10.8,15,no,no
-2026-04-30,Thu,no,wind 22 kt at Kaiwi mid-channel 6 AM; channel average 16.4 kt; wind chop 4.1 ft; period down to 6 s; windy day before (16 kt),16.4,21.6,1.6,4.1,5.1,6,15.6,,13.2,16,no,no
-2026-05-01,Fri,no,wind 23 kt at Kaiwi mid-channel 6 AM; channel average 17.4 kt; wind chop 5.8 ft; waves 7.5 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,17.4,23.2,3.0,5.8,7.5,7,16.4,yes,14.6,19,no,no
-2026-05-02,Sat,no,wind 18 kt at Kaiwi mid-channel 10 AM; channel average 13.9 kt; wind chop 3.4 ft; period down to 8 s; windy day before (17 kt),13.9,18.2,2.5,3.4,5.5,8,17.4,,12.5,16,no,no
-2026-05-03,Sun,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.2 kt; wind chop 3.1 ft; period down to 8 s; windy day before (14 kt),12.2,17.6,1.3,3.1,5.4,8,13.9,,10.9,16,no,no
-2026-05-04,Mon,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 12.7 kt; wind chop 2.8 ft; period down to 8 s; windy day before (12 kt),12.7,17.6,1.1,2.8,5.0,8,12.2,,10.4,14,no,no
-2026-05-05,Tue,no,period down to 8 s; windy day before (13 kt),4.6,7.2,2.5,0.2,5.1,8,12.7,,4.2,10,no,no
-2026-05-06,Wed,no,wind 15 kt at Bank N ledge 2 PM; channel average 8.1 kt; models differ by 5 kt; wind chop 1.8 ft; period down to 8 s,8.1,14.6,4.8,1.8,4.5,8,4.6,,7.5,13,no,no
-2026-05-07,Thu,no,wind 16 kt at Bank N ledge 1 PM; channel average 11.5 kt; wind chop 1.9 ft,11.5,15.9,1.4,1.9,4.3,9,8.1,,9.7,13,no,no
-2026-05-08,Fri,no,wind 16 kt at Bank N ledge 2 PM; channel average 10.5 kt; wind chop 2.0 ft; windy day before (11 kt),10.5,16.5,1.3,2.0,5.0,10,11.5,,10.4,16,no,no
-2026-05-09,Sat,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; wind chop 3.1 ft; period down to 8 s,10.9,17.2,1.1,3.1,4.9,8,10.5,,8.4,12,no,no
-2026-05-10,Sun,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; wind chop 3.9 ft; period down to 7 s,14.3,20.1,1.3,3.9,5.7,7,10.9,,12.2,16,no,no
-2026-05-11,Mon,no,wind 21 kt at Kaiwi mid-channel 12 PM; channel average 16.0 kt; wind chop 3.8 ft; period down to 7 s; windy day before (14 kt),16.0,20.9,1.8,3.8,5.1,7,14.3,,11.8,20,no,no
-2026-05-12,Tue,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 15.6 kt; wind chop 4.7 ft; period down to 7 s; windy day before (16 kt),15.6,20.6,2.4,4.7,5.9,7,16.0,,14.0,19,no,no
-2026-05-13,Wed,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.4 kt; wind chop 5.2 ft; waves 6.2 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,16.4,21.8,2.9,5.2,6.2,7,15.6,yes,14.2,18,no,no
-2026-05-14,Thu,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; wind chop 3.5 ft; period down to 7 s; windy day before (16 kt),13.0,17.6,1.7,3.5,5.6,7,16.4,,12.8,15,no,no
-2026-05-15,Fri,no,wind 14 kt at Kaiwi mid-channel 2 PM; models differ by 4 kt; wind chop 1.9 ft; period down to 8 s; windy day before (13 kt),5.8,13.7,4.1,1.9,5.4,8,13.0,,8.5,15,no,no
-2026-05-16,Sat,no,wind 12 kt at Kaiwi mid-channel 1 PM; wind chop 2.0 ft; period down to 8 s,7.3,11.8,2.9,2.0,4.9,8,5.8,,7.0,9,no,no
-2026-05-17,Sun,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 1.6 ft; period down to 9 s,7.2,13.1,1.4,1.6,5.1,9,7.3,,5.6,9,no,no
-2026-05-18,Mon,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; models differ by 5 kt; wind chop 4.2 ft; period down to 7 s,12.6,20.1,5.2,4.2,5.6,7,7.2,,13.3,21,no,no
-2026-05-19,Tue,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.2 kt; models differ by 4 kt; wind chop 3.6 ft; period down to 7 s; windy day before (13 kt),12.2,17.8,4.0,3.6,5.1,7,12.6,,10.2,13,no,no
-2026-05-20,Wed,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.3 kt; wind chop 5.9 ft; waves 7.0 ft; period down to 7 s; windy day before (12 kt); Small Craft Advisory,16.3,22.3,3.3,5.9,7.0,7,12.2,yes,14.8,21,no,no
-2026-05-21,Thu,no,wind 26 kt at Kaiwi mid-channel 2 PM; channel average 19.3 kt; wind chop 7.1 ft; waves 8.1 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,19.3,26.4,3.2,7.1,8.1,7,16.3,yes,19.2,23,no,no
-2026-05-22,Fri,no,wind 25 kt at Kaiwi mid-channel 5 AM; channel average 19.4 kt; wind chop 6.6 ft; waves 7.6 ft; period down to 7 s; windy day before (19 kt); Small Craft Advisory,19.4,25.3,3.0,6.6,7.6,7,19.3,yes,13.1,18,no,no
-2026-05-23,Sat,no,wind 26 kt at Kaiwi mid-channel 11 AM; channel average 20.3 kt; wind chop 6.6 ft; waves 7.9 ft; period down to 8 s; windy day before (19 kt); Small Craft Advisory,20.3,26.3,2.9,6.6,7.9,8,19.4,yes,13.4,17,no,no
-2026-05-24,Sun,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.8 kt; wind chop 6.0 ft; waves 7.2 ft; period down to 8 s; windy day before (20 kt); Small Craft Advisory,16.8,22.3,1.5,6.0,7.2,8,20.3,yes,13.8,18,no,no
-2026-05-25,Mon,no,wind 21 kt at Kaiwi mid-channel 6 AM; channel average 15.4 kt; wind chop 4.5 ft; waves 6.5 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,15.4,20.9,2.1,4.5,6.5,7,16.8,yes,14.6,17,no,no
-2026-05-26,Tue,no,wind 24 kt at Kaiwi mid-channel 2 PM; channel average 16.1 kt; wind chop 5.2 ft; waves 6.4 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,16.1,23.6,3.1,5.2,6.4,7,15.4,yes,12.1,18,no,no
-2026-05-27,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.0 kt; wind chop 4.7 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,14.0,19.7,2.7,4.7,5.8,7,16.1,yes,11.8,16,no,no
-2026-05-28,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.4 kt; wind chop 4.2 ft; period down to 8 s; windy day before (14 kt),13.4,20.4,3.9,4.2,5.7,8,14.0,,12.1,16,no,no
-2026-05-29,Fri,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.1 kt; wind chop 3.7 ft; period down to 9 s; windy day before (13 kt),13.1,18.0,2.6,3.7,5.6,9,13.4,,11.4,15,no,no
-2026-05-30,Sat,no,wind 13 kt at Kaiwi mid-channel 2 PM; channel average 9.2 kt; wind chop 2.0 ft; windy day before (13 kt),9.2,13.4,3.8,2.0,5.2,11,13.1,,9.7,17,no,no
-2026-05-31,Sun,no,wind 16 kt at Kaiwi mid-channel 2 PM; wind chop 2.2 ft,7.5,15.5,2.6,2.2,5.1,12,9.2,,10.2,14,no,no
-2026-06-01,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.3 kt; wind chop 3.2 ft,11.3,17.4,2.2,3.2,5.0,9,7.5,,11.9,15,no,no
-2026-06-02,Tue,no,wind 16 kt at Kaiwi mid-channel 12 PM; channel average 12.9 kt; models differ by 5 kt; wind chop 3.7 ft; windy day before (11 kt),12.9,16.3,4.9,3.7,5.8,10,11.3,,11.1,14,no,no
-2026-06-03,Wed,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; models differ by 5 kt; wind chop 4.1 ft; waves 6.8 ft; windy day before (13 kt),14.3,18.8,5.2,4.1,6.8,10,12.9,,11.5,15,no,no
-2026-06-04,Thu,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.9 ft; period down to 8 s; windy day before (14 kt),13.7,20.6,2.9,3.9,6.0,8,14.3,,13.3,18,no,no
-2026-06-05,Fri,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 14.5 kt; wind chop 5.1 ft; waves 6.5 ft; period down to 8 s; windy day before (14 kt),14.5,21.7,3.9,5.1,6.5,8,13.7,,13.5,19,no,no
-2026-06-06,Sat,no,wind 20 kt at Kaiwi mid-channel 12 PM; channel average 15.6 kt; wind chop 4.7 ft; period down to 7 s; windy day before (14 kt); Small Craft Advisory,15.6,20.5,2.4,4.7,5.8,7,14.5,yes,15.2,20,no,no
-2026-06-07,Sun,no,wind 20 kt at Kaiwi mid-channel 6 AM; channel average 15.3 kt; wind chop 5.1 ft; waves 6.0 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,15.3,20.0,3.7,5.1,6.0,7,15.6,yes,11.8,16,no,no
-2026-06-08,Mon,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.4 kt; wind chop 4.8 ft; period down to 8 s; windy day before (15 kt),14.4,20.0,1.8,4.8,5.9,8,15.3,,12.5,16,no,no
-2026-06-09,Tue,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.1 kt; wind chop 3.4 ft; period down to 8 s; windy day before (14 kt),14.1,19.1,2.4,3.4,5.2,8,14.4,,11.3,18,no,no
-2026-06-10,Wed,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.9 kt; models differ by 4 kt; wind chop 3.0 ft; period down to 8 s; windy day before (14 kt),11.9,17.3,4.1,3.0,4.7,8,14.1,,12.2,16,no,no
-2026-06-11,Thu,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; wind chop 2.3 ft; period down to 9 s; windy day before (12 kt),10.9,15.8,1.2,2.3,3.9,9,11.9,,11.0,15,no,no
-2026-06-12,Fri,no,wind 14 kt at Bank N ledge 2 PM; channel average 8.5 kt; wind chop 1.6 ft,8.5,13.5,0.8,1.6,3.8,11,10.9,,9.0,14,no,no
-2026-06-13,Sat,no,wind 15 kt at Bank N ledge 2 PM; channel average 8.9 kt; wind chop 1.6 ft,8.9,15.1,0.7,1.6,3.5,12,8.5,,8.4,13,no,no
-2026-06-14,Sun,no,wind 14 kt at Kaiwi mid-channel 5 AM; channel average 9.5 kt; wind chop 1.8 ft,9.5,13.5,1.5,1.8,4.1,13,8.9,,7.8,10,no,no
-2026-06-15,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 12.5 kt; wind chop 3.0 ft,12.5,17.2,1.9,3.0,5.1,11,9.5,,10.1,15,no,no
-2026-06-16,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.8 ft; windy day before (12 kt),10.4,16.2,2.1,2.8,5.6,11,12.5,,10.3,14,no,no
-2026-06-17,Wed,no,wind 12 kt at Makapuu corner 2 PM; models differ by 4 kt; wind chop 1.6 ft,6.1,11.5,4.3,1.6,4.9,11,10.4,,6.3,11,no,no
-2026-06-18,Thu,yes,,4.0,9.1,2.2,0.6,5.1,12,6.1,,3.7,6,yes,no
-2026-06-19,Fri,yes,,5.0,9.1,2.4,0.9,4.6,11,4.0,,4.2,10,yes,no
-2026-06-20,Sat,no,wind 15 kt at Kaiwi mid-channel 2 PM; models differ by 4 kt; wind chop 2.0 ft,7.9,14.8,4.1,2.0,4.9,11,5.0,,8.7,13,no,no
-2026-06-21,Sun,no,wind 16 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 1.9 ft,9.1,16.2,2.0,1.9,4.3,10,7.9,,10.3,13,no,no
-2026-06-22,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.7 ft,10.4,16.7,2.6,2.7,4.7,10,9.1,,11.7,17,no,no
-2026-06-23,Tue,no,wind 16 kt at Kaiwi mid-channel 7 AM; channel average 12.2 kt; wind chop 2.7 ft; period down to 9 s,12.2,16.4,2.1,2.7,5.1,9,10.4,,9.7,13,no,no
-2026-06-24,Wed,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 15.5 kt; wind chop 5.2 ft; waves 6.4 ft; period down to 7 s; windy day before (12 kt),15.5,21.5,2.1,5.2,6.4,7,12.2,,13.6,18,no,no
-2026-06-25,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.8 kt; models differ by 4 kt; wind chop 4.5 ft; period down to 7 s; windy day before (15 kt),14.8,20.3,4.5,4.5,5.8,7,15.5,,14.5,20,no,no
-2026-06-26,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.9 kt; models differ by 6 kt; wind chop 4.9 ft; waves 6.4 ft; period down to 7 s; windy day before (15 kt),13.9,19.9,6.0,4.9,6.4,7,14.8,,12.2,16,no,no
-2026-06-27,Sat,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; models differ by 5 kt; wind chop 5.1 ft; waves 6.2 ft; period down to 7 s; windy day before (14 kt); Small Craft Advisory,15.4,21.1,4.7,5.1,6.2,7,13.9,yes,13.7,18,no,no
-2026-06-28,Sun,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; wind chop 3.5 ft; period down to 8 s; windy day before (15 kt),12.6,19.0,3.5,3.5,5.5,8,15.4,,11.4,16,no,no
-2026-06-29,Mon,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 14.1 kt; wind chop 3.8 ft; period down to 8 s; windy day before (13 kt); Small Craft Advisory,14.1,19.7,3.2,3.8,5.4,8,12.6,yes,13.2,16,no,no
-2026-06-30,Tue,no,wind 18 kt at Bank N ledge 6 AM; channel average 13.5 kt; wind chop 3.0 ft; period down to 8 s; windy day before (14 kt),13.5,17.5,0.1,3.0,5.2,8,14.1,,9.7,15,no,no
-2026-07-01,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.6 kt; wind chop 4.9 ft; waves 7.1 ft; period down to 7 s; windy day before (14 kt),14.6,20.4,3.9,4.9,7.1,7,13.5,,13.9,19,no,no
-2026-07-02,Thu,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.7 kt; wind chop 3.4 ft; period down to 8 s; windy day before (15 kt),14.7,18.9,1.4,3.4,5.7,8,14.6,,11.7,17,no,no
-2026-07-03,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 12.9 kt; wind chop 4.6 ft; period down to 8 s; windy day before (15 kt),12.9,20.1,2.1,4.6,5.9,8,14.7,,11.5,16,no,no
-2026-07-04,Sat,no,wind 19 kt at Kaiwi mid-channel 11 AM; channel average 15.0 kt; wind chop 4.1 ft; period down to 9 s; windy day before (13 kt),15.0,19.0,1.0,4.1,5.6,9,12.9,,11.5,14,no,no
-2026-07-05,Sun,no,wind 23 kt at Kaiwi mid-channel 1 PM; channel average 14.9 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 8 s; windy day before (15 kt); Small Craft Advisory,14.9,22.8,2.9,5.4,6.5,8,15.0,yes,13.4,17,no,no
-2026-07-06,Mon,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.6 kt; wind chop 5.0 ft; waves 6.4 ft; period down to 8 s; windy day before (15 kt); Small Craft Advisory,16.6,22.0,2.1,5.0,6.4,8,14.9,yes,13.3,18,no,no
-2026-07-07,Tue,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 18.1 kt; wind chop 6.2 ft; waves 7.5 ft; period down to 8 s; windy day before (17 kt); Small Craft Advisory,18.1,23.4,3.0,6.2,7.5,8,16.6,yes,13.1,16,no,no
-2026-07-08,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 15.5 kt; wind chop 5.1 ft; waves 6.2 ft; period down to 7 s; windy day before (18 kt); Small Craft Advisory,15.5,19.8,3.6,5.1,6.2,7,18.1,yes,13.2,18,no,no
-2026-07-09,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.2 kt; models differ by 5 kt; wind chop 4.8 ft; waves 6.0 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,13.2,19.9,4.5,4.8,6.0,7,15.5,yes,14.1,18,no,no
-2026-07-10,Fri,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.4 kt; wind chop 4.5 ft; period down to 7 s; windy day before (13 kt); Small Craft Advisory,16.4,21.7,0.4,4.5,5.6,7,13.2,yes,13.2,17,no,no
-2026-07-11,Sat,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 16.1 kt; wind chop 5.4 ft; waves 6.7 ft; period down to 7 s; windy day before (16 kt); Small Craft Advisory,16.1,21.0,2.2,5.4,6.7,7,16.4,yes,13.0,19,no,no
-2026-07-12,Sun,no,wind 21 kt at Kaiwi mid-channel 11 AM; channel average 16.1 kt; wind chop 4.8 ft; waves 6.1 ft; period down to 8 s; windy day before (16 kt); Small Craft Advisory,16.1,21.3,1.6,4.8,6.1,8,16.1,yes,14.3,19,no,no
-2026-07-13,Mon,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 14.8 kt; wind chop 4.1 ft; waves 6.0 ft; period down to 8 s; windy day before (16 kt); Small Craft Advisory,14.8,21.1,1.7,4.1,6.0,8,16.1,yes,14.3,18,no,no
-2026-07-14,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.5 kt; wind chop 2.8 ft; period down to 8 s; windy day before (15 kt),10.5,15.7,2.9,2.8,4.7,8,14.8,,9.7,14,no,no
-2026-07-15,Wed,no,wind 11 kt at Kaiwi mid-channel 2 PM,5.5,10.7,3.4,1.3,4.4,9,10.5,,3.8,8,yes,no
-2026-07-16,Thu,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 9.7 kt; models differ by 4 kt; wind chop 2.7 ft; period down to 8 s,9.7,15.7,4.4,2.7,4.7,8,5.5,,10.6,14,no,no
-2026-07-17,Fri,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.1 kt; models differ by 5 kt; wind chop 3.8 ft; period down to 8 s,12.1,18.5,4.9,3.8,5.7,8,9.7,,12.8,18,no,no
-2026-07-18,Sat,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.0 kt; models differ by 5 kt; wind chop 4.4 ft; waves 6.4 ft; period down to 8 s; windy day before (12 kt); Small Craft Advisory,15.0,20.0,4.7,4.4,6.4,8,12.1,yes,13.3,18,no,no
-2026-07-19,Sun,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; wind chop 4.1 ft; period down to 8 s; windy day before (15 kt),14.3,20.3,2.7,4.1,6.0,8,15.0,,13.2,16,no,no
-2026-07-20,Mon,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 11.6 kt; wind chop 3.5 ft; windy day before (14 kt),11.6,18.1,3.8,3.5,5.7,10,14.3,,9.3,13,no,no
-2026-07-21,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.6 kt; models differ by 6 kt; wind chop 3.0 ft; waves 6.2 ft; windy day before (12 kt),9.6,14.8,6.0,3.0,6.2,9,11.6,,11.8,17,no,no
-2026-07-22,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 14.1 kt; wind chop 4.2 ft; waves 6.1 ft; period down to 8 s,14.1,20.9,3.7,4.2,6.1,8,9.6,,13.6,19,no,no
-2026-07-23,Thu,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; models differ by 5 kt; wind chop 5.2 ft; waves 7.0 ft; period down to 8 s; windy day before (14 kt); Small Craft Advisory,15.8,20.6,4.8,5.2,7.0,8,14.1,yes,13.5,18,no,no
-2026-07-24,Fri,no,wind 23 kt at Kaiwi mid-channel 12 PM; channel average 16.9 kt; wind chop 5.4 ft; waves 7.1 ft; period down to 8 s; windy day before (16 kt); Small Craft Advisory,16.9,23.4,2.2,5.4,7.1,8,15.8,yes,14.7,20,no,no
-2026-07-25,Sat,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 5.6 ft; waves 7.2 ft; period down to 8 s; windy day before (17 kt),15.8,23.0,1.9,5.6,7.2,8,16.9,,12.6,17,no,no
-2026-07-26,Sun,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.3 kt; wind chop 4.8 ft; waves 6.6 ft; period down to 8 s; windy day before (16 kt),16.3,22.5,1.1,4.8,6.6,8,15.8,,12.7,16,no,no
-2026-07-27,Mon,no,wind 20 kt at Kaiwi mid-channel 5 AM; channel average 15.3 kt; wind chop 3.1 ft; period down to 8 s; windy day before (16 kt),15.3,19.6,1.8,3.1,5.8,8,16.3,,10.3,14,no,no
-2026-07-28,Tue,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.3 kt; wind chop 3.3 ft; period down to 8 s; windy day before (15 kt); Small Craft Advisory,14.3,18.8,1.8,3.3,6.0,8,15.3,yes,8.9,13,no,no
-2026-07-29,Wed,no,wind 12 kt at P FAD 5 AM; channel average 9.4 kt; wind chop 1.8 ft; windy day before (14 kt),9.4,12.1,0.9,1.8,5.6,9,14.3,,7.6,11,no,no
-2026-07-30,Thu,no,wind 15 kt at Makapuu corner 2 PM; channel average 9.0 kt; models differ by 6 kt; wind chop 2.6 ft; period down to 8 s,9.0,14.8,5.6,2.6,4.9,8,9.4,,9.8,15,no,no
-2026-07-31,Fri,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 14.9 kt; wind chop 5.4 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,14.9,23.3,3.4,5.4,6.4,7,9.0,yes,12.1,19,no,no
-2026-08-01,Sat,no,wind 24 kt at Kaiwi mid-channel 5 AM; channel average 19.1 kt; wind chop 6.3 ft; waves 7.2 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,19.1,24.5,2.7,6.3,7.2,7,14.9,yes,15.8,21,no,no
-2026-08-02,Sun,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.5 kt; wind chop 4.2 ft; waves 6.3 ft; period down to 7 s; windy day before (19 kt),16.5,21.8,1.6,4.2,6.3,7,19.1,,12.9,18,no,no
-2026-08-03,Mon,no,wind 17 kt at Kaiwi mid-channel 5 AM; channel average 11.9 kt; wind chop 3.1 ft; period down to 7 s; windy day before (17 kt),11.9,17.0,2.9,3.1,5.3,7,16.5,,9.6,13,no,no
-2026-08-04,Tue,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 2.2 ft; period down to 8 s; windy day before (12 kt),7.6,12.8,3.8,2.2,4.5,8,11.9,,7.5,14,no,no
-2026-08-05,Wed,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.6 ft; period down to 8 s,10.4,15.8,3.0,2.6,4.3,8,7.6,,10.7,14,no,no
-2026-08-06,Thu,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; models differ by 5 kt; wind chop 2.6 ft; period down to 8 s,10.9,15.5,4.7,2.6,4.3,8,10.4,,10.2,12,no,no
-2026-08-07,Fri,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.7 kt; wind chop 2.4 ft; period down to 8 s,10.7,16.3,2.6,2.4,4.4,8,10.9,,10.6,15,no,no
-2026-08-08,Sat,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.5 kt; wind chop 3.8 ft; period down to 7 s,13.5,19.2,2.8,3.8,5.0,7,10.7,,13.3,18,no,no
-2026-08-09,Sun,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.7 ft; period down to 8 s; windy day before (14 kt),13.7,19.3,2.6,3.7,5.6,8,13.5,,10.2,13,no,no
-2026-08-10,Mon,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.9 ft; period down to 8 s; windy day before (14 kt),12.4,17.7,2.4,3.9,5.2,8,13.7,,13.0,16,no,no
-2026-08-11,Tue,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.5 kt; models differ by 4 kt; wind chop 3.1 ft; period down to 9 s; windy day before (12 kt),11.5,17.3,4.1,3.1,5.6,9,12.4,,9.9,14,no,no
-2026-08-12,Wed,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 3.7 ft; waves 6.3 ft; windy day before (12 kt),13.6,19.0,2.9,3.7,6.3,10,11.5,,12.6,16,no,no
-2026-08-13,Thu,no,wind 24 kt at Kaiwi mid-channel 11 AM; channel average 17.4 kt; wind chop 4.3 ft; waves 6.8 ft; windy day before (14 kt),17.4,23.5,2.0,4.3,6.8,10,13.6,,13.5,20,no,no
-2026-08-14,Fri,no,wind 25 kt at Kaiwi mid-channel 2 PM; channel average 19.3 kt; wind chop 6.0 ft; waves 7.4 ft; period down to 8 s; windy day before (17 kt); Small Craft Advisory,19.3,25.1,3.6,6.0,7.4,8,17.4,yes,14.6,18,no,no
-2026-08-15,Sat,no,wind 31 kt at Kaiwi mid-channel 1 PM; channel average 25.4 kt; models differ by 4 kt; wind chop 9.1 ft; waves 11.0 ft; period down to 8 s; windy day before (19 kt); Small Craft Advisory,25.4,31.4,4.3,9.1,11.0,8,19.3,yes,17.4,22,no,no
-2026-08-16,Sun,no,wind 36 kt at P FAD 6 AM; channel average 22.9 kt; models differ by 5 kt; wind chop 11.2 ft; waves 12.7 ft; period down to 8 s; windy day before (25 kt); Small Craft Advisory,22.9,35.5,4.9,11.2,12.7,8,25.4,yes,8.8,14,no,no
-2026-08-17,Mon,no,wind 15 kt at Makapuu corner 11 AM; channel average 11.1 kt; models differ by 4 kt; wind chop 2.6 ft; waves 6.4 ft; period down to 8 s; windy day before (23 kt),11.1,15.4,4.5,2.6,6.4,8,22.9,,10.4,14,no,no
-2026-08-18,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 11.9 kt; wind chop 3.1 ft; period down to 7 s; windy day before (11 kt),11.9,16.2,3.2,3.1,5.1,7,11.1,,10.7,15,no,no
-2026-08-19,Wed,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.5 kt; wind chop 1.9 ft; period down to 8 s; windy day before (12 kt),9.5,14.4,1.2,1.9,4.3,8,11.9,,9.7,12,no,no
-2026-08-20,Thu,no,wind 12 kt at Kaiwi mid-channel 2 PM; period down to 9 s,6.0,12.2,0.8,0.9,3.7,9,9.5,,7.4,10,no,no
-2026-08-21,Fri,yes,,4.6,9.8,2.6,0.3,3.9,10,6.0,,3.1,10,yes,no
-2026-08-22,Sat,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 4.5 ft; period down to 7 s; Small Craft Advisory,13.6,21.0,3.3,4.5,5.6,7,4.6,yes,11.5,17,no,no
-2026-08-23,Sun,no,wind 23 kt at Kaiwi mid-channel 1 PM; channel average 17.9 kt; wind chop 5.0 ft; waves 6.6 ft; period down to 7 s; windy day before (14 kt); Small Craft Advisory,17.9,23.4,1.5,5.0,6.6,7,13.6,yes,11.3,14,no,no
-2026-08-24,Mon,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 14.3 kt; models differ by 4 kt; wind chop 4.3 ft; waves 6.2 ft; period down to 8 s; windy day before (18 kt),14.3,19.5,4.0,4.3,6.2,8,17.9,,13.6,17,no,no
-2026-08-25,Tue,no,wind 19 kt at Kaiwi mid-channel 10 AM; channel average 14.7 kt; wind chop 4.1 ft; period down to 7 s; windy day before (14 kt),14.7,19.3,3.8,4.1,5.7,7,14.3,,12.8,16,no,no
-2026-08-26,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 4.5 ft; period down to 8 s; windy day before (15 kt),15.8,20.8,2.3,4.5,5.8,8,14.7,,10.7,13,no,no
-2026-08-27,Thu,no,wind 20 kt at Kaiwi mid-channel 6 AM; channel average 15.1 kt; wind chop 3.9 ft; windy day before (16 kt),15.1,20.5,2.2,3.9,5.8,9,15.8,,12.9,17,no,no
-2026-08-28,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; wind chop 4.1 ft; waves 6.2 ft; windy day before (15 kt),15.4,20.3,1.7,4.1,6.2,9,15.1,,13.4,16,no,no
-2026-08-29,Sat,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.4 kt; wind chop 4.2 ft; period down to 8 s; windy day before (15 kt),15.4,19.9,2.4,4.2,5.6,8,15.4,,12.5,19,no,no
-2026-08-30,Sun,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.3 kt; wind chop 4.8 ft; waves 6.0 ft; period down to 7 s; windy day before (15 kt); Small Craft Advisory,15.3,20.6,2.8,4.8,6.0,7,15.4,yes,12.2,15,no,no
-2026-08-31,Mon,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 16.8 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 7 s; windy day before (15 kt),16.8,23.3,2.0,5.4,6.5,7,15.3,,14.2,19,no,no
-2026-09-01,Tue,no,wind 22 kt at Bank N ledge 2 PM; channel average 17.1 kt; wind chop 4.6 ft; waves 6.2 ft; period down to 8 s; windy day before (17 kt),17.1,22.0,1.1,4.6,6.2,8,16.8,,13.4,18,no,no
-2026-09-02,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 14.8 kt; models differ by 4 kt; wind chop 5.4 ft; waves 6.8 ft; period down to 8 s; windy day before (17 kt); Small Craft Advisory,14.8,20.7,4.1,5.4,6.8,8,17.1,yes,13.2,19,no,no
-2026-09-03,Thu,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 17.1 kt; wind chop 5.8 ft; waves 7.5 ft; period down to 8 s; windy day before (15 kt); Small Craft Advisory,17.1,22.4,3.0,5.8,7.5,8,14.8,yes,15.8,23,no,no
-2026-09-04,Fri,no,wind 23 kt at Kaiwi mid-channel 12 PM; channel average 17.2 kt; wind chop 5.2 ft; waves 7.0 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,17.2,22.7,3.3,5.2,7.0,7,17.1,yes,15.1,18,no,no
-2026-09-05,Sat,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.2 kt; wind chop 4.4 ft; waves 7.1 ft; period down to 8 s; windy day before (17 kt),13.2,20.2,3.1,4.4,7.1,8,17.2,,11.5,17,no,no
-2026-09-06,Sun,no,wind 16 kt at Kaiwi mid-channel 6 AM; channel average 10.7 kt; models differ by 5 kt; wind chop 2.8 ft; waves 6.8 ft; windy day before (13 kt),10.7,16.3,4.7,2.8,6.8,9,13.2,,6.6,12,no,no
-2026-09-07,Mon,no,wind 23 kt at P FAD 11 AM; channel average 16.2 kt; models differ by 5 kt; wind chop 5.2 ft; waves 9.6 ft; period down to 8 s; Small Craft Advisory,16.2,23.2,5.3,5.2,9.6,8,10.7,yes,10.7,13,no,no
-2026-09-08,Tue,no,wind 24 kt at Kaiwi mid-channel 5 AM; channel average 16.3 kt; wind chop 6.4 ft; waves 14.4 ft; windy day before (16 kt); Small Craft Advisory,16.3,24.2,1.8,6.4,14.4,9,16.2,yes,14.9,17,no,no
-2026-09-09,Wed,no,wind 10 kt at Kaiwi mid-channel 2 PM; waves 7.7 ft; windy day before (16 kt),3.5,10.1,1.2,0.9,7.7,10,16.3,,4.3,7,no,no
-2026-09-10,Thu,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 9.4 kt; wind chop 2.6 ft; period down to 8 s,9.4,16.8,3.0,2.6,5.1,8,3.5,,9.1,12,no,no
-2026-09-11,Fri,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 3.2 ft; period down to 7 s,10.8,16.6,3.5,3.2,5.2,7,9.4,,10.1,14,no,no
-2026-09-12,Sat,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 8.3 kt; wind chop 1.9 ft; period down to 8 s,8.3,13.7,1.8,1.9,4.3,8,10.8,,8.9,18,no,no
-2026-09-13,Sun,no,wind 15 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 2.1 ft; period down to 8 s,9.1,14.6,1.8,2.1,4.6,8,8.3,,9.6,13,no,no
-2026-09-14,Mon,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 10.3 kt; wind chop 2.1 ft; period down to 7 s,10.3,14.1,2.6,2.1,4.1,7,9.1,,10.7,13,no,no
-2026-09-15,Tue,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 8.6 kt; wind chop 1.6 ft; period down to 8 s,8.6,14.3,1.4,1.6,3.3,8,10.3,,4.7,8,no,no
-2026-09-16,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.7 ft; period down to 7 s,12.4,21.1,1.3,3.7,4.5,7,8.6,,10.3,14,no,no
-2026-09-17,Thu,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 16.6 kt; wind chop 4.3 ft; period down to 7 s; windy day before (12 kt),16.6,22.2,0.2,4.3,5.8,7,12.4,,9.9,14,no,no
-2026-09-18,Fri,no,wind 21 kt at Kaiwi mid-channel 11 AM; channel average 14.4 kt; models differ by 6 kt; wind chop 5.2 ft; waves 6.7 ft; period down to 7 s; windy day before (17 kt),14.4,20.6,6.0,5.2,6.7,7,16.6,,12.8,17,no,no
-2026-09-19,Sat,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 16.3 kt; models differ by 5 kt; wind chop 6.0 ft; waves 6.9 ft; period down to 7 s; windy day before (14 kt),16.3,22.6,4.7,6.0,6.9,7,14.4,,14.6,19,no,no
-2026-09-20,Sun,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; models differ by 4 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 7 s; windy day before (16 kt),15.4,21.6,4.2,5.4,6.5,7,16.3,,16.1,22,no,no
-2026-09-21,Mon,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 16.1 kt; wind chop 4.7 ft; waves 6.2 ft; period down to 7 s; windy day before (15 kt),16.1,21.0,1.4,4.7,6.2,7,15.4,,13.5,19,no,no
-2026-09-22,Tue,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; wind chop 4.7 ft; period down to 7 s; windy day before (16 kt),13.0,19.1,3.6,4.7,5.6,7,16.1,,12.2,18,no,no
-2026-09-23,Wed,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.5 kt; wind chop 4.6 ft; waves 6.7 ft; period down to 7 s; windy day before (13 kt),16.5,21.5,2.0,4.6,6.7,7,13.0,,13.5,16,no,no
-2026-09-24,Thu,no,wind 24 kt at Kaiwi mid-channel 10 AM; channel average 17.5 kt; wind chop 5.3 ft; waves 6.2 ft; period down to 7 s; windy day before (17 kt); Small Craft Advisory,17.5,23.5,2.7,5.3,6.2,7,16.5,yes,17.8,23,no,no
-2026-09-25,Fri,no,wind 25 kt at Kaiwi mid-channel 10 AM; channel average 19.4 kt; wind chop 6.4 ft; waves 7.4 ft; period down to 7 s; windy day before (18 kt),19.4,25.3,3.0,6.4,7.4,7,17.5,,15.8,20,no,no
-2026-09-26,Sat,no,wind 31 kt at Kaiwi mid-channel 1 PM; channel average 23.3 kt; models differ by 5 kt; wind chop 9.6 ft; waves 11.1 ft; period down to 8 s; windy day before (19 kt),23.3,30.7,4.9,9.6,11.1,8,19.4,,20.1,24,no,no
-2026-09-27,Sun,no,wind 29 kt at Kaiwi mid-channel 5 AM; channel average 22.6 kt; models differ by 8 kt; wind chop 9.1 ft; waves 10.7 ft; period down to 8 s; windy day before (23 kt); Small Craft Advisory,22.6,29.4,7.7,9.1,10.7,8,23.3,yes,14.3,18,no,no
-2026-09-28,Mon,no,wind 17 kt at Makapuu corner 10 AM; channel average 11.1 kt; wind chop 4.8 ft; waves 8.3 ft; period down to 8 s; windy day before (23 kt); Small Craft Advisory,11.1,17.4,3.6,4.8,8.3,8,22.6,yes,9.7,14,no,no
-2026-09-29,Tue,no,wind 14 kt at P FAD 5 AM; wind chop 1.7 ft; period down to 8 s; windy day before (11 kt),6.2,13.6,2.3,1.7,6.0,8,11.1,,5.1,11,no,no
-2026-09-30,Wed,no,wind 15 kt at P FAD 8 AM; channel average 11.2 kt; wind chop 2.6 ft; waves 6.4 ft; period down to 8 s,11.2,15.5,2.8,2.6,6.4,8,6.2,,5.6,10,no,no
-2026-10-01,Thu,no,wind 15 kt at P FAD 5 AM; channel average 8.2 kt; wind chop 1.9 ft; period down to 8 s; windy day before (11 kt),8.2,14.7,1.6,1.9,5.5,8,11.2,,5.0,9,no,no
-2026-10-02,Fri,no,wind 12 kt at P FAD 9 AM; period down to 8 s,5.4,11.7,2.6,1.4,5.1,8,8.2,,3.5,6,yes,no
-2026-10-03,Sat,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.3 kt; wind chop 2.5 ft; period down to 8 s,11.3,16.7,1.2,2.5,4.7,8,5.4,,11.1,14,no,no
-2026-10-04,Sun,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 15.1 kt; wind chop 3.8 ft; period down to 7 s; windy day before (11 kt),15.1,20.2,1.8,3.8,5.2,7,11.3,,12.6,19,no,no
+date,weekday,window,fails,channel_wind_avg_kt,channel_wind_max_kt,models_differ_kt,wind_chop_max_ft,waves_max_ft,period_min_s,day_before_avg_kt,small_craft_advisory,molokai_obs_avg_kt,molokai_obs_max_kt,window_2,window_3,window_4
+2025-10-05,Sun,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.3 kt; wind chop 2.8 ft; period down to 8 s; Small Craft Advisory,14.3,19.3,1.4,2.8,5.4,8,10.3,yes,11.0,15,no,no,no
+2025-10-06,Mon,yes,,6.3,10.8,1.0,0.5,4.1,9,14.3,,6.1,9,yes,no,no
+2025-10-07,Tue,yes,,3.8,7.1,2.2,0.3,3.5,9,6.3,,3.4,8,yes,yes,yes
+2025-10-08,Wed,yes,,6.9,9.0,2.7,0.4,3.1,9,3.8,,6.7,10,yes,no,yes
+2025-10-09,Thu,yes,,7.7,9.6,2.9,0.7,3.5,10,6.9,,8.7,12,yes,no,yes
+2025-10-10,Fri,yes,,4.3,6.8,2.7,0.3,4.3,10,7.7,,5.4,11,yes,yes,yes
+2025-10-11,Sat,no,period down to 8 s,7.9,10.8,0.3,0.9,4.1,8,4.3,,6.3,9,yes,no,no
+2025-10-12,Sun,no,wind 11 kt at Kaiwi mid-channel 5 AM; period down to 9 s,6.2,11.3,2.8,0.9,4.9,9,7.9,,3.9,10,yes,no,no
+2025-10-13,Mon,yes,,4.6,9.4,3.6,1.2,4.8,10,6.2,,7.0,10,yes,no,yes
+2025-10-14,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 8.0 kt; wind chop 2.0 ft; period down to 8 s; Small Craft Advisory,8.0,15.0,3.4,2.0,4.9,8,4.6,yes,9.1,13,no,no,no
+2025-10-15,Wed,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; wind chop 3.0 ft; period down to 7 s,12.6,17.9,2.7,3.0,5.2,7,8.0,,11.2,14,no,no,no
+2025-10-16,Thu,no,wind 15 kt at Makapuu corner 11 AM; channel average 10.4 kt; models differ by 5 kt; wind chop 2.4 ft; period down to 8 s,10.4,15.0,5.1,2.4,5.6,8,12.6,,10.5,14,no,no,no
+2025-10-17,Fri,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 3.8 ft; period down to 7 s,13.6,20.7,3.5,3.8,5.6,7,10.4,,12.2,17,no,no,no
+2025-10-18,Sat,no,wind 22 kt at Kaiwi mid-channel 6 AM; channel average 16.0 kt; wind chop 3.8 ft; period down to 7 s,16.0,21.5,2.8,3.8,5.6,7,13.6,,13.3,17,no,no,no
+2025-10-19,Sun,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 13.7 kt; wind chop 3.7 ft; period down to 7 s,13.7,19.2,1.1,3.7,5.2,7,16.0,,13.1,19,no,no,no
+2025-10-20,Mon,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.4 ft; period down to 6 s,12.4,19.4,3.1,3.4,4.8,6,13.7,,10.9,15,no,no,no
+2025-10-21,Tue,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 16.4 kt; wind chop 3.8 ft; period down to 6 s,16.4,20.5,2.8,3.8,4.7,6,12.4,,11.7,18,no,no,no
+2025-10-22,Wed,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 5.0 ft; period down to 6 s,15.8,23.4,2.7,5.0,5.9,6,16.4,,12.5,19,no,no,no
+2025-10-23,Thu,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 16.7 kt; wind chop 4.6 ft; period down to 6 s; Small Craft Advisory,16.7,21.7,2.4,4.6,5.7,6,15.8,yes,12.9,16,no,no,no
+2025-10-24,Fri,no,wind 24 kt at Kaiwi mid-channel 1 PM; channel average 18.0 kt; wind chop 5.5 ft; waves 6.4 ft; period down to 6 s; Small Craft Advisory,18.0,24.1,2.8,5.5,6.4,6,16.7,yes,14.3,20,no,no,no
+2025-10-25,Sat,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 17.1 kt; wind chop 4.4 ft; waves 6.1 ft; period down to 7 s; Small Craft Advisory,17.1,23.3,1.4,4.4,6.1,7,18.0,yes,14.8,19,no,no,no
+2025-10-26,Sun,no,wind 19 kt at Kaiwi mid-channel 9 AM; channel average 15.0 kt; models differ by 6 kt; wind chop 4.0 ft; period down to 6 s; Small Craft Advisory,15.0,19.5,6.0,4.0,5.7,6,17.1,yes,12.6,18,no,no,no
+2025-10-27,Mon,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 12.0 kt; wind chop 3.7 ft; period down to 6 s,12.0,16.4,3.1,3.7,5.6,6,15.0,,9.2,11,no,no,no
+2025-10-28,Tue,no,wind 17 kt at Kaiwi mid-channel 7 AM; channel average 11.8 kt; wind chop 2.4 ft; period down to 7 s,11.8,17.1,3.2,2.4,4.3,7,12.0,,8.7,14,no,no,no
+2025-10-29,Wed,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.5 ft; period down to 8 s,10.4,15.5,3.2,2.5,4.4,8,11.8,,10.2,15,no,no,no
+2025-10-30,Thu,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.2 ft; period down to 7 s,13.7,18.4,2.7,3.2,5.0,7,10.4,,12.5,17,no,no,no
+2025-10-31,Fri,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.7 kt; wind chop 3.3 ft; period down to 7 s,12.7,18.5,2.5,3.3,4.5,7,13.7,,11.8,16,no,no,no
+2025-11-01,Sat,no,wind 16 kt at Kaiwi mid-channel 9 AM; channel average 11.9 kt; wind chop 3.3 ft; period down to 7 s,11.9,16.3,1.8,3.3,5.0,7,12.7,,9.9,13,no,no,no
+2025-11-02,Sun,no,waves 6.2 ft; period down to 9 s; Small Craft Advisory,5.6,8.5,2.1,1.1,6.2,9,11.9,yes,5.3,8,no,no,no
+2025-11-03,Mon,no,wind 13 kt at Kaiwi mid-channel 2 PM; waves 6.0 ft; period down to 8 s,7.7,13.1,1.1,1.1,6.0,8,5.6,,4.6,10,no,no,no
+2025-11-04,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 2.3 ft; period down to 7 s,10.8,16.3,2.5,2.3,5.1,7,7.7,,12.4,16,no,no,no
+2025-11-05,Wed,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 13.3 kt; wind chop 3.6 ft; period down to 6 s; Small Craft Advisory,13.3,18.1,1.9,3.6,5.2,6,10.8,yes,10.8,14,no,no,no
+2025-11-06,Thu,no,period down to 7 s,5.6,9.8,2.2,1.0,4.9,7,13.3,,7.0,10,no,no,no
+2025-11-07,Fri,no,period down to 8 s,3.5,7.3,0.5,0.4,4.4,8,5.6,,4.5,9,no,no,no
+2025-11-08,Sat,no,wind 11 kt at Bank N ledge 2 PM; channel average 8.1 kt,8.1,11.1,1.9,0.7,3.8,10,3.5,,8.4,13,yes,no,no
+2025-11-09,Sun,no,wind 24 kt at Bank N ledge 12 PM; channel average 20.1 kt; models differ by 4 kt; wind chop 5.4 ft; waves 7.8 ft; period down to 8 s; Small Craft Advisory,20.1,24.0,4.5,5.4,7.8,8,8.1,yes,14.4,20,no,no,no
+2025-11-10,Mon,no,wind 25 kt at Kaiwi mid-channel 2 PM; channel average 17.2 kt; wind chop 5.7 ft; waves 9.4 ft; period down to 9 s; Small Craft Advisory,17.2,24.6,3.0,5.7,9.4,9,20.1,yes,12.4,19,no,no,no
+2025-11-11,Tue,no,wind 25 kt at Kaiwi mid-channel 6 AM; channel average 19.0 kt; wind chop 6.3 ft; waves 9.1 ft; period down to 8 s; Small Craft Advisory,19.0,25.2,3.5,6.3,9.1,8,17.2,yes,13.8,18,no,no,no
+2025-11-12,Wed,no,wind 26 kt at Kaiwi mid-channel 12 PM; channel average 20.2 kt; wind chop 6.8 ft; waves 8.9 ft; period down to 8 s; Small Craft Advisory,20.2,26.1,3.9,6.8,8.9,8,19.0,yes,12.9,15,no,no,no
+2025-11-13,Thu,no,wind 24 kt at Kaiwi mid-channel 12 PM; channel average 19.3 kt; wind chop 6.9 ft; waves 8.7 ft; period down to 7 s; Small Craft Advisory,19.3,24.4,3.4,6.9,8.7,7,20.2,yes,13.5,22,no,no,no
+2025-11-14,Fri,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 17.1 kt; wind chop 5.5 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,17.1,21.9,2.8,5.5,7.5,7,19.3,yes,13.9,17,no,no,no
+2025-11-15,Sat,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s,10.0,15.7,1.7,2.6,5.2,7,17.1,,8.8,13,no,no,no
+2025-11-16,Sun,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.7 kt; wind chop 2.4 ft; period down to 8 s,9.7,13.5,3.1,2.4,4.5,8,10.0,,8.8,13,no,no,no
+2025-11-17,Mon,no,wind 15 kt at Kaiwi mid-channel 10 AM; channel average 10.8 kt; wind chop 2.1 ft; period down to 7 s,10.8,15.4,3.7,2.1,4.7,7,9.7,,8.2,13,no,no,no
+2025-11-18,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.4 kt; wind chop 1.9 ft; period down to 7 s,9.4,15.3,3.2,1.9,4.1,7,10.8,,9.5,15,no,no,no
+2025-11-19,Wed,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.8 kt; wind chop 4.1 ft; period down to 6 s; Small Craft Advisory,16.8,21.7,2.3,4.1,5.2,6,9.4,yes,10.9,19,no,no,no
+2025-11-20,Thu,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.4 kt; models differ by 5 kt; wind chop 5.3 ft; waves 7.8 ft; period down to 7 s; Small Craft Advisory,15.4,19.8,4.9,5.3,7.8,7,16.8,yes,11.5,14,no,no,no
+2025-11-21,Fri,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.3 kt; wind chop 2.6 ft; period down to 7 s,10.3,15.0,2.3,2.6,5.8,7,15.4,,9.9,14,no,no,no
+2025-11-22,Sat,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 9.6 kt; wind chop 1.8 ft; period down to 7 s,9.6,16.1,1.1,1.8,5.2,7,10.3,,8.7,11,no,no,no
+2025-11-23,Sun,no,wind 16 kt at Kaiwi mid-channel 12 PM; channel average 10.9 kt; models differ by 4 kt; wind chop 3.2 ft; period down to 7 s,10.9,16.4,4.2,3.2,5.5,7,9.6,,10.6,15,no,no,no
+2025-11-24,Mon,no,wind 16 kt at Kaiwi mid-channel 5 AM; channel average 10.4 kt; wind chop 1.9 ft; period down to 7 s,10.4,15.7,3.6,1.9,5.0,7,10.9,,5.3,11,no,no,no
+2025-11-25,Tue,no,period down to 7 s,5.2,8.8,0.9,0.5,4.1,7,10.4,,5.0,9,no,no,no
+2025-11-26,Wed,no,period down to 7 s,4.4,7.2,2.2,0.4,4.8,7,5.2,,5.6,10,no,no,no
+2025-11-27,Thu,yes,,5.0,7.6,3.2,0.5,5.2,9,4.4,,4.3,12,yes,yes,yes
+2025-11-28,Fri,no,period down to 8 s,5.0,9.0,4.0,1.0,5.1,8,5.0,,4.7,9,no,no,no
+2025-11-29,Sat,no,period down to 8 s; Small Craft Advisory,2.2,3.8,0.9,0.0,4.1,8,5.0,yes,3.8,8,no,no,no
+2025-11-30,Sun,no,Small Craft Advisory,5.2,6.9,2.0,0.1,7.9,10,2.2,yes,4.8,9,no,no,no
+2025-12-01,Mon,no,Small Craft Advisory,2.5,5.2,0.7,0.1,7.0,10,5.2,yes,3.5,7,no,no,no
+2025-12-02,Tue,no,period down to 8 s,4.4,6.8,1.9,0.1,4.7,8,2.5,,2.8,6,no,no,no
+2025-12-03,Wed,no,period down to 8 s,3.6,5.5,1.6,0.1,4.3,8,4.4,,3.8,7,no,no,no
+2025-12-04,Thu,no,period down to 7 s,4.4,9.7,0.7,0.5,5.1,7,3.6,,3.1,7,no,no,no
+2025-12-05,Fri,no,wind 16 kt at Makapuu corner 2 PM; channel average 10.5 kt; models differ by 4 kt; wind chop 4.5 ft; waves 6.9 ft; period down to 7 s; Small Craft Advisory,10.5,16.1,4.4,4.5,6.9,7,4.4,yes,10.4,14,no,no,no
+2025-12-06,Sat,no,wind 14 kt at Makapuu corner 10 AM; channel average 9.8 kt; models differ by 5 kt; wind chop 2.2 ft; waves 6.2 ft; period down to 7 s,9.8,13.8,5.0,2.2,6.2,7,10.5,,5.8,8,no,no,no
+2025-12-07,Sun,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.1 kt; models differ by 4 kt; wind chop 2.1 ft; period down to 6 s,10.1,14.9,4.4,2.1,5.1,6,9.8,,10.4,18,no,no,no
+2025-12-08,Mon,no,wind 14 kt at Kaiwi mid-channel 12 PM; channel average 9.4 kt; wind chop 2.4 ft; period down to 6 s,9.4,14.3,1.8,2.4,4.5,6,10.1,,9.7,15,no,no,no
+2025-12-09,Tue,no,period down to 8 s,5.1,8.0,3.6,0.6,4.2,8,9.4,,4.3,8,no,no,no
+2025-12-10,Wed,no,wind 12 kt at Kaiwi mid-channel 2 PM,7.6,12.5,2.4,0.7,5.1,10,5.1,,7.7,15,yes,no,no
+2025-12-11,Thu,no,wind 11 kt at Kaiwi mid-channel 5 AM,8.0,11.4,2.4,1.1,5.2,10,7.6,,5.5,9,yes,no,no
+2025-12-12,Fri,yes,,4.5,6.5,2.8,0.4,5.2,10,8.0,,4.3,7,yes,yes,yes
+2025-12-13,Sat,no,wind 17 kt at Kaiwi mid-channel 1 PM; channel average 14.2 kt; wind chop 2.7 ft; period down to 6 s,14.2,16.8,2.4,2.7,4.3,6,4.5,,14.7,21,no,no,no
+2025-12-14,Sun,no,wind 12 kt at Bank N ledge 5 AM; period down to 6 s,7.9,11.6,1.2,1.4,5.1,6,14.2,,11.9,17,no,no,no
+2025-12-15,Mon,no,wind 16 kt at Kaiwi mid-channel 11 AM; channel average 13.2 kt; models differ by 4 kt; wind chop 3.0 ft; waves 7.2 ft; period down to 8 s,13.2,16.2,4.4,3.0,7.2,8,7.9,,14.6,17,no,no,no
+2025-12-16,Tue,no,wind 18 kt at P FAD 2 PM; channel average 12.8 kt; models differ by 5 kt; wind chop 3.4 ft; period down to 6 s,12.8,18.2,5.1,3.4,5.7,6,13.2,,9.8,15,no,no,no
+2025-12-17,Wed,no,wind 19 kt at Kaiwi mid-channel 10 AM; channel average 16.2 kt; wind chop 4.3 ft; waves 7.5 ft; period down to 6 s; Small Craft Advisory,16.2,18.8,3.3,4.3,7.5,6,12.8,yes,16.8,20,no,no,no
+2025-12-18,Thu,no,wind 12 kt at Kaiwi mid-channel 5 AM; channel average 8.9 kt; waves 6.8 ft; period down to 8 s; Small Craft Advisory,8.9,11.9,1.0,1.2,6.8,8,16.2,yes,11.9,15,no,no,no
+2025-12-19,Fri,no,period down to 8 s,6.5,8.6,2.6,1.4,5.6,8,8.9,,5.6,8,no,no,no
+2025-12-20,Sat,no,models differ by 4 kt; period down to 8 s,4.8,6.8,4.2,0.7,5.4,8,6.5,,3.9,7,no,no,no
+2025-12-21,Sun,no,wind 13 kt at Makapuu corner 2 PM; channel average 9.0 kt; wind chop 2.0 ft; period down to 9 s,9.0,13.5,2.1,2.0,5.1,9,4.8,,7.4,13,no,no,no
+2025-12-22,Mon,no,wind 15 kt at Kaiwi mid-channel 1 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s,10.0,15.4,2.2,2.6,5.4,7,9.0,,8.8,13,no,no,no
+2025-12-23,Tue,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 17.0 kt; models differ by 5 kt; wind chop 4.9 ft; waves 7.0 ft; period down to 7 s; Small Craft Advisory,17.0,22.5,4.7,4.9,7.0,7,10.0,yes,13.3,20,no,no,no
+2025-12-24,Wed,no,wind 19 kt at Kaiwi mid-channel 6 AM; channel average 14.2 kt; models differ by 4 kt; wind chop 4.1 ft; waves 7.0 ft; period down to 7 s,14.2,19.0,4.4,4.1,7.0,7,17.0,,10.9,16,no,no,no
+2025-12-25,Thu,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; models differ by 5 kt; wind chop 4.0 ft; waves 6.6 ft; period down to 7 s,13.0,18.8,5.0,4.0,6.6,7,14.2,,11.6,19,no,no,no
+2025-12-26,Fri,no,wind 15 kt at Makapuu corner 2 PM; channel average 8.9 kt; models differ by 6 kt; wind chop 3.0 ft; waves 6.1 ft; period down to 8 s,8.9,14.7,6.3,3.0,6.1,8,13.0,,7.1,12,no,no,no
+2025-12-27,Sat,no,wind 11 kt at P FAD 5 AM; period down to 7 s,4.5,11.0,2.4,0.7,5.8,7,8.9,,5.6,11,no,no,no
+2025-12-28,Sun,no,period down to 8 s,3.7,6.1,2.7,0.4,4.7,8,4.5,,3.8,7,yes,no,no
+2025-12-29,Mon,no,period down to 8 s,6.4,10.4,1.1,0.7,5.4,8,3.7,,6.5,13,yes,no,no
+2025-12-30,Tue,no,wind 14 kt at Makapuu corner 11 AM; channel average 9.6 kt; wind chop 1.7 ft; waves 6.2 ft; period down to 7 s,9.6,14.5,2.4,1.7,6.2,7,6.4,,10.3,15,no,no,no
+2025-12-31,Wed,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 13.2 kt; wind chop 3.2 ft; waves 6.4 ft; period down to 7 s,13.2,18.6,2.2,3.2,6.4,7,9.6,,9.0,12,no,no,no
+2026-01-01,Thu,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 2.9 ft; period down to 7 s,12.4,17.3,2.3,2.9,4.7,7,13.2,,11.5,16,no,no,no
+2026-01-02,Fri,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 16.0 kt; wind chop 5.1 ft; waves 6.6 ft; period down to 6 s; Small Craft Advisory,16.0,21.4,3.0,5.1,6.6,6,12.4,yes,14.0,21,no,no,no
+2026-01-03,Sat,no,wind 12 kt at Kaiwi mid-channel 5 AM; wind chop 1.6 ft; period down to 7 s,5.5,12.4,2.0,1.6,5.8,7,16.0,,4.1,6,no,no,no
+2026-01-04,Sun,no,period down to 8 s,4.9,8.1,3.0,0.2,5.3,8,5.5,,3.4,9,yes,no,no
+2026-01-05,Mon,no,wind 20 kt at Makapuu corner 2 PM; channel average 12.2 kt; models differ by 5 kt; wind chop 4.4 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,12.2,19.8,5.0,4.4,7.5,7,4.9,yes,8.2,15,no,no,no
+2026-01-06,Tue,no,wind 18 kt at Makapuu corner 12 PM; channel average 12.9 kt; wind chop 4.3 ft; waves 8.6 ft; period down to 7 s; Small Craft Advisory,12.9,18.3,2.0,4.3,8.6,7,12.2,yes,8.3,13,no,no,no
+2026-01-07,Wed,no,wind 14 kt at Makapuu corner 5 AM; wind chop 1.6 ft; waves 7.0 ft; period down to 7 s,7.1,13.8,3.5,1.6,7.0,7,12.9,,6.9,13,no,no,no
+2026-01-08,Thu,no,period down to 8 s,2.9,6.0,2.1,0.1,5.1,8,7.1,,3.9,9,no,no,no
+2026-01-09,Fri,no,period down to 9 s,2.6,4.4,1.0,0.1,4.1,9,2.9,,4.4,9,yes,no,no
+2026-01-10,Sat,no,period down to 9 s; Small Craft Advisory,2.8,4.3,0.9,0.0,4.6,9,2.6,yes,3.5,7,no,no,no
+2026-01-11,Sun,no,waves 6.2 ft; Small Craft Advisory,5.0,9.5,3.8,0.4,6.2,10,2.8,yes,5.8,10,no,no,no
+2026-01-12,Mon,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 8.8 kt; models differ by 4 kt; wind chop 2.0 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,8.8,18.8,4.3,2.0,6.4,7,5.0,yes,9.3,14,no,no,no
+2026-01-13,Tue,no,wind 14 kt at P FAD 5 AM; channel average 9.7 kt; wind chop 1.7 ft; waves 8.4 ft; Small Craft Advisory,9.7,14.4,1.6,1.7,8.4,9,8.8,yes,8.6,11,no,no,no
+2026-01-14,Wed,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 14.0 kt; wind chop 3.9 ft; waves 6.6 ft; period down to 6 s; Small Craft Advisory,14.0,20.7,2.5,3.9,6.6,6,9.7,yes,10.3,21,no,no,no
+2026-01-15,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 11.7 kt; wind chop 3.3 ft; waves 7.9 ft; period down to 7 s; Small Craft Advisory,11.7,19.6,3.2,3.3,7.9,7,14.0,yes,6.9,15,no,no,no
+2026-01-16,Fri,no,wind 23 kt at Bank N ledge 5 AM; channel average 17.9 kt; wind chop 5.1 ft; waves 10.4 ft; period down to 8 s; Small Craft Advisory,17.9,22.7,3.3,5.1,10.4,8,11.7,yes,12.2,15,no,no,no
+2026-01-17,Sat,no,wind 21 kt at Bank N ledge 6 AM; channel average 15.5 kt; wind chop 3.6 ft; waves 7.2 ft; period down to 7 s; Small Craft Advisory,15.5,21.1,3.0,3.6,7.2,7,17.9,yes,11.7,16,no,no,no
+2026-01-18,Sun,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 9.1 kt; wind chop 2.4 ft; period down to 7 s; Small Craft Advisory,9.1,19.1,3.3,2.4,5.2,7,15.5,yes,5.4,13,no,no,no
+2026-01-19,Mon,no,period down to 7 s,5.1,8.6,3.8,1.2,5.2,7,9.1,,4.9,8,no,no,no
+2026-01-20,Tue,no,period down to 7 s,4.9,8.0,3.4,1.0,4.3,7,5.1,,3.9,9,no,no,no
+2026-01-21,Wed,no,wind 23 kt at Kaiwi mid-channel 7 AM; channel average 16.3 kt; models differ by 6 kt; wind chop 3.8 ft; waves 7.9 ft; period down to 7 s; Small Craft Advisory,16.3,22.6,6.3,3.8,7.9,7,4.9,yes,12.8,16,no,no,no
+2026-01-22,Thu,no,wind 14 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 1.5 ft; period down to 9 s,9.1,13.8,1.5,1.5,5.4,9,16.3,,7.4,12,no,no,no
+2026-01-23,Fri,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 1.5 ft; waves 6.2 ft; period down to 8 s,10.8,15.0,0.9,1.5,6.2,8,9.1,,9.1,13,no,no,no
+2026-01-24,Sat,no,period down to 8 s,5.7,10.5,0.9,0.6,4.7,8,10.8,,3.4,8,no,no,no
+2026-01-25,Sun,no,period down to 8 s,2.6,6.2,0.5,0.1,3.4,8,5.7,,4.4,9,yes,no,no
+2026-01-26,Mon,no,period down to 8 s,6.9,9.9,2.4,0.3,3.4,8,2.6,,4.5,11,yes,no,no
+2026-01-27,Tue,yes,,4.6,7.3,1.6,0.1,4.1,11,6.9,,5.6,11,yes,yes,yes
+2026-01-28,Wed,yes,,3.0,6.0,1.9,0.1,4.4,11,4.6,,3.5,8,yes,yes,yes
+2026-01-29,Thu,yes,,5.9,10.0,0.6,0.1,3.6,10,3.0,,6.6,11,yes,no,yes
+2026-01-30,Fri,no,Small Craft Advisory,5.0,6.9,2.9,0.8,6.7,11,5.9,yes,7.0,11,no,no,no
+2026-01-31,Sat,no,wind 13 kt at Bank N ledge 5 AM; wind chop 2.6 ft; waves 8.1 ft; Small Craft Advisory,7.8,13.4,0.5,2.6,8.1,10,5.0,yes,5.1,6,no,no,no
+2026-02-01,Sun,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 1.5 ft; period down to 9 s,7.7,13.4,1.6,1.5,5.6,9,7.8,,9.6,15,no,no,no
+2026-02-02,Mon,no,wind 24 kt at Kaiwi mid-channel 2 PM; channel average 19.7 kt; wind chop 5.4 ft; waves 6.4 ft; period down to 6 s; Small Craft Advisory,19.7,23.9,2.5,5.4,6.4,6,7.7,yes,19.3,23,no,no,no
+2026-02-03,Tue,no,wind 14 kt at P FAD 5 AM; waves 10.1 ft; period down to 8 s; Small Craft Advisory,7.4,14.4,1.6,1.1,10.1,8,19.7,yes,8.6,11,no,no,no
+2026-02-04,Wed,no,waves 8.9 ft; Small Craft Advisory,5.7,10.3,1.0,1.0,8.9,10,7.4,yes,4.9,8,no,no,no
+2026-02-05,Thu,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.1 kt; models differ by 4 kt; waves 6.5 ft; period down to 8 s; Small Craft Advisory,9.1,14.8,4.2,1.4,6.5,8,5.7,yes,9.4,14,no,no,no
+2026-02-06,Fri,no,period down to 9 s,6.5,10.1,2.0,0.9,4.9,9,9.1,,7.4,12,yes,no,no
+2026-02-07,Sat,no,wind 23 kt at Bank N ledge 12 PM; channel average 16.8 kt; wind chop 3.9 ft; waves 7.3 ft; period down to 8 s; Small Craft Advisory,16.8,23.2,0.4,3.9,7.3,8,6.5,yes,8.7,14,no,no,no
+2026-02-08,Sun,no,wind 32 kt at Kaiwi mid-channel 10 AM; channel average 25.0 kt; wind chop 8.4 ft; waves 9.3 ft; period down to 6 s; Small Craft Advisory,25.0,31.9,3.5,8.4,9.3,6,16.8,yes,18.0,22,no,no,no
+2026-02-09,Mon,no,wind 28 kt at Kaiwi mid-channel 2 PM; channel average 22.3 kt; models differ by 5 kt; wind chop 8.0 ft; waves 9.6 ft; period down to 7 s; Small Craft Advisory,22.3,28.3,5.2,8.0,9.6,7,25.0,yes,14.1,17,no,no,no
+2026-02-10,Tue,no,wind 26 kt at Kaiwi mid-channel 1 PM; channel average 20.5 kt; models differ by 6 kt; wind chop 8.4 ft; waves 10.1 ft; period down to 7 s; Small Craft Advisory,20.5,26.3,5.5,8.4,10.1,7,22.3,yes,14.8,18,no,no,no
+2026-02-11,Wed,no,wind 26 kt at Kaiwi mid-channel 5 AM; channel average 19.6 kt; models differ by 5 kt; wind chop 7.9 ft; waves 9.1 ft; period down to 7 s; Small Craft Advisory,19.6,25.6,5.1,7.9,9.1,7,20.5,yes,14.1,18,no,no,no
+2026-02-12,Thu,no,wind 20 kt at Makapuu corner 1 PM; channel average 14.9 kt; models differ by 7 kt; wind chop 5.3 ft; waves 6.8 ft; period down to 7 s; Small Craft Advisory,14.9,19.5,6.8,5.3,6.8,7,19.6,yes,9.3,15,no,no,no
+2026-02-13,Fri,no,wind 16 kt at Makapuu corner 1 PM; channel average 11.1 kt; models differ by 5 kt; wind chop 3.0 ft; waves 7.2 ft; period down to 7 s; Small Craft Advisory,11.1,16.4,4.5,3.0,7.2,7,14.9,yes,8.3,17,no,no,no
+2026-02-14,Sat,no,wind 20 kt at Kaiwi mid-channel 12 PM; channel average 15.0 kt; models differ by 5 kt; wind chop 5.0 ft; waves 7.2 ft; period down to 7 s; Small Craft Advisory,15.0,20.0,5.1,5.0,7.2,7,11.1,yes,12.0,20,no,no,no
+2026-02-15,Sun,no,wind 27 kt at Kaiwi mid-channel 2 PM; channel average 16.7 kt; models differ by 6 kt; wind chop 7.8 ft; waves 9.1 ft; period down to 7 s; Small Craft Advisory,16.7,26.6,6.0,7.8,9.1,7,15.0,yes,13.8,23,no,no,no
+2026-02-16,Mon,no,wind 25 kt at Kaiwi mid-channel 12 PM; channel average 19.7 kt; models differ by 5 kt; wind chop 6.5 ft; waves 8.7 ft; period down to 7 s; Small Craft Advisory,19.7,25.0,4.6,6.5,8.7,7,16.7,yes,17.7,23,no,no,no
+2026-02-17,Tue,no,wind 24 kt at Kaiwi mid-channel 8 AM; channel average 19.6 kt; models differ by 7 kt; wind chop 7.5 ft; waves 10.0 ft; period down to 7 s; Small Craft Advisory,19.6,24.1,7.3,7.5,10.0,7,19.7,yes,15.5,20,no,no,no
+2026-02-18,Wed,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.4 kt; models differ by 6 kt; wind chop 5.8 ft; waves 8.3 ft; period down to 7 s; Small Craft Advisory,16.4,22.4,5.7,5.8,8.3,7,19.6,yes,10.3,19,no,no,no
+2026-02-19,Thu,no,wind 22 kt at Kaiwi mid-channel 10 AM; channel average 16.5 kt; models differ by 5 kt; wind chop 6.0 ft; waves 8.7 ft; period down to 7 s; Small Craft Advisory,16.5,22.0,5.2,6.0,8.7,7,16.4,yes,11.0,15,no,no,no
+2026-02-20,Fri,no,wind 16 kt at Makapuu corner 12 PM; channel average 10.1 kt; models differ by 5 kt; wind chop 2.4 ft; waves 6.8 ft; period down to 8 s; Small Craft Advisory,10.1,16.0,4.6,2.4,6.8,8,16.5,yes,10.6,16,no,no,no
+2026-02-21,Sat,no,period down to 8 s; Small Craft Advisory,5.8,10.8,1.1,0.9,5.8,8,10.1,yes,3.9,9,no,no,no
+2026-02-22,Sun,no,wind 12 kt at P FAD 2 PM; period down to 8 s,5.9,11.8,1.5,1.0,4.5,8,5.8,,5.2,12,yes,no,no
+2026-02-23,Mon,no,wind 22 kt at Bank N ledge 12 PM; channel average 18.3 kt; wind chop 5.0 ft; waves 8.0 ft; period down to 7 s; Small Craft Advisory,18.3,22.1,2.6,5.0,8.0,7,5.9,yes,11.5,15,no,no,no
+2026-02-24,Tue,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 15.3 kt; wind chop 4.1 ft; waves 8.6 ft; period down to 9 s; Small Craft Advisory,15.3,20.4,2.9,4.1,8.6,9,18.3,yes,12.3,17,no,no,no
+2026-02-25,Wed,no,wind 21 kt at Bank N ledge 6 AM; channel average 16.4 kt; wind chop 4.5 ft; waves 7.8 ft; period down to 7 s; Small Craft Advisory,16.4,20.8,2.0,4.5,7.8,7,15.3,yes,12.9,17,no,no,no
+2026-02-26,Thu,no,wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.4 kt; models differ by 5 kt; wind chop 1.7 ft; period down to 7 s,9.4,13.3,4.5,1.7,5.8,7,16.4,,6.3,10,no,no,no
+2026-02-27,Fri,no,period down to 8 s,3.8,8.2,1.5,1.0,4.5,8,9.4,,5.8,12,no,no,no
+2026-02-28,Sat,no,period down to 8 s,3.8,7.0,1.8,0.5,3.7,8,3.8,,5.1,10,no,no,no
+2026-03-01,Sun,no,period down to 8 s,4.0,8.8,1.1,0.7,5.3,8,3.8,,3.5,6,yes,no,no
+2026-03-02,Mon,no,wind 14 kt at Kaiwi mid-channel 11 AM; channel average 8.8 kt; wind chop 1.6 ft; period down to 8 s,8.8,14.3,2.7,1.6,4.7,8,4.0,,6.9,10,no,no,no
+2026-03-03,Tue,no,wind 20 kt at Kaiwi mid-channel 9 AM; channel average 15.8 kt; wind chop 4.3 ft; period down to 6 s,15.8,20.4,3.8,4.3,5.8,6,8.8,,12.7,18,no,no,no
+2026-03-04,Wed,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 10.9 kt; wind chop 3.5 ft; waves 6.2 ft; period down to 6 s,10.9,17.7,3.2,3.5,6.2,6,15.8,,9.4,14,no,no,no
+2026-03-05,Thu,no,models differ by 4 kt; period down to 7 s,4.5,7.8,4.4,0.1,5.4,7,10.9,,6.1,13,no,no,no
+2026-03-06,Fri,no,period down to 7 s,5.5,10.1,3.1,0.9,4.8,7,4.5,,5.7,10,no,no,no
+2026-03-07,Sat,no,wind 15 kt at Makapuu corner 1 PM; channel average 9.4 kt; wind chop 2.4 ft; period down to 7 s; Small Craft Advisory,9.4,14.8,2.7,2.4,6.0,7,5.5,yes,9.0,14,no,no,no
+2026-03-08,Sun,no,wind 14 kt at Makapuu corner 2 PM; channel average 9.6 kt; wind chop 2.9 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,9.6,13.8,2.2,2.9,7.5,7,9.4,yes,8.2,12,no,no,no
+2026-03-09,Mon,no,wind 12 kt at P FAD 11 AM; wind chop 1.6 ft; period down to 8 s,6.9,11.8,1.5,1.6,5.7,8,9.6,,4.9,8,no,no,no
+2026-03-10,Tue,no,wind 15 kt at P FAD 1 PM; channel average 10.1 kt; wind chop 2.4 ft; period down to 8 s,10.1,14.9,1.8,2.4,5.2,8,6.9,,5.2,10,no,no,no
+2026-03-11,Wed,no,wind 19 kt at Kaiwi mid-channel 1 PM; channel average 14.5 kt; wind chop 4.2 ft; waves 6.6 ft; period down to 7 s,14.5,19.5,3.4,4.2,6.6,7,10.1,,10.2,18,no,no,no
+2026-03-12,Thu,no,wind 16 kt at P FAD 1 PM; channel average 11.0 kt; wind chop 2.3 ft; waves 6.0 ft; period down to 8 s,11.0,16.1,2.4,2.3,6.0,8,14.5,,8.7,13,no,no,no
+2026-03-13,Fri,no,wind 30 kt at Kaiwi mid-channel 2 PM; channel average 23.2 kt; models differ by 7 kt; wind chop 12.0 ft; waves 12.7 ft; period down to 6 s; Small Craft Advisory,23.2,29.8,6.7,12.0,12.7,6,11.0,yes,20.7,29,no,no,no
+2026-03-14,Sat,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 19.3 kt; wind chop 8.5 ft; waves 11.4 ft; period down to 8 s; Small Craft Advisory,19.3,23.0,3.1,8.5,11.4,8,23.2,yes,13.2,17,no,no,no
+2026-03-15,Sun,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 15.4 kt; wind chop 3.4 ft; waves 9.6 ft; period down to 8 s; Small Craft Advisory,15.4,20.7,3.0,3.4,9.6,8,19.3,yes,14.8,18,no,no,no
+2026-03-16,Mon,no,waves 8.4 ft; period down to 9 s,6.1,8.6,2.0,0.3,8.4,9,15.4,,7.1,10,no,no,no
+2026-03-17,Tue,no,models differ by 5 kt,7.5,10.8,4.9,0.3,5.9,9,6.1,,5.2,8,no,no,no
+2026-03-18,Wed,yes,,4.8,7.4,2.8,0.1,5.3,12,7.5,,2.4,8,yes,yes,yes
+2026-03-19,Thu,no,wind 13 kt at P FAD 1 PM; wind chop 2.0 ft,7.9,13.2,2.6,2.0,4.8,10,4.8,,4.7,9,no,no,no
+2026-03-20,Fri,no,wind 20 kt at Kaiwi mid-channel 5 AM; channel average 16.7 kt; wind chop 5.8 ft; waves 7.3 ft; period down to 7 s,16.7,19.8,3.7,5.8,7.3,7,7.9,,15.8,18,no,no,no
+2026-03-21,Sat,no,wind 19 kt at Kaiwi mid-channel 7 AM; channel average 12.6 kt; wind chop 4.9 ft; waves 7.5 ft; period down to 8 s; Small Craft Advisory,12.6,19.3,2.5,4.9,7.5,8,16.7,yes,8.6,15,no,no,no
+2026-03-22,Sun,yes,,5.6,8.9,2.2,1.0,5.9,10,12.6,,6.1,10,yes,no,no
+2026-03-23,Mon,no,wind 19 kt at P FAD 1 PM; channel average 12.8 kt; wind chop 2.4 ft,12.8,18.6,3.3,2.4,5.0,9,5.6,,8.3,12,no,no,no
+2026-03-24,Tue,no,wind 22 kt at Bank N ledge 2 PM; channel average 17.1 kt; wind chop 4.7 ft; period down to 7 s; Small Craft Advisory,17.1,21.7,1.9,4.7,5.8,7,12.8,yes,12.5,16,no,no,no
+2026-03-25,Wed,no,wind 22 kt at Bank N ledge 12 PM; channel average 18.1 kt; wind chop 5.1 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,18.1,21.7,3.0,5.1,6.4,7,17.1,yes,13.6,17,no,no,no
+2026-03-26,Thu,no,wind 17 kt at P FAD 1 PM; channel average 13.4 kt; wind chop 3.1 ft; period down to 8 s,13.4,16.5,1.9,3.1,5.9,8,18.1,,10.6,13,no,no,no
+2026-03-27,Fri,no,wind 18 kt at P FAD 2 PM; channel average 13.5 kt; wind chop 3.5 ft; period down to 8 s; Small Craft Advisory,13.5,18.1,2.0,3.5,5.6,8,13.4,yes,10.1,14,no,no,no
+2026-03-28,Sat,no,wind 22 kt at P FAD 2 PM; channel average 16.8 kt; wind chop 5.0 ft; waves 6.2 ft; period down to 7 s; Small Craft Advisory,16.8,22.4,2.5,5.0,6.2,7,13.5,yes,12.0,16,no,no,no
+2026-03-29,Sun,no,wind 22 kt at Bank N ledge 5 AM; channel average 17.7 kt; wind chop 4.6 ft; waves 6.9 ft; period down to 7 s; Small Craft Advisory,17.7,21.9,1.9,4.6,6.9,7,16.8,yes,11.5,15,no,no,no
+2026-03-30,Mon,no,wind 21 kt at Bank N ledge 6 AM; channel average 17.7 kt; wind chop 4.3 ft; waves 7.4 ft; period down to 8 s; Small Craft Advisory,17.7,21.3,2.4,4.3,7.4,8,17.7,yes,12.5,15,no,no,no
+2026-03-31,Tue,no,wind 22 kt at Kaiwi mid-channel 1 PM; channel average 17.9 kt; wind chop 4.5 ft; waves 7.7 ft; period down to 8 s; Small Craft Advisory,17.9,22.0,3.2,4.5,7.7,8,17.7,yes,11.8,16,no,no,no
+2026-04-01,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.7 ft; waves 6.6 ft; period down to 8 s,13.7,20.1,1.0,3.7,6.6,8,17.9,,10.2,15,no,no,no
+2026-04-02,Thu,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 14.8 kt; wind chop 3.4 ft; period down to 8 s,14.8,20.0,1.4,3.4,6.0,8,13.7,,9.8,14,no,no,no
+2026-04-03,Fri,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.4 kt; wind chop 3.0 ft; period down to 8 s,14.4,18.7,1.9,3.0,5.1,8,14.8,,9.3,13,no,no,no
+2026-04-04,Sat,no,wind 17 kt at Kaiwi mid-channel 8 AM; channel average 13.2 kt; wind chop 2.4 ft; period down to 8 s,13.2,17.2,3.2,2.4,4.5,8,14.4,,9.4,13,no,no,no
+2026-04-05,Sun,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.6 kt; wind chop 2.7 ft; period down to 8 s,9.6,14.1,3.8,2.7,3.9,8,13.2,,9.1,12,no,no,no
+2026-04-06,Mon,no,period down to 9 s,6.8,10.5,1.8,0.9,3.8,9,9.6,,4.9,8,yes,no,no
+2026-04-07,Tue,yes,,4.4,8.8,3.7,0.9,4.2,11,6.8,,5.4,11,yes,yes,yes
+2026-04-08,Wed,no,wind 12 kt at Kaiwi mid-channel 2 PM,6.4,12.0,2.2,1.4,5.8,12,4.4,,6.3,11,yes,no,no
+2026-04-09,Thu,no,wind 20 kt at P FAD 6 AM; channel average 13.8 kt; models differ by 6 kt; wind chop 4.7 ft; waves 7.7 ft; period down to 8 s; Small Craft Advisory,13.8,19.7,5.8,4.7,7.7,8,6.4,yes,8.8,14,no,no,no
+2026-04-10,Fri,no,wind 24 kt at P FAD 11 AM; channel average 17.5 kt; models differ by 5 kt; wind chop 4.4 ft; waves 7.3 ft; period down to 8 s; Small Craft Advisory,17.5,23.8,5.2,4.4,7.3,8,13.8,yes,10.2,14,no,no,no
+2026-04-11,Sat,no,waves 6.6 ft; period down to 8 s,4.7,8.8,0.5,0.9,6.6,8,17.5,,10.1,12,no,no,no
+2026-04-12,Sun,yes,,5.7,10.1,3.6,0.1,5.5,9,4.7,,3.9,6,yes,no,yes
+2026-04-13,Mon,no,wind chop 1.6 ft,7.4,10.3,2.5,1.6,4.3,10,5.7,,7.7,12,yes,no,no
+2026-04-14,Tue,yes,,3.2,5.6,1.6,0.3,4.4,11,7.4,,6.2,9,yes,yes,yes
+2026-04-15,Wed,yes,,4.9,7.7,1.6,0.3,4.5,11,3.2,,4.0,8,yes,yes,yes
+2026-04-16,Thu,yes,,5.6,8.5,0.8,0.5,4.5,11,4.9,,5.3,11,yes,yes,yes
+2026-04-17,Fri,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.2 kt; wind chop 2.7 ft; period down to 8 s,11.2,17.2,2.9,2.7,4.3,8,5.6,,10.7,14,no,no,no
+2026-04-18,Sat,no,wind 17 kt at Kaiwi mid-channel 7 AM; channel average 9.9 kt; wind chop 2.2 ft; period down to 8 s,9.9,17.2,4.0,2.2,4.3,8,11.2,,11.8,19,no,no,no
+2026-04-19,Sun,no,wind 14 kt at Kaiwi mid-channel 5 AM; channel average 8.3 kt; wind chop 1.9 ft; period down to 7 s,8.3,13.7,3.2,1.9,3.9,7,9.9,,5.4,9,no,no,no
+2026-04-20,Mon,no,period down to 8 s,3.8,6.1,3.1,0.1,3.2,8,8.3,,5.3,10,yes,no,no
+2026-04-21,Tue,yes,,3.2,4.7,2.1,0.0,3.7,10,3.8,,5.8,10,yes,yes,yes
+2026-04-22,Wed,yes,,5.1,10.2,1.7,0.2,5.9,11,3.2,,4.6,9,yes,no,yes
+2026-04-23,Thu,no,wind 15 kt at Bank N ledge 2 PM; channel average 9.9 kt; wind chop 1.6 ft,9.9,15.1,2.2,1.6,4.9,9,5.1,,9.2,13,no,no,no
+2026-04-24,Fri,no,wind 19 kt at Bank N ledge 2 PM; channel average 13.1 kt; wind chop 2.8 ft; period down to 8 s,13.1,18.7,1.4,2.8,4.5,8,9.9,,10.7,15,no,no,no
+2026-04-25,Sat,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 14.0 kt; wind chop 3.3 ft; period down to 7 s,14.0,19.2,2.0,3.3,5.2,7,13.1,,10.8,16,no,no,no
+2026-04-26,Sun,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.0 kt; wind chop 2.6 ft; period down to 7 s,10.0,14.7,3.2,2.6,4.5,7,14.0,,9.4,14,no,no,no
+2026-04-27,Mon,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.5 kt; wind chop 2.5 ft; period down to 7 s,9.5,13.7,3.1,2.5,4.3,7,10.0,,9.2,14,no,no,no
+2026-04-28,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.7 kt; wind chop 1.9 ft; period down to 7 s,10.7,15.0,1.1,1.9,3.8,7,9.5,,10.0,15,no,no,no
+2026-04-29,Wed,no,wind 20 kt at Bank N ledge 2 PM; channel average 15.6 kt; wind chop 3.6 ft; period down to 6 s,15.6,20.5,1.8,3.6,5.0,6,10.7,,10.8,15,no,no,no
+2026-04-30,Thu,no,wind 22 kt at Kaiwi mid-channel 6 AM; channel average 16.4 kt; wind chop 4.1 ft; period down to 6 s,16.4,21.6,1.6,4.1,5.1,6,15.6,,13.2,16,no,no,no
+2026-05-01,Fri,no,wind 23 kt at Kaiwi mid-channel 6 AM; channel average 17.4 kt; wind chop 5.8 ft; waves 7.5 ft; period down to 7 s; Small Craft Advisory,17.4,23.2,3.0,5.8,7.5,7,16.4,yes,14.6,19,no,no,no
+2026-05-02,Sat,no,wind 18 kt at Kaiwi mid-channel 10 AM; channel average 13.9 kt; wind chop 3.4 ft; period down to 8 s,13.9,18.2,2.5,3.4,5.5,8,17.4,,12.5,16,no,no,no
+2026-05-03,Sun,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.2 kt; wind chop 3.1 ft; period down to 8 s,12.2,17.6,1.3,3.1,5.4,8,13.9,,10.9,16,no,no,no
+2026-05-04,Mon,no,wind 18 kt at Kaiwi mid-channel 5 AM; channel average 12.7 kt; wind chop 2.8 ft; period down to 8 s,12.7,17.6,1.1,2.8,5.0,8,12.2,,10.4,14,no,no,no
+2026-05-05,Tue,no,period down to 8 s,4.6,7.2,2.5,0.2,5.1,8,12.7,,4.2,10,yes,no,no
+2026-05-06,Wed,no,wind 15 kt at Bank N ledge 2 PM; channel average 8.1 kt; models differ by 5 kt; wind chop 1.8 ft; period down to 8 s,8.1,14.6,4.8,1.8,4.5,8,4.6,,7.5,13,no,no,no
+2026-05-07,Thu,no,wind 16 kt at Bank N ledge 1 PM; channel average 11.5 kt; wind chop 1.9 ft,11.5,15.9,1.4,1.9,4.3,9,8.1,,9.7,13,no,no,no
+2026-05-08,Fri,no,wind 16 kt at Bank N ledge 2 PM; channel average 10.5 kt; wind chop 2.0 ft,10.5,16.5,1.3,2.0,5.0,10,11.5,,10.4,16,no,no,no
+2026-05-09,Sat,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; wind chop 3.1 ft; period down to 8 s,10.9,17.2,1.1,3.1,4.9,8,10.5,,8.4,12,no,no,no
+2026-05-10,Sun,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; wind chop 3.9 ft; period down to 7 s,14.3,20.1,1.3,3.9,5.7,7,10.9,,12.2,16,no,no,no
+2026-05-11,Mon,no,wind 21 kt at Kaiwi mid-channel 12 PM; channel average 16.0 kt; wind chop 3.8 ft; period down to 7 s,16.0,20.9,1.8,3.8,5.1,7,14.3,,11.8,20,no,no,no
+2026-05-12,Tue,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 15.6 kt; wind chop 4.7 ft; period down to 7 s,15.6,20.6,2.4,4.7,5.9,7,16.0,,14.0,19,no,no,no
+2026-05-13,Wed,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.4 kt; wind chop 5.2 ft; waves 6.2 ft; period down to 7 s; Small Craft Advisory,16.4,21.8,2.9,5.2,6.2,7,15.6,yes,14.2,18,no,no,no
+2026-05-14,Thu,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; wind chop 3.5 ft; period down to 7 s,13.0,17.6,1.7,3.5,5.6,7,16.4,,12.8,15,no,no,no
+2026-05-15,Fri,no,wind 14 kt at Kaiwi mid-channel 2 PM; models differ by 4 kt; wind chop 1.9 ft; period down to 8 s,5.8,13.7,4.1,1.9,5.4,8,13.0,,8.5,15,no,no,no
+2026-05-16,Sat,no,wind 12 kt at Kaiwi mid-channel 1 PM; wind chop 2.0 ft; period down to 8 s,7.3,11.8,2.9,2.0,4.9,8,5.8,,7.0,9,no,no,no
+2026-05-17,Sun,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 1.6 ft; period down to 9 s,7.2,13.1,1.4,1.6,5.1,9,7.3,,5.6,9,no,no,no
+2026-05-18,Mon,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; models differ by 5 kt; wind chop 4.2 ft; period down to 7 s,12.6,20.1,5.2,4.2,5.6,7,7.2,,13.3,21,no,no,no
+2026-05-19,Tue,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.2 kt; models differ by 4 kt; wind chop 3.6 ft; period down to 7 s,12.2,17.8,4.0,3.6,5.1,7,12.6,,10.2,13,no,no,no
+2026-05-20,Wed,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.3 kt; wind chop 5.9 ft; waves 7.0 ft; period down to 7 s; Small Craft Advisory,16.3,22.3,3.3,5.9,7.0,7,12.2,yes,14.8,21,no,no,no
+2026-05-21,Thu,no,wind 26 kt at Kaiwi mid-channel 2 PM; channel average 19.3 kt; wind chop 7.1 ft; waves 8.1 ft; period down to 7 s; Small Craft Advisory,19.3,26.4,3.2,7.1,8.1,7,16.3,yes,19.2,23,no,no,no
+2026-05-22,Fri,no,wind 25 kt at Kaiwi mid-channel 5 AM; channel average 19.4 kt; wind chop 6.6 ft; waves 7.6 ft; period down to 7 s; Small Craft Advisory,19.4,25.3,3.0,6.6,7.6,7,19.3,yes,13.1,18,no,no,no
+2026-05-23,Sat,no,wind 26 kt at Kaiwi mid-channel 11 AM; channel average 20.3 kt; wind chop 6.6 ft; waves 7.9 ft; period down to 8 s; Small Craft Advisory,20.3,26.3,2.9,6.6,7.9,8,19.4,yes,13.4,17,no,no,no
+2026-05-24,Sun,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.8 kt; wind chop 6.0 ft; waves 7.2 ft; period down to 8 s; Small Craft Advisory,16.8,22.3,1.5,6.0,7.2,8,20.3,yes,13.8,18,no,no,no
+2026-05-25,Mon,no,wind 21 kt at Kaiwi mid-channel 6 AM; channel average 15.4 kt; wind chop 4.5 ft; waves 6.5 ft; period down to 7 s; Small Craft Advisory,15.4,20.9,2.1,4.5,6.5,7,16.8,yes,14.6,17,no,no,no
+2026-05-26,Tue,no,wind 24 kt at Kaiwi mid-channel 2 PM; channel average 16.1 kt; wind chop 5.2 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,16.1,23.6,3.1,5.2,6.4,7,15.4,yes,12.1,18,no,no,no
+2026-05-27,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.0 kt; wind chop 4.7 ft; period down to 7 s; Small Craft Advisory,14.0,19.7,2.7,4.7,5.8,7,16.1,yes,11.8,16,no,no,no
+2026-05-28,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.4 kt; wind chop 4.2 ft; period down to 8 s,13.4,20.4,3.9,4.2,5.7,8,14.0,,12.1,16,no,no,no
+2026-05-29,Fri,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 13.1 kt; wind chop 3.7 ft; period down to 9 s,13.1,18.0,2.6,3.7,5.6,9,13.4,,11.4,15,no,no,no
+2026-05-30,Sat,no,wind 13 kt at Kaiwi mid-channel 2 PM; channel average 9.2 kt; wind chop 2.0 ft,9.2,13.4,3.8,2.0,5.2,11,13.1,,9.7,17,no,no,no
+2026-05-31,Sun,no,wind 16 kt at Kaiwi mid-channel 2 PM; wind chop 2.2 ft,7.5,15.5,2.6,2.2,5.1,12,9.2,,10.2,14,no,no,no
+2026-06-01,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.3 kt; wind chop 3.2 ft,11.3,17.4,2.2,3.2,5.0,9,7.5,,11.9,15,no,no,no
+2026-06-02,Tue,no,wind 16 kt at Kaiwi mid-channel 12 PM; channel average 12.9 kt; models differ by 5 kt; wind chop 3.7 ft,12.9,16.3,4.9,3.7,5.8,10,11.3,,11.1,14,no,no,no
+2026-06-03,Wed,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; models differ by 5 kt; wind chop 4.1 ft,14.3,18.8,5.2,4.1,6.8,10,12.9,,11.5,15,no,no,no
+2026-06-04,Thu,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.9 ft; period down to 8 s,13.7,20.6,2.9,3.9,6.0,8,14.3,,13.3,18,no,no,no
+2026-06-05,Fri,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 14.5 kt; wind chop 5.1 ft; waves 6.5 ft; period down to 8 s,14.5,21.7,3.9,5.1,6.5,8,13.7,,13.5,19,no,no,no
+2026-06-06,Sat,no,wind 20 kt at Kaiwi mid-channel 12 PM; channel average 15.6 kt; wind chop 4.7 ft; period down to 7 s; Small Craft Advisory,15.6,20.5,2.4,4.7,5.8,7,14.5,yes,15.2,20,no,no,no
+2026-06-07,Sun,no,wind 20 kt at Kaiwi mid-channel 6 AM; channel average 15.3 kt; wind chop 5.1 ft; waves 6.0 ft; period down to 7 s; Small Craft Advisory,15.3,20.0,3.7,5.1,6.0,7,15.6,yes,11.8,16,no,no,no
+2026-06-08,Mon,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.4 kt; wind chop 4.8 ft; period down to 8 s,14.4,20.0,1.8,4.8,5.9,8,15.3,,12.5,16,no,no,no
+2026-06-09,Tue,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.1 kt; wind chop 3.4 ft; period down to 8 s,14.1,19.1,2.4,3.4,5.2,8,14.4,,11.3,18,no,no,no
+2026-06-10,Wed,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.9 kt; models differ by 4 kt; wind chop 3.0 ft; period down to 8 s,11.9,17.3,4.1,3.0,4.7,8,14.1,,12.2,16,no,no,no
+2026-06-11,Thu,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; wind chop 2.3 ft; period down to 9 s,10.9,15.8,1.2,2.3,3.9,9,11.9,,11.0,15,no,no,no
+2026-06-12,Fri,no,wind 14 kt at Bank N ledge 2 PM; channel average 8.5 kt; wind chop 1.6 ft,8.5,13.5,0.8,1.6,3.8,11,10.9,,9.0,14,no,no,no
+2026-06-13,Sat,no,wind 15 kt at Bank N ledge 2 PM; channel average 8.9 kt; wind chop 1.6 ft,8.9,15.1,0.7,1.6,3.5,12,8.5,,8.4,13,no,no,no
+2026-06-14,Sun,no,wind 14 kt at Kaiwi mid-channel 5 AM; channel average 9.5 kt; wind chop 1.8 ft,9.5,13.5,1.5,1.8,4.1,13,8.9,,7.8,10,no,no,no
+2026-06-15,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 12.5 kt; wind chop 3.0 ft,12.5,17.2,1.9,3.0,5.1,11,9.5,,10.1,15,no,no,no
+2026-06-16,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.8 ft,10.4,16.2,2.1,2.8,5.6,11,12.5,,10.3,14,no,no,no
+2026-06-17,Wed,no,wind 12 kt at Makapuu corner 2 PM; models differ by 4 kt; wind chop 1.6 ft,6.1,11.5,4.3,1.6,4.9,11,10.4,,6.3,11,no,no,no
+2026-06-18,Thu,yes,,4.0,9.1,2.2,0.6,5.1,12,6.1,,3.7,6,yes,no,yes
+2026-06-19,Fri,yes,,5.0,9.1,2.4,0.9,4.6,11,4.0,,4.2,10,yes,no,yes
+2026-06-20,Sat,no,wind 15 kt at Kaiwi mid-channel 2 PM; models differ by 4 kt; wind chop 2.0 ft,7.9,14.8,4.1,2.0,4.9,11,5.0,,8.7,13,no,no,no
+2026-06-21,Sun,no,wind 16 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 1.9 ft,9.1,16.2,2.0,1.9,4.3,10,7.9,,10.3,13,no,no,no
+2026-06-22,Mon,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.7 ft,10.4,16.7,2.6,2.7,4.7,10,9.1,,11.7,17,no,no,no
+2026-06-23,Tue,no,wind 16 kt at Kaiwi mid-channel 7 AM; channel average 12.2 kt; wind chop 2.7 ft; period down to 9 s,12.2,16.4,2.1,2.7,5.1,9,10.4,,9.7,13,no,no,no
+2026-06-24,Wed,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 15.5 kt; wind chop 5.2 ft; waves 6.4 ft; period down to 7 s,15.5,21.5,2.1,5.2,6.4,7,12.2,,13.6,18,no,no,no
+2026-06-25,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.8 kt; models differ by 4 kt; wind chop 4.5 ft; period down to 7 s,14.8,20.3,4.5,4.5,5.8,7,15.5,,14.5,20,no,no,no
+2026-06-26,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.9 kt; models differ by 6 kt; wind chop 4.9 ft; waves 6.4 ft; period down to 7 s,13.9,19.9,6.0,4.9,6.4,7,14.8,,12.2,16,no,no,no
+2026-06-27,Sat,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; models differ by 5 kt; wind chop 5.1 ft; waves 6.2 ft; period down to 7 s; Small Craft Advisory,15.4,21.1,4.7,5.1,6.2,7,13.9,yes,13.7,18,no,no,no
+2026-06-28,Sun,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.6 kt; wind chop 3.5 ft; period down to 8 s,12.6,19.0,3.5,3.5,5.5,8,15.4,,11.4,16,no,no,no
+2026-06-29,Mon,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 14.1 kt; wind chop 3.8 ft; period down to 8 s; Small Craft Advisory,14.1,19.7,3.2,3.8,5.4,8,12.6,yes,13.2,16,no,no,no
+2026-06-30,Tue,no,wind 18 kt at Bank N ledge 6 AM; channel average 13.5 kt; wind chop 3.0 ft; period down to 8 s,13.5,17.5,0.1,3.0,5.2,8,14.1,,9.7,15,no,no,no
+2026-07-01,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.6 kt; wind chop 4.9 ft; waves 7.1 ft; period down to 7 s,14.6,20.4,3.9,4.9,7.1,7,13.5,,13.9,19,no,no,no
+2026-07-02,Thu,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 14.7 kt; wind chop 3.4 ft; period down to 8 s,14.7,18.9,1.4,3.4,5.7,8,14.6,,11.7,17,no,no,no
+2026-07-03,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 12.9 kt; wind chop 4.6 ft; period down to 8 s,12.9,20.1,2.1,4.6,5.9,8,14.7,,11.5,16,no,no,no
+2026-07-04,Sat,no,wind 19 kt at Kaiwi mid-channel 11 AM; channel average 15.0 kt; wind chop 4.1 ft; period down to 9 s,15.0,19.0,1.0,4.1,5.6,9,12.9,,11.5,14,no,no,no
+2026-07-05,Sun,no,wind 23 kt at Kaiwi mid-channel 1 PM; channel average 14.9 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 8 s; Small Craft Advisory,14.9,22.8,2.9,5.4,6.5,8,15.0,yes,13.4,17,no,no,no
+2026-07-06,Mon,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.6 kt; wind chop 5.0 ft; waves 6.4 ft; period down to 8 s; Small Craft Advisory,16.6,22.0,2.1,5.0,6.4,8,14.9,yes,13.3,18,no,no,no
+2026-07-07,Tue,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 18.1 kt; wind chop 6.2 ft; waves 7.5 ft; period down to 8 s; Small Craft Advisory,18.1,23.4,3.0,6.2,7.5,8,16.6,yes,13.1,16,no,no,no
+2026-07-08,Wed,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 15.5 kt; wind chop 5.1 ft; waves 6.2 ft; period down to 7 s; Small Craft Advisory,15.5,19.8,3.6,5.1,6.2,7,18.1,yes,13.2,18,no,no,no
+2026-07-09,Thu,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.2 kt; models differ by 5 kt; wind chop 4.8 ft; waves 6.0 ft; period down to 7 s; Small Craft Advisory,13.2,19.9,4.5,4.8,6.0,7,15.5,yes,14.1,18,no,no,no
+2026-07-10,Fri,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.4 kt; wind chop 4.5 ft; period down to 7 s; Small Craft Advisory,16.4,21.7,0.4,4.5,5.6,7,13.2,yes,13.2,17,no,no,no
+2026-07-11,Sat,no,wind 21 kt at Kaiwi mid-channel 1 PM; channel average 16.1 kt; wind chop 5.4 ft; waves 6.7 ft; period down to 7 s; Small Craft Advisory,16.1,21.0,2.2,5.4,6.7,7,16.4,yes,13.0,19,no,no,no
+2026-07-12,Sun,no,wind 21 kt at Kaiwi mid-channel 11 AM; channel average 16.1 kt; wind chop 4.8 ft; waves 6.1 ft; period down to 8 s; Small Craft Advisory,16.1,21.3,1.6,4.8,6.1,8,16.1,yes,14.3,19,no,no,no
+2026-07-13,Mon,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 14.8 kt; wind chop 4.1 ft; waves 6.0 ft; period down to 8 s; Small Craft Advisory,14.8,21.1,1.7,4.1,6.0,8,16.1,yes,14.3,18,no,no,no
+2026-07-14,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.5 kt; wind chop 2.8 ft; period down to 8 s,10.5,15.7,2.9,2.8,4.7,8,14.8,,9.7,14,no,no,no
+2026-07-15,Wed,yes,,5.5,10.7,3.4,1.3,4.4,9,10.5,,3.8,8,yes,no,yes
+2026-07-16,Thu,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 9.7 kt; models differ by 4 kt; wind chop 2.7 ft; period down to 8 s,9.7,15.7,4.4,2.7,4.7,8,5.5,,10.6,14,no,no,no
+2026-07-17,Fri,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 12.1 kt; models differ by 5 kt; wind chop 3.8 ft; period down to 8 s,12.1,18.5,4.9,3.8,5.7,8,9.7,,12.8,18,no,no,no
+2026-07-18,Sat,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.0 kt; models differ by 5 kt; wind chop 4.4 ft; waves 6.4 ft; period down to 8 s; Small Craft Advisory,15.0,20.0,4.7,4.4,6.4,8,12.1,yes,13.3,18,no,no,no
+2026-07-19,Sun,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 14.3 kt; wind chop 4.1 ft; period down to 8 s,14.3,20.3,2.7,4.1,6.0,8,15.0,,13.2,16,no,no,no
+2026-07-20,Mon,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 11.6 kt; wind chop 3.5 ft,11.6,18.1,3.8,3.5,5.7,10,14.3,,9.3,13,no,no,no
+2026-07-21,Tue,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.6 kt; models differ by 6 kt; wind chop 3.0 ft; waves 6.2 ft,9.6,14.8,6.0,3.0,6.2,9,11.6,,11.8,17,no,no,no
+2026-07-22,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 14.1 kt; wind chop 4.2 ft; waves 6.1 ft; period down to 8 s,14.1,20.9,3.7,4.2,6.1,8,9.6,,13.6,19,no,no,no
+2026-07-23,Thu,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; models differ by 5 kt; wind chop 5.2 ft; waves 7.0 ft; period down to 8 s; Small Craft Advisory,15.8,20.6,4.8,5.2,7.0,8,14.1,yes,13.5,18,no,no,no
+2026-07-24,Fri,no,wind 23 kt at Kaiwi mid-channel 12 PM; channel average 16.9 kt; wind chop 5.4 ft; waves 7.1 ft; period down to 8 s; Small Craft Advisory,16.9,23.4,2.2,5.4,7.1,8,15.8,yes,14.7,20,no,no,no
+2026-07-25,Sat,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 5.6 ft; waves 7.2 ft; period down to 8 s,15.8,23.0,1.9,5.6,7.2,8,16.9,,12.6,17,no,no,no
+2026-07-26,Sun,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.3 kt; wind chop 4.8 ft; waves 6.6 ft; period down to 8 s,16.3,22.5,1.1,4.8,6.6,8,15.8,,12.7,16,no,no,no
+2026-07-27,Mon,no,wind 20 kt at Kaiwi mid-channel 5 AM; channel average 15.3 kt; wind chop 3.1 ft; period down to 8 s,15.3,19.6,1.8,3.1,5.8,8,16.3,,10.3,14,no,no,no
+2026-07-28,Tue,no,wind 19 kt at Bank N ledge 2 PM; channel average 14.3 kt; wind chop 3.3 ft; period down to 8 s; Small Craft Advisory,14.3,18.8,1.8,3.3,6.0,8,15.3,yes,8.9,13,no,no,no
+2026-07-29,Wed,no,wind 12 kt at P FAD 5 AM; channel average 9.4 kt; wind chop 1.8 ft,9.4,12.1,0.9,1.8,5.6,9,14.3,,7.6,11,no,no,no
+2026-07-30,Thu,no,wind 15 kt at Makapuu corner 2 PM; channel average 9.0 kt; models differ by 6 kt; wind chop 2.6 ft; period down to 8 s,9.0,14.8,5.6,2.6,4.9,8,9.4,,9.8,15,no,no,no
+2026-07-31,Fri,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 14.9 kt; wind chop 5.4 ft; waves 6.4 ft; period down to 7 s; Small Craft Advisory,14.9,23.3,3.4,5.4,6.4,7,9.0,yes,12.1,19,no,no,no
+2026-08-01,Sat,no,wind 24 kt at Kaiwi mid-channel 5 AM; channel average 19.1 kt; wind chop 6.3 ft; waves 7.2 ft; period down to 7 s; Small Craft Advisory,19.1,24.5,2.7,6.3,7.2,7,14.9,yes,15.8,21,no,no,no
+2026-08-02,Sun,no,wind 22 kt at Kaiwi mid-channel 11 AM; channel average 16.5 kt; wind chop 4.2 ft; waves 6.3 ft; period down to 7 s,16.5,21.8,1.6,4.2,6.3,7,19.1,,12.9,18,no,no,no
+2026-08-03,Mon,no,wind 17 kt at Kaiwi mid-channel 5 AM; channel average 11.9 kt; wind chop 3.1 ft; period down to 7 s,11.9,17.0,2.9,3.1,5.3,7,16.5,,9.6,13,no,no,no
+2026-08-04,Tue,no,wind 13 kt at Kaiwi mid-channel 2 PM; wind chop 2.2 ft; period down to 8 s,7.6,12.8,3.8,2.2,4.5,8,11.9,,7.5,14,no,no,no
+2026-08-05,Wed,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.4 kt; wind chop 2.6 ft; period down to 8 s,10.4,15.8,3.0,2.6,4.3,8,7.6,,10.7,14,no,no,no
+2026-08-06,Thu,no,wind 15 kt at Kaiwi mid-channel 2 PM; channel average 10.9 kt; models differ by 5 kt; wind chop 2.6 ft; period down to 8 s,10.9,15.5,4.7,2.6,4.3,8,10.4,,10.2,12,no,no,no
+2026-08-07,Fri,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 10.7 kt; wind chop 2.4 ft; period down to 8 s,10.7,16.3,2.6,2.4,4.4,8,10.9,,10.6,15,no,no,no
+2026-08-08,Sat,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.5 kt; wind chop 3.8 ft; period down to 7 s,13.5,19.2,2.8,3.8,5.0,7,10.7,,13.3,18,no,no,no
+2026-08-09,Sun,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.7 kt; wind chop 3.7 ft; period down to 8 s,13.7,19.3,2.6,3.7,5.6,8,13.5,,10.2,13,no,no,no
+2026-08-10,Mon,no,wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.9 ft; period down to 8 s,12.4,17.7,2.4,3.9,5.2,8,13.7,,13.0,16,no,no,no
+2026-08-11,Tue,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.5 kt; models differ by 4 kt; wind chop 3.1 ft; period down to 9 s,11.5,17.3,4.1,3.1,5.6,9,12.4,,9.9,14,no,no,no
+2026-08-12,Wed,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 3.7 ft; waves 6.3 ft,13.6,19.0,2.9,3.7,6.3,10,11.5,,12.6,16,no,no,no
+2026-08-13,Thu,no,wind 24 kt at Kaiwi mid-channel 11 AM; channel average 17.4 kt; wind chop 4.3 ft; waves 6.8 ft,17.4,23.5,2.0,4.3,6.8,10,13.6,,13.5,20,no,no,no
+2026-08-14,Fri,no,wind 25 kt at Kaiwi mid-channel 2 PM; channel average 19.3 kt; wind chop 6.0 ft; waves 7.4 ft; period down to 8 s; Small Craft Advisory,19.3,25.1,3.6,6.0,7.4,8,17.4,yes,14.6,18,no,no,no
+2026-08-15,Sat,no,wind 31 kt at Kaiwi mid-channel 1 PM; channel average 25.4 kt; models differ by 4 kt; wind chop 9.1 ft; waves 11.0 ft; period down to 8 s; Small Craft Advisory,25.4,31.4,4.3,9.1,11.0,8,19.3,yes,17.4,22,no,no,no
+2026-08-16,Sun,no,wind 36 kt at P FAD 6 AM; channel average 22.9 kt; models differ by 5 kt; wind chop 11.2 ft; waves 12.7 ft; period down to 8 s; Small Craft Advisory,22.9,35.5,4.9,11.2,12.7,8,25.4,yes,8.8,14,no,no,no
+2026-08-17,Mon,no,wind 15 kt at Makapuu corner 11 AM; channel average 11.1 kt; models differ by 4 kt; wind chop 2.6 ft; waves 6.4 ft; period down to 8 s,11.1,15.4,4.5,2.6,6.4,8,22.9,,10.4,14,no,no,no
+2026-08-18,Tue,no,wind 16 kt at Kaiwi mid-channel 2 PM; channel average 11.9 kt; wind chop 3.1 ft; period down to 7 s,11.9,16.2,3.2,3.1,5.1,7,11.1,,10.7,15,no,no,no
+2026-08-19,Wed,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.5 kt; wind chop 1.9 ft; period down to 8 s,9.5,14.4,1.2,1.9,4.3,8,11.9,,9.7,12,no,no,no
+2026-08-20,Thu,no,wind 12 kt at Kaiwi mid-channel 2 PM; period down to 9 s,6.0,12.2,0.8,0.9,3.7,9,9.5,,7.4,10,yes,no,no
+2026-08-21,Fri,yes,,4.6,9.8,2.6,0.3,3.9,10,6.0,,3.1,10,yes,no,yes
+2026-08-22,Sat,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 13.6 kt; wind chop 4.5 ft; period down to 7 s; Small Craft Advisory,13.6,21.0,3.3,4.5,5.6,7,4.6,yes,11.5,17,no,no,no
+2026-08-23,Sun,no,wind 23 kt at Kaiwi mid-channel 1 PM; channel average 17.9 kt; wind chop 5.0 ft; waves 6.6 ft; period down to 7 s; Small Craft Advisory,17.9,23.4,1.5,5.0,6.6,7,13.6,yes,11.3,14,no,no,no
+2026-08-24,Mon,no,wind 19 kt at Kaiwi mid-channel 5 AM; channel average 14.3 kt; models differ by 4 kt; wind chop 4.3 ft; waves 6.2 ft; period down to 8 s,14.3,19.5,4.0,4.3,6.2,8,17.9,,13.6,17,no,no,no
+2026-08-25,Tue,no,wind 19 kt at Kaiwi mid-channel 10 AM; channel average 14.7 kt; wind chop 4.1 ft; period down to 7 s,14.7,19.3,3.8,4.1,5.7,7,14.3,,12.8,16,no,no,no
+2026-08-26,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; wind chop 4.5 ft; period down to 8 s,15.8,20.8,2.3,4.5,5.8,8,14.7,,10.7,13,no,no,no
+2026-08-27,Thu,no,wind 20 kt at Kaiwi mid-channel 6 AM; channel average 15.1 kt; wind chop 3.9 ft,15.1,20.5,2.2,3.9,5.8,9,15.8,,12.9,17,no,no,no
+2026-08-28,Fri,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; wind chop 4.1 ft; waves 6.2 ft,15.4,20.3,1.7,4.1,6.2,9,15.1,,13.4,16,no,no,no
+2026-08-29,Sat,no,wind 20 kt at Kaiwi mid-channel 11 AM; channel average 15.4 kt; wind chop 4.2 ft; period down to 8 s,15.4,19.9,2.4,4.2,5.6,8,15.4,,12.5,19,no,no,no
+2026-08-30,Sun,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.3 kt; wind chop 4.8 ft; waves 6.0 ft; period down to 7 s; Small Craft Advisory,15.3,20.6,2.8,4.8,6.0,7,15.4,yes,12.2,15,no,no,no
+2026-08-31,Mon,no,wind 23 kt at Kaiwi mid-channel 5 AM; channel average 16.8 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 7 s,16.8,23.3,2.0,5.4,6.5,7,15.3,,14.2,19,no,no,no
+2026-09-01,Tue,no,wind 22 kt at Bank N ledge 2 PM; channel average 17.1 kt; wind chop 4.6 ft; waves 6.2 ft; period down to 8 s,17.1,22.0,1.1,4.6,6.2,8,16.8,,13.4,18,no,no,no
+2026-09-02,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 14.8 kt; models differ by 4 kt; wind chop 5.4 ft; waves 6.8 ft; period down to 8 s; Small Craft Advisory,14.8,20.7,4.1,5.4,6.8,8,17.1,yes,13.2,19,no,no,no
+2026-09-03,Thu,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 17.1 kt; wind chop 5.8 ft; waves 7.5 ft; period down to 8 s; Small Craft Advisory,17.1,22.4,3.0,5.8,7.5,8,14.8,yes,15.8,23,no,no,no
+2026-09-04,Fri,no,wind 23 kt at Kaiwi mid-channel 12 PM; channel average 17.2 kt; wind chop 5.2 ft; waves 7.0 ft; period down to 7 s; Small Craft Advisory,17.2,22.7,3.3,5.2,7.0,7,17.1,yes,15.1,18,no,no,no
+2026-09-05,Sat,no,wind 20 kt at Kaiwi mid-channel 2 PM; channel average 13.2 kt; wind chop 4.4 ft; waves 7.1 ft; period down to 8 s,13.2,20.2,3.1,4.4,7.1,8,17.2,,11.5,17,no,no,no
+2026-09-06,Sun,no,wind 16 kt at Kaiwi mid-channel 6 AM; channel average 10.7 kt; models differ by 5 kt; wind chop 2.8 ft; waves 6.8 ft,10.7,16.3,4.7,2.8,6.8,9,13.2,,6.6,12,no,no,no
+2026-09-07,Mon,no,wind 23 kt at P FAD 11 AM; channel average 16.2 kt; models differ by 5 kt; wind chop 5.2 ft; waves 9.6 ft; period down to 8 s; Small Craft Advisory,16.2,23.2,5.3,5.2,9.6,8,10.7,yes,10.7,13,no,no,no
+2026-09-08,Tue,no,wind 24 kt at Kaiwi mid-channel 5 AM; channel average 16.3 kt; wind chop 6.4 ft; waves 14.4 ft; Small Craft Advisory,16.3,24.2,1.8,6.4,14.4,9,16.2,yes,14.9,17,no,no,no
+2026-09-09,Wed,no,waves 7.7 ft,3.5,10.1,1.2,0.9,7.7,10,16.3,,4.3,7,no,no,no
+2026-09-10,Thu,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 9.4 kt; wind chop 2.6 ft; period down to 8 s,9.4,16.8,3.0,2.6,5.1,8,3.5,,9.1,12,no,no,no
+2026-09-11,Fri,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.8 kt; wind chop 3.2 ft; period down to 7 s,10.8,16.6,3.5,3.2,5.2,7,9.4,,10.1,14,no,no,no
+2026-09-12,Sat,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 8.3 kt; wind chop 1.9 ft; period down to 8 s,8.3,13.7,1.8,1.9,4.3,8,10.8,,8.9,18,no,no,no
+2026-09-13,Sun,no,wind 15 kt at Bank N ledge 2 PM; channel average 9.1 kt; wind chop 2.1 ft; period down to 8 s,9.1,14.6,1.8,2.1,4.6,8,8.3,,9.6,13,no,no,no
+2026-09-14,Mon,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 10.3 kt; wind chop 2.1 ft; period down to 7 s,10.3,14.1,2.6,2.1,4.1,7,9.1,,10.7,13,no,no,no
+2026-09-15,Tue,no,wind 14 kt at Kaiwi mid-channel 2 PM; channel average 8.6 kt; wind chop 1.6 ft; period down to 8 s,8.6,14.3,1.4,1.6,3.3,8,10.3,,4.7,8,no,no,no
+2026-09-16,Wed,no,wind 21 kt at Kaiwi mid-channel 2 PM; channel average 12.4 kt; wind chop 3.7 ft; period down to 7 s,12.4,21.1,1.3,3.7,4.5,7,8.6,,10.3,14,no,no,no
+2026-09-17,Thu,no,wind 22 kt at Kaiwi mid-channel 5 AM; channel average 16.6 kt; wind chop 4.3 ft; period down to 7 s,16.6,22.2,0.2,4.3,5.8,7,12.4,,9.9,14,no,no,no
+2026-09-18,Fri,no,wind 21 kt at Kaiwi mid-channel 11 AM; channel average 14.4 kt; models differ by 6 kt; wind chop 5.2 ft; waves 6.7 ft; period down to 7 s,14.4,20.6,6.0,5.2,6.7,7,16.6,,12.8,17,no,no,no
+2026-09-19,Sat,no,wind 23 kt at Kaiwi mid-channel 2 PM; channel average 16.3 kt; models differ by 5 kt; wind chop 6.0 ft; waves 6.9 ft; period down to 7 s,16.3,22.6,4.7,6.0,6.9,7,14.4,,14.6,19,no,no,no
+2026-09-20,Sun,no,wind 22 kt at Kaiwi mid-channel 2 PM; channel average 15.4 kt; models differ by 4 kt; wind chop 5.4 ft; waves 6.5 ft; period down to 7 s,15.4,21.6,4.2,5.4,6.5,7,16.3,,16.1,22,no,no,no
+2026-09-21,Mon,no,wind 21 kt at Kaiwi mid-channel 5 AM; channel average 16.1 kt; wind chop 4.7 ft; waves 6.2 ft; period down to 7 s,16.1,21.0,1.4,4.7,6.2,7,15.4,,13.5,19,no,no,no
+2026-09-22,Tue,no,wind 19 kt at Kaiwi mid-channel 2 PM; channel average 13.0 kt; wind chop 4.7 ft; period down to 7 s,13.0,19.1,3.6,4.7,5.6,7,16.1,,12.2,18,no,no,no
+2026-09-23,Wed,no,wind 22 kt at Kaiwi mid-channel 12 PM; channel average 16.5 kt; wind chop 4.6 ft; waves 6.7 ft; period down to 7 s,16.5,21.5,2.0,4.6,6.7,7,13.0,,13.5,16,no,no,no
+2026-09-24,Thu,no,wind 24 kt at Kaiwi mid-channel 10 AM; channel average 17.5 kt; wind chop 5.3 ft; waves 6.2 ft; period down to 7 s; Small Craft Advisory,17.5,23.5,2.7,5.3,6.2,7,16.5,yes,17.8,23,no,no,no
+2026-09-25,Fri,no,wind 25 kt at Kaiwi mid-channel 10 AM; channel average 19.4 kt; wind chop 6.4 ft; waves 7.4 ft; period down to 7 s,19.4,25.3,3.0,6.4,7.4,7,17.5,,15.8,20,no,no,no
+2026-09-26,Sat,no,wind 31 kt at Kaiwi mid-channel 1 PM; channel average 23.3 kt; models differ by 5 kt; wind chop 9.6 ft; waves 11.1 ft; period down to 8 s,23.3,30.7,4.9,9.6,11.1,8,19.4,,20.1,24,no,no,no
+2026-09-27,Sun,no,wind 29 kt at Kaiwi mid-channel 5 AM; channel average 22.6 kt; models differ by 8 kt; wind chop 9.1 ft; waves 10.7 ft; period down to 8 s; Small Craft Advisory,22.6,29.4,7.7,9.1,10.7,8,23.3,yes,14.3,18,no,no,no
+2026-09-28,Mon,no,wind 17 kt at Makapuu corner 10 AM; channel average 11.1 kt; wind chop 4.8 ft; waves 8.3 ft; period down to 8 s; Small Craft Advisory,11.1,17.4,3.6,4.8,8.3,8,22.6,yes,9.7,14,no,no,no
+2026-09-29,Tue,no,wind 14 kt at P FAD 5 AM; wind chop 1.7 ft; period down to 8 s,6.2,13.6,2.3,1.7,6.0,8,11.1,,5.1,11,no,no,no
+2026-09-30,Wed,no,wind 15 kt at P FAD 8 AM; channel average 11.2 kt; wind chop 2.6 ft; waves 6.4 ft; period down to 8 s,11.2,15.5,2.8,2.6,6.4,8,6.2,,5.6,10,no,no,no
+2026-10-01,Thu,no,wind 15 kt at P FAD 5 AM; channel average 8.2 kt; wind chop 1.9 ft; period down to 8 s,8.2,14.7,1.6,1.9,5.5,8,11.2,,5.0,9,no,no,no
+2026-10-02,Fri,no,wind 12 kt at P FAD 9 AM; period down to 8 s,5.4,11.7,2.6,1.4,5.1,8,8.2,,3.5,6,yes,no,no
+2026-10-03,Sat,no,wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.3 kt; wind chop 2.5 ft; period down to 8 s,11.3,16.7,1.2,2.5,4.7,8,5.4,,11.1,14,no,no,no
+2026-10-04,Sun,no,wind 20 kt at Kaiwi mid-channel 1 PM; channel average 15.1 kt; wind chop 3.8 ft; period down to 7 s,15.1,20.2,1.8,3.8,5.2,7,11.3,,12.6,19,no,no,no
