@@ -1,0 +1,24 @@
+Penguin Bank backtest 2025-10-05 to 2026-10-04, window 5:00-15:00 HST
+
+ok   wind 2025-10-04..2026-01-03: historical forecasts, ecmwf_ifs025, gfs_seamless, icon_seamless
+ok   wind 2026-01-04..2026-04-05: historical forecasts, ecmwf_ifs025, gfs_seamless, icon_seamless
+ok   wind 2026-04-06..2026-07-06: historical forecasts, ecmwf_ifs025, gfs_seamless, icon_seamless
+ok   wind 2026-07-07..2026-10-04: historical forecasts, ecmwf_ifs025, gfs_seamless, icon_seamless
+ok   waves 2025-10-04..2026-01-03
+ok   waves 2026-01-04..2026-04-05
+ok   waves 2026-04-06..2026-07-06
+ok   waves 2026-07-07..2026-10-04
+ok   NWS advisories for the Kaiwi Channel: 52 events, 118 days with one in effect during the window
+ok   Molokai airport observations: 365 days
+
+Results
+  as set (strict)                                               18 days
+  a bit looser: max 12 kt, avg 9 kt, chop 2 ft, period 8 s      39 days
+  stricter: max 8 kt, avg 6 kt, chop 1 ft                       10 days
+  2026-09-08 Wes: sloppy but manageable nearshore (day before the epic day) -> no wind 24 kt at Kaiwi mid-channel 5 AM; channel average 16.3 kt; wind chop 6.4 ft; waves 14.4 ft; windy day before (16 kt); Small Craft Advisory
+  2026-09-09 Wes: dead calm everywhere, would have been a great bank day -> no wind 10 kt at Kaiwi mid-channel 2 PM; waves 7.7 ft; windy day before (16 kt)
+
+Window days (strict): Tue Oct 7 2025, Wed Oct 8 2025, Thu Oct 9 2025, Fri Oct 10 2025, Mon Oct 13 2025, Thu Nov 27 2025, Fri Dec 12 2025, Tue Jan 27 2026, Wed Jan 28 2026, Wed Mar 18 2026, Tue Apr 7 2026, Tue Apr 14 2026, Wed Apr 15 2026, Thu Apr 16 2026, Tue Apr 21 2026, Thu Jun 18 2026, Fri Jun 19 2026, Fri Aug 21 2026
+Near misses (one thing wrong): 29
+
+Wrote backtest/penguin_backtest.html and .csv
