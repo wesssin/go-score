@@ -258,7 +258,7 @@ def main():
             ok, fails, m, prev = main_res[d]
             o = obs.get(d, (None, None))
             w.writerow([d.isoformat(), d.strftime("%a"), "yes" if ok else "no", "; ".join(fails), f1(m["wind_mean"]), f1(m["wind_max"]),
-                        f1(m["spread"]), f1(m["chop_max"]), f1(m["hs_max"]), f1(m["tp_min"], "%.0f"), f1(prev),
+                        f1(m["spread"]), f1(m["chop_max"]), f1(m["hs_max"]), f1(m["tp_min"]), f1(prev),
                         "yes" if d in sca else "", f1(o[0]), f1(o[1], "%.0f")] +
                        ["yes" if r[d][0] else "no" for _, r in runs[1:]])
 
@@ -286,7 +286,7 @@ def main():
         note = KNOWN.get(d, "")
         return "<tr><td>%s</td><td>%s / %s</td><td>%s</td><td>%s</td><td>%s @ %s s+</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
             d.strftime("%a %b %-d, %Y"), f1(m["wind_mean"]), f1(m["wind_max"], "%.0f"), f1(m["spread"], "%.0f"), f1(m["chop_max"]),
-            f1(m["hs_max"]), f1(m["tp_min"], "%.0f"), ("%s / %s" % (f1(o[0]), f1(o[1], "%.0f"))) if o[0] is not None else "–",
+            f1(m["hs_max"]), f1(m["tp_min"]), ("%s / %s" % (f1(o[0]), f1(o[1], "%.0f"))) if o[0] is not None else "–",
             esc("; ".join(fails) or "all clear"), esc(note))
     hdr = ("<tr><th>Day</th><th>Channel wind avg / max (kt)</th><th>Models differ (kt)</th><th>Wind chop (ft)</th><th>Waves</th>"
            "<th>Molokai airport, observed avg / max (kt)</th><th>Test</th><th>Note</th></tr>")
