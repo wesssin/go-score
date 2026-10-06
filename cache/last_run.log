@@ -56,18 +56,18 @@ ok   Hawaii Mesonet (windward stations)
 ...  Penguin Bank forecast
 ok   Channel wind, 3 models (Open-Meteo)
 ok   Channel waves + wind chop (Open-Meteo Marine)
-ok   NWS wind forecast @ Kaiwi mid-channel
-ok   NWS wind forecast @ Hawaii Kai exit
-ok   NWS wind forecast @ Makapuu corner
-ok   NWS wind forecast @ P FAD
 ok   NWS wind forecast @ Kailua offshore
+ok   NWS wind forecast @ P FAD
 ok   NWS wind forecast @ Bank N ledge
+ok   NWS wind forecast @ Kaiwi mid-channel
+ok   NWS wind forecast @ Makapuu corner
+ok   NWS wind forecast @ Hawaii Kai exit
+ok   WW3 waves @ Kaiwi mid-channel
 ok   WW3 waves @ P FAD
+ok   WW3 waves @ Kailua offshore
+ok   WW3 waves @ Hawaii Kai exit
 ok   WW3 waves @ Bank N ledge
 ok   WW3 waves @ Makapuu corner
-ok   WW3 waves @ Hawaii Kai exit
-ok   WW3 waves @ Kaiwi mid-channel
-ok   WW3 waves @ Kailua offshore
 ok   NWS Kaiwi Channel forecast (PHZ116)
 ok   NWS Maui County Leeward Waters forecast (PHZ118)
 ok   buoy 51202 Mokapu
