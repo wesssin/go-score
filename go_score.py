@@ -19,6 +19,10 @@ RIGHT NOW
   Waimea, Hanalei, NW Hawaii), Kaneohe airport wind, Coconut Island (HIMB) wind, lifeguard surf
   reports, Hawaii Mesonet stations (needs a free API token in hcdp_token.txt)
 
+PENGUIN BANK (penguin.py)
+  Every run: a strict check of the Kaiwi Channel and Penguin Bank; passing days get a badge on their card.
+  python go_score.py --penguin  also writes penguin.html, the detailed channel forecast (on demand).
+
 Thresholds are fitted to a handful of Wes's days (Sep 9/13, Jun 13/16/21 2026) - tune in SETTINGS.
 """
 import argparse
@@ -781,6 +785,8 @@ def esc(s):
 
 def render(days, ctx, status, demo):
     per_spot, meta, flags = ctx.get("per_spot", {}), ctx.get("route_meta", {}), ctx.get("flags", {})
+    pbc = ctx.get("penguin")
+    pb_days = pbc["days"] if pbc else {}
     summaries, spot_scores = {}, {}
     for d, hrs in days.items():
         win = window(hrs)
@@ -804,6 +810,9 @@ def render(days, ctx, status, demo):
     watch = [d for d in sorted(flags) if any(k == "watch" for k, _ in flags[d]) and d >= datetime.now(HST).date()]
     if watch:
         hero = (hero[0], hero[1], hero[2] + " \u00b7 \u2605 watch day: %s (2nd light day after the trades)" % watch[0].strftime("%a %b %-d"))
+    pb_ok = [d for d in sorted(pb_days) if pb_days[d]["confirmed"]]
+    if pb_ok:
+        hero = (hero[0], hero[1], hero[2] + " \u00b7 \u2693 Penguin Bank window: %s" % ", ".join(d.strftime("%a %b %-d") for d in pb_ok))
 
     cards, strips, rows = [], [], []
     for d, hrs in days.items():
@@ -822,6 +831,9 @@ def render(days, ctx, status, demo):
                 extra += '<p class="route">Best: <b>%s</b>%s</p>' % (esc(m["best"]), (" · " + esc(others)) if others else "")
             for kind, text in flags.get(d.date(), []):
                 extra += '<p class="flag %s">%s %s</p>' % (kind, "★" if kind == "watch" else "↻", esc(text))
+            if pbc:
+                import penguin as pb_mod
+                extra += pb_mod.card_badge(pb_days.get(d.date()), esc)
             if nws_w:
                 warn = " – windier than the score assumes" if nws_w[1] >= 15 and s["score"] >= 7.5 else ""
                 extra += '<p class="nws">NWS: %s kt%s</p>' % (rng(*nws_w), warn)
@@ -926,11 +938,19 @@ def render(days, ctx, status, demo):
            "%%CARDS%%": "".join(cards), "%%HOURS_HDR%%": hours_hdr, "%%STRIPS%%": "".join(strips), "%%NOW%%": now_html,
            "%%UP%%": "".join(up_rows), "%%CWF%%": cwf_html or '<p class="muted">NWS text forecast not available this run.</p>',
            "%%ROWS%%": "".join(rows), "%%STATUS%%": status_html, "%%WIN%%": win_txt,
-           "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES))}
+           "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES)), "%%PENGUIN%%": penguin_section(pbc)}
     page = PAGE
     for k, v in rep.items():
         page = page.replace(k, v)
     return page
+
+
+def penguin_section(pbc):
+    try:
+        import penguin as pb_mod
+    except Exception:  # noqa
+        return ""
+    return pb_mod.check_table(pbc, esc, os.path.exists(os.path.join(pb_mod.SAVED_DIR, pb_mod.PAGE_NAME)))
 
 
 def fmt0(x):
@@ -953,7 +973,7 @@ main{max-width:1100px;margin:0 auto;padding:20px 16px 48px}h1{font-size:22px;mar
 .card{background:var(--surface);border:1px solid var(--ring);border-left:5px solid var(--muted);border-radius:10px;padding:12px}.card h3{margin:0;font-size:13px;color:var(--ink2);font-weight:600}
 .card.good{border-left-color:var(--good)}.card.warning{border-left-color:var(--warning)}.card.critical{border-left-color:var(--critical)}.big{font-size:34px;font-weight:700;line-height:1.1}
 .tier{font-weight:600}.dot{display:inline-block;width:1.3em;text-align:center;border-radius:50%;color:#fff;font-size:12px;line-height:1.3em}.dot.good{background:var(--good)}.dot.warning{background:var(--warning);color:#000}.dot.critical{background:var(--critical)}
-.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.note{color:var(--muted);font-size:12px;margin:0}
+.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.flag.penguin{color:var(--ink)}.flag.penguin a{color:inherit}.pb-yes td{font-weight:600}.note{color:var(--muted);font-size:12px;margin:0}
 .strip-row{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;margin:4px 0}.strip-label{font-size:12px;color:var(--ink2)}
 .strip,.strip-head{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}.cell{position:relative;text-align:center;font-size:12px;padding:6px 0;border-radius:4px;font-variant-numeric:tabular-nums}
 .cell.hdr{background:none;color:var(--muted);font-size:11px;padding:2px 0}.cell.nodata{background:var(--grid);color:var(--muted)}.cell.win{box-shadow:0 0 0 2px var(--ink2) inset}
@@ -979,6 +999,7 @@ ul.status{list-style:none;padding:0;margin:0;font-size:13px}ul.status li{margin:
 <h2>Buoys, nearest first then upstream</h2><div class="wrap"><table><thead><tr><th>Buoy</th><th>Reading</th><th>Waves</th><th>Period</th><th>From</th><th>Last 6 h</th></tr></thead><tbody>%%UP%%</tbody></table></div>
 <h2>NWS forecast – Oahu Windward Waters</h2>%%CWF%%
 <h2>Details</h2><div class="wrap"><table><thead><tr><th>Day</th><th>Score</th><th>Call</th><th>Best route</th><th>Wind</th><th>Waves</th><th>Period</th><th>By spot</th><th>Wind models</th><th>Held back by</th></tr></thead><tbody>%%ROWS%%</tbody></table></div>
+<h2>Penguin Bank check</h2>%%PENGUIN%%
 <h2>Data sources this run</h2><ul class="status">%%STATUS%%</ul>
 <p class="fine">How to read this: the score takes points off 10 for sustained wind (3-hour average), short-period chop and big waves, at each spot on the route, then averages the spots. Long, smooth swell costs almost nothing; small waves with a short period cost a lot. Epic needs 9+ with no rough hour; the day is capped at 3 if the route-average wind holds at 12 kt or more for 2+ hours, or any spot hits 15 kt. WW3 wind chop over 2.5 ft costs points even when the swell period looks long. Offshore spots use the WW3 model, which separates wind chop from swell. Fitted to five of your days, so treat the tiers as a starting point.</p>
 </main></body></html>"""
@@ -1170,6 +1191,7 @@ def main():
     ap.add_argument("--out", default="go_score.html")
     ap.add_argument("--open", action="store_true")
     ap.add_argument("--notify", action="store_true", help="send a phone push via ntfy (needs NTFY_TOPIC)")
+    ap.add_argument("--penguin", action="store_true", help="also write the detailed Penguin Bank forecast (penguin.html)")
     a = ap.parse_args()
     if a.backtest:
         return backtest()
@@ -1256,8 +1278,21 @@ def main():
     per_spot = compute_spots(spot_wind, spot_waves, DAYS_AHEAD)
     days, meta = pick_best(per_spot)
     ctx.update(per_spot=per_spot, route_meta=meta, flags=pattern_flags(per_spot, ctx.get("past_days")))
+    out_dir = os.path.dirname(os.path.abspath(a.out))
+    pb_mod = None
+    if not a.demo:
+        try:
+            import penguin as pb_mod
+            me = sys.modules[__name__]
+            print("...  Penguin Bank %s" % ("forecast" if a.penguin else "check"), flush=True)
+            ctx["penguin"] = pb_mod.detail(me, out_dir, status) if a.penguin else pb_mod.check(me, status)
+        except Exception as e:  # noqa
+            status.append((False, "Penguin Bank check failed: %s" % str(e)[:140]))
+            print("FAIL Penguin Bank: %s" % str(e)[:140])
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(render(days, ctx, status, a.demo))
+    if pb_mod:
+        pb_mod.publish_saved(out_dir)
 
     if not a.demo:
         os.makedirs("forecast_history", exist_ok=True)
@@ -1275,6 +1310,11 @@ def main():
         print("  %-11s %s%s" % (fmt_day(d), ("%.1f  %-9s %-20s wind %s mph, waves %s ft @ %s s" % (
             s["score"], tier_for(s["score"])[0], meta[d]["best"], rng(mph(s["wind_min"]), mph(s["wind_max"])), rng(s["hs_min"], s["hs_max"], 1),
             rng(s["tp_min"], s["tp_max"]))) if s else "no forecast", ("  [" + "; ".join(t for _, t in ctx["flags"][d.date()]) + "]") if d.date() in ctx["flags"] else ""))
+    pbc = ctx.get("penguin")
+    if pbc:
+        print("\nPenguin Bank check:")
+        for d, v in sorted(pbc["days"].items()):
+            print("  %s  %s" % (d.strftime("%a %b %-d"), ("WINDOW" + (" (confirmed)" if v["confirmed"] else " (1st run)")) if v["pass"] else "no: " + "; ".join(v["fails"])))
     print("\nWrote %s" % os.path.abspath(a.out))
     if a.notify and not a.demo:
         try:

@@ -4,7 +4,13 @@ on:
   schedule:
     # GitHub uses UTC. These are 5 AM, 11 AM, 5 PM and 11 PM Hawaii time.
     - cron: "0 3,9,15,21 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "standard = normal run with push; penguin-bank = also build the detailed Penguin Bank forecast (no push)"
+        type: choice
+        options: [standard, penguin-bank]
+        default: standard
 
 permissions:
   contents: write
@@ -29,15 +35,18 @@ jobs:
           HCDP_API_TOKEN: ${{ secrets.HCDP_API_TOKEN }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          MODE: ${{ inputs.mode || 'standard' }}
         run: |
-          mkdir -p site
-          python go_score.py --out site/index.html --notify
+          mkdir -p site cache
+          if [ "$MODE" = "penguin-bank" ]; then ARGS="--penguin"; else ARGS="--notify"; fi
+          python go_score.py --out site/index.html $ARGS 2>&1 | tee cache/last_run.log
       - name: Save forecast history and model cache
         run: |
           git config user.name "go-score-bot"
           git config user.email "go-score-bot@users.noreply.github.com"
-          for d in forecast_history cache; do [ -d "$d" ] && git add "$d"; done
+          for d in forecast_history cache penguin; do [ -d "$d" ] && git add "$d"; done
           git commit -m "Forecast snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing new to save"
+          git pull --rebase -q || true
           git push || echo "push skipped"
       - uses: actions/upload-pages-artifact@v3
         with:

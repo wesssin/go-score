@@ -1,0 +1,30 @@
+name: Penguin Bank backtest
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the past-year test
+        run: |
+          mkdir -p backtest
+          python penguin_backtest.py 2>&1 | tee backtest/penguin_backtest_log.txt
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "go-score-bot"
+          git config user.email "go-score-bot@users.noreply.github.com"
+          git add backtest
+          git commit -m "Penguin Bank backtest $(date -u +%Y-%m-%d)" || echo "nothing new"
+          git pull --rebase -q || true
+          git push
