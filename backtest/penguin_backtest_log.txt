@@ -12,14 +12,14 @@ ok   NWS advisories for the Kaiwi Channel: 52 events, 118 days with one in effec
 ok   Molokai airport observations: 365 days
 
 Results
-  as set                                                        24 days
-  looser: max 13 kt, avg 9 kt, chop 2 ft, period 8 s            45 days
+  as set                                                        25 days
+  looser: max 13 kt, avg 9 kt, chop 2 ft, period 8 s            46 days
   stricter: max 9 kt, avg 6 kt, chop 1 ft                       12 days
   as set + day before under 11 kt (the rule Sep 9 broke)        22 days
   2026-09-08 Wes: sloppy but manageable nearshore (day before the epic day) -> no wind 24 kt at Kaiwi mid-channel 5 AM; channel average 16.3 kt; wind chop 6.4 ft; waves 14.4 ft; Small Craft Advisory
-  2026-09-09 Wes: dead calm everywhere, would have been a great bank day -> no waves 7.7 ft
+  2026-09-09 Wes: dead calm everywhere, would have been a great bank day -> WINDOW 
 
-Window days: Mon Oct 6 2025, Tue Oct 7 2025, Wed Oct 8 2025, Thu Oct 9 2025, Fri Oct 10 2025, Mon Oct 13 2025, Thu Nov 27 2025, Fri Dec 12 2025, Tue Jan 27 2026, Wed Jan 28 2026, Thu Jan 29 2026, Wed Mar 18 2026, Sun Mar 22 2026, Tue Apr 7 2026, Sun Apr 12 2026, Tue Apr 14 2026, Wed Apr 15 2026, Thu Apr 16 2026, Tue Apr 21 2026, Wed Apr 22 2026, Thu Jun 18 2026, Fri Jun 19 2026, Wed Jul 15 2026, Fri Aug 21 2026
+Window days: Mon Oct 6 2025, Tue Oct 7 2025, Wed Oct 8 2025, Thu Oct 9 2025, Fri Oct 10 2025, Mon Oct 13 2025, Thu Nov 27 2025, Fri Dec 12 2025, Tue Jan 27 2026, Wed Jan 28 2026, Thu Jan 29 2026, Wed Mar 18 2026, Sun Mar 22 2026, Tue Apr 7 2026, Sun Apr 12 2026, Tue Apr 14 2026, Wed Apr 15 2026, Thu Apr 16 2026, Tue Apr 21 2026, Wed Apr 22 2026, Thu Jun 18 2026, Fri Jun 19 2026, Wed Jul 15 2026, Fri Aug 21 2026, Wed Sep 9 2026
 Near misses (one thing wrong): 38
 
 Wrote backtest/penguin_backtest.html and .csv
