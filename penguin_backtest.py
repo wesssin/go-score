@@ -25,11 +25,12 @@ HST, UTC = pb.HST, pb.UTC
 OUT_DIR = "backtest"
 KNOWN = {date(2026, 9, 9): "Wes: dead calm everywhere, would have been a great bank day",
          date(2026, 9, 8): "Wes: sloppy but manageable nearshore (day before the epic day)"}
-VARIANTS = [("as set (strict)", {}),
-            ("a bit looser: max 12 kt, avg 9 kt, chop 2 ft, period 8 s",
-             {"MAX_WIND_KT": 12.0, "MEAN_WIND_KT": 9.0, "MAX_CHOP_FT": 2.0, "MIN_PERIOD_S": 8.0}),
-            ("stricter: max 8 kt, avg 6 kt, chop 1 ft",
-             {"MAX_WIND_KT": 8.0, "MEAN_WIND_KT": 6.0, "MAX_CHOP_FT": 1.0})]
+VARIANTS = [("as set", {}),
+            ("looser: max 13 kt, avg 9 kt, chop 2 ft, period 8 s",
+             {"MAX_WIND_KT": 13.0, "MEAN_WIND_KT": 9.0, "MAX_CHOP_FT": 2.0, "MIN_PERIOD_S": 8.0}),
+            ("stricter: max 9 kt, avg 6 kt, chop 1 ft",
+             {"MAX_WIND_KT": 9.0, "MEAN_WIND_KT": 6.0, "MAX_CHOP_FT": 1.0}),
+            ("as set + day before under 11 kt (the rule Sep 9 broke)", {"PREV_DAY_MAX_MEAN_KT": 11.0})]
 
 
 def log(*a):
@@ -271,7 +272,7 @@ def main():
             ok, fails, m, prev = main_res[d]
             log("  %s %s -> %s %s" % (d, note, "WINDOW" if ok else "no", "; ".join(fails)))
     passes = [d for d in days if main_res[d][0]]
-    log("\nWindow days (strict): " + (", ".join(d.strftime("%a %b %-d %Y") for d in passes) or "none"))
+    log("\nWindow days: " + (", ".join(d.strftime("%a %b %-d %Y") for d in passes) or "none"))
     near = [d for d in days if not main_res[d][0] and len(main_res[d][1]) == 1 and "not enough" not in main_res[d][1][0]]
     log("Near misses (one thing wrong): %d" % len(near))
 
@@ -310,7 +311,7 @@ def main():
 %s
 <h2>Your known days</h2><div class="wrap"><table><thead>%s</thead><tbody>%s</tbody></table></div>
 <h2>How often it fires</h2><div class="wrap"><table><thead><tr><th>Test</th><th>Days</th><th>Which</th></tr></thead><tbody>%s</tbody></table></div>
-<h2>Window days (strict test) – ask your friends about these</h2><div class="wrap"><table><thead>%s</thead><tbody>%s</tbody></table></div>
+<h2>Window days – ask your friends about these</h2><div class="wrap"><table><thead>%s</thead><tbody>%s</tbody></table></div>
 <h2>Near misses – failed on one thing</h2><div class="wrap"><table><thead>%s</thead><tbody>%s</tbody></table></div>
 <h2>By month</h2><div class="wrap"><table><thead><tr><th>Month</th><th>Window days</th><th>Days with a Kaiwi Channel advisory</th></tr></thead><tbody>%s</tbody></table></div>
 <p class="fine">Full day-by-day table: penguin_backtest.csv in the go-score repo (backtest folder).</p>

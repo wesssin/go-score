@@ -42,13 +42,16 @@ WINDOW = (5, 15)            # HST: leave 5 AM, back by 3 PM
 LEGS = [("Run out", 5, 9), ("Fishing", 9, 12), ("Ride home", 12, 15)]
 
 # Strict "Penguin Bank window" test. Every line must pass for the window.
-MAX_WIND_KT = 10.0          # no channel point, no hour, above this (model average)
+MAX_WIND_KT = 11.0          # no channel point, no hour, above this (model average). Sep 9 2026 peaked at 10.1 kt mid-channel at 2 PM
 MEAN_WIND_KT = 8.0          # channel average over the window
 MAX_SPREAD_KT = 4.0         # models must agree: window-average wind per model within this range
 MAX_CHOP_FT = 1.5           # wind-sea height (the short, steep part)
-MAX_WAVE_FT = 6.0           # total significant wave height
+MAX_WAVE_FT = 6.0           # total significant wave height...
+MAX_WAVE_LONG_FT = 8.0      # ...or up to this when the period stays at LONG_PERIOD_S or longer (Sep 9 2026: 7.7 ft @ 10 s+)
+LONG_PERIOD_S = 10.0
 MIN_PERIOD_S = 9.0          # dominant period, lowest hour in the window
-PREV_DAY_MAX_MEAN_KT = 11.0  # the day before must not be windy (channel needs time to lay down)
+PREV_DAY_MAX_MEAN_KT = None  # off: Sep 9 2026 was glassy the day after a 16 kt day. Shown as a note instead.
+PREV_DAY_NOTE_KT = 11.0
 NWS_MAX_KT = 10.0           # top of the NWS Kaiwi Channel wind range for that day, when the text covers it
 
 WIND_MODELS = ["ecmwf_ifs025", "gfs_seamless", "icon_seamless"]
@@ -265,11 +268,12 @@ def evaluate(m, prev_mean=None, nws_max=None, sca=False):
         fails.append("models differ by %.0f kt" % m["spread"])
     if m["chop_max"] is not None and m["chop_max"] > MAX_CHOP_FT:
         fails.append("wind chop %.1f ft" % m["chop_max"])
-    if m["hs_max"] is not None and m["hs_max"] > MAX_WAVE_FT:
+    hs_limit = MAX_WAVE_LONG_FT if (m["tp_min"] or 0) >= LONG_PERIOD_S else MAX_WAVE_FT
+    if m["hs_max"] is not None and m["hs_max"] > hs_limit:
         fails.append("waves %.1f ft" % m["hs_max"])
     if m["tp_min"] is not None and m["tp_min"] < MIN_PERIOD_S:
         fails.append("period down to %.0f s" % m["tp_min"])
-    if prev_mean is not None and prev_mean > PREV_DAY_MAX_MEAN_KT:
+    if PREV_DAY_MAX_MEAN_KT is not None and prev_mean is not None and prev_mean > PREV_DAY_MAX_MEAN_KT:
         fails.append("windy day before (%.0f kt)" % prev_mean)
     if nws_max is not None and nws_max > NWS_MAX_KT:
         fails.append("NWS Kaiwi %d kt" % nws_max)
@@ -365,7 +369,9 @@ def check(gs, status, days_ahead=7, wind=None, waves=None, extra_wind=None, zone
         nws = gs.nws_wind_range(cwf_days.get(d, {}).get("day"))
         ok, fails = evaluate(m, prev["wind_mean"], nws[1] if nws else None, d in sca)
         out[d] = {"pass": ok, "fails": fails, "m": m, "prev_mean": prev["wind_mean"], "nws": nws,
-                  "confirmed": ok and d.isoformat() in prev_pass}
+                  "confirmed": ok and d.isoformat() in prev_pass,
+                  "note": ("windy day before (%.0f kt) \u2013 check leftover chop" % prev["wind_mean"])
+                  if prev["wind_mean"] is not None and prev["wind_mean"] > PREV_DAY_NOTE_KT else ""}
     if wind or waves:
         state["runs"].append({"t": datetime.now(UTC).isoformat(), "pass": [d.isoformat() for d, v in out.items() if v["pass"]]})
         save_state(state)
@@ -397,17 +403,17 @@ def check_table(check_result, esc, have_page):
             "%.1f ft" % m["chop_max"] if m["chop_max"] is not None else "–",
             ("%.1f ft @ %.0f s+" % (m["hs_max"], m["tp_min"])) if m["hs_max"] is not None and m["tp_min"] else "–",
             "%.0f kt" % m["spread"] if m["spread"] is not None else "–",
-            esc("; ".join(v["fails"]) or "all clear")))
+            esc("; ".join(v["fails"]) or ("all clear" + ((" \u00b7 " + v["note"]) if v.get("note") else "")))))
     link = ('<a href="%s">Open the last Penguin Bank forecast</a> · ' % PAGE_NAME) if have_page else ""
     bt = ('<a href="%s">Past-year check</a> · ' % os.path.basename(BACKTEST_HTML)) if os.path.exists(BACKTEST_HTML) else ""
     return ('<div class="wrap"><table><thead><tr><th>Day</th><th>Penguin Bank</th><th>Channel wind avg / max</th><th>Wind chop</th>'
             '<th>Waves</th><th>Models differ</th><th>Why not</th></tr></thead><tbody>%s</tbody></table></div>'
             '<p class="fine">%s%sStrict test over %s, Kaiwi Channel to the P FAD: no hour above %.0f kt, average %.0f kt or less, '
-            'models within %.0f kt, wind chop %.1f ft or less, waves %.0f ft or less at %.0f s or longer, day before under %.0f kt, '
+            'models within %.0f kt, wind chop %.1f ft or less, waves %.0f ft or less (%.0f ft if the period stays %.0f s+), period %.0f s or longer, '
             'no Small Craft Advisory for the Kaiwi Channel. A day has to pass two runs in a row to count as confirmed. '
             'To run the detailed forecast: GitHub app → go-score → Actions → Go Score → Run workflow → mode: penguin-bank.</p>'
             % ("".join(rows), link, bt, _win_txt(), MAX_WIND_KT, MEAN_WIND_KT, MAX_SPREAD_KT, MAX_CHOP_FT, MAX_WAVE_FT,
-               MIN_PERIOD_S, PREV_DAY_MAX_MEAN_KT))
+               MAX_WAVE_LONG_FT, LONG_PERIOD_S, MIN_PERIOD_S))
 
 
 def _win_txt():
@@ -564,7 +570,7 @@ def render(gs, chk, zone_texts, buoys, obs, status):
                          ("%.1f avg, %.0f max" % (m["wind_mean"], m["wind_max"])) if m["wind_mean"] is not None else "–",
                          ("%.1f ft" % m["chop_max"]) if m["chop_max"] is not None else "–",
                          ("%.1f ft @ %.0f s+" % (m["hs_max"], m["tp_min"])) if m["hs_max"] is not None and m["tp_min"] else "–",
-                         legs_html, esc("; ".join(v["fails"]) or "all clear")))
+                         legs_html, esc("; ".join(v["fails"]) or ("all clear" + ((" \u00b7 " + v["note"]) if v.get("note") else "")))))
         for rn, names in ROUTES:
             cells = []
             base = datetime(d.year, d.month, d.day, tzinfo=HST)
@@ -645,7 +651,7 @@ def render(gs, chk, zone_texts, buoys, obs, status):
 <h2>NWS text forecasts</h2>%s
 <h2>Points used</h2><ul class="fine">%s</ul>%s
 <h2>Data sources this run</h2><ul class="status">%s</ul>
-<p class="fine">The window test: no hour above %.0f kt anywhere from the Kaiwi Channel to the P FAD, channel average %.0f kt or less, wind models within %.0f kt of each other, wind chop %.1f ft or less, waves %.0f ft or less with the period %.0f s or longer, the day before under %.0f kt, and no Small Craft Advisory for the Kaiwi Channel. These are starting values, not fitted to anyone's trips yet.</p>
+<p class="fine">The window test: no hour above %.0f kt anywhere from the Kaiwi Channel to the P FAD, channel average %.0f kt or less, wind models within %.0f kt of each other, wind chop %.1f ft or less, waves %.0f ft or less (%.0f ft if the period stays %.0f s or longer), period %.0f s or longer, and no Small Craft Advisory for the Kaiwi Channel. Checked against one known day (Sep 9 2026 passes, Sep 8 fails) and a year of history; not yet against anyone's trips.</p>
 </main></body></html>""" % (css, esc(_win_txt()), esc(datetime.now(HST).strftime("%a %b %-d, %-I:%M %p HST")),
                               "".join(cards), hdr, "".join(strips), "".join(brow), "".join(orow), zone_html, pts, bt, status_html,
-                              MAX_WIND_KT, MEAN_WIND_KT, MAX_SPREAD_KT, MAX_CHOP_FT, MAX_WAVE_FT, MIN_PERIOD_S, PREV_DAY_MAX_MEAN_KT))
+                              MAX_WIND_KT, MEAN_WIND_KT, MAX_SPREAD_KT, MAX_CHOP_FT, MAX_WAVE_FT, MAX_WAVE_LONG_FT, LONG_PERIOD_S, MIN_PERIOD_S))
