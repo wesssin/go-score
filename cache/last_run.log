@@ -6,30 +6,36 @@ ok   Open-Meteo Marine waves (all spots)
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
 FAIL WW3 waves + chop @ Bay mouth: network error: <urlopen error timed out>
-     using saved WW3 waves + chop from 3 h ago
+     using saved WW3 waves + chop from 7 h ago
 ...  SWAN waves @ Bay mouth
 FAIL SWAN waves @ Bay mouth: network error: <urlopen error timed out>
-     using saved SWAN waves from 3 h ago
+     using saved SWAN waves from 7 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-ok   WW3 waves + chop @ U FAD
+FAIL WW3 waves + chop @ U FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 5 h ago
 ...  SWAN waves @ U FAD
-ok   SWAN waves @ U FAD
+FAIL SWAN waves @ U FAD: network error: <urlopen error timed out>
+     using saved SWAN waves from 5 h ago
 ...  NWS wind forecast @ MM FAD
 ok   NWS wind forecast @ MM FAD
 ...  WW3 waves + chop @ MM FAD
-ok   WW3 waves + chop @ MM FAD
+FAIL WW3 waves + chop @ MM FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 5 h ago
 ...  NWS wind forecast @ T FAD
 ok   NWS wind forecast @ T FAD
 ...  WW3 waves + chop @ T FAD
-ok   WW3 waves + chop @ T FAD
+FAIL WW3 waves + chop @ T FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 5 h ago
 ...  NWS wind forecast @ LL FAD
 ok   NWS wind forecast @ LL FAD
 ...  WW3 waves + chop @ LL FAD
-ok   WW3 waves + chop @ LL FAD
+FAIL WW3 waves + chop @ LL FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 5 h ago
 ...  SWAN waves @ LL FAD
-ok   SWAN waves @ LL FAD
+FAIL SWAN waves @ LL FAD: network error: <urlopen error timed out>
+     using saved SWAN waves from 5 h ago
 ...  NWS Oahu Windward Waters forecast
 ok   NWS Oahu Windward Waters forecast
 ...  buoy 51202 Mokapu (your buoy)
@@ -47,33 +53,30 @@ ok   buoy 51101 NW Hawaii (backup)
 ...  Kaneohe airport wind
 ok   Kaneohe airport wind
 ...  Coconut Island (HIMB) wind
-ok   Coconut Island (HIMB) wind
+FAIL Coconut Island (HIMB) wind: timed out after 40s
 ...  Lifeguard surf reports
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
-ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      1 kt from NNW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           3 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   4 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+FAIL Hawaii Mesonet (windward stations): network error: <urlopen error timed out>
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Mon Oct 5   no forecast
-  Tue Oct 6   5.7  Marginal  North toward Kahuku  wind 10–11 mph, waves 4.6–4.7 ft @ 7 s
-  Wed Oct 7   9.2  Epic      North toward Kahuku  wind 6–10 mph, waves 5.2–5.3 ft @ 13–15 s  [Wind from the S – windward side in the lee]
-  Thu Oct 8   8.8  Good      North toward Kahuku  wind 8–11 mph, waves 4.4–4.8 ft @ 12 s  [Wind from the SSW – windward side in the lee]
-  Fri Oct 9   7.7  Good      East to MM & T       wind 9–10 mph, waves 5.3–5.8 ft @ 10–11 s  [Wind from the SSE – windward side in the lee]
-  Sat Oct 10  4.6  Stay home North toward Kahuku  wind 12–13 mph, waves 6.2–6.5 ft @ 11 s
-  Sun Oct 11  7.9  Good      North toward Kahuku  wind 9–11 mph, waves 4.9–5.0 ft @ 9–10 s
+  Tue Oct 6   4.5  Stay home North toward Kahuku  wind 11–12 mph, waves 4.6–4.7 ft @ 7 s  [Settling day: wind backs off after the trades – expect leftover slop]
+  Wed Oct 7   8.7  Good      East to MM & T       wind 7–10 mph, waves 5.5–5.6 ft @ 13–15 s  [Watch day: 2nd light day after the trades – leftover chop should have laid down; Wind from the SSE – windward side in the lee]
+  Thu Oct 8   8.2  Good      North toward Kahuku  wind 10–11 mph, waves 4.4–4.8 ft @ 12 s  [Wind from the S – windward side in the lee]
+  Fri Oct 9   8.2  Good      North toward Kahuku  wind 7–11 mph, waves 4.9–5.5 ft @ 10–11 s  [Wind from the SSE – windward side in the lee]
+  Sat Oct 10  3.8  Stay home North toward Kahuku  wind 12–13 mph, waves 6.2–6.5 ft @ 11 s
+  Sun Oct 11  7.5  Good      North toward Kahuku  wind 10 mph, waves 4.9–5.0 ft @ 9–10 s
+  Mon Oct 12  8.4  Good      North toward Kahuku  wind 8–9 mph, waves 3.9–4.5 ft @ 9 s
 
 Penguin Bank check:
-  Mon Oct 5  no: wind 19 kt at Kaiwi mid-channel 5 AM; channel average 15.2 kt; wind chop 3.8 ft; period down to 7 s
-  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 6 AM; channel average 8.6 kt; wind chop 1.9 ft; NWS Kaiwi 15 kt
+  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.0 kt; wind chop 1.6 ft; NWS Kaiwi 15 kt
   Wed Oct 7  WINDOW (confirmed)
-  Thu Oct 8  no: wind 14 kt at Kaiwi mid-channel 5 AM; channel average 10.6 kt; models differ by 7 kt; wind chop 1.8 ft
-  Fri Oct 9  no: wind 12 kt at Kaiwi mid-channel 5 AM; channel average 8.7 kt; wind chop 1.9 ft
-  Sat Oct 10  no: models differ by 10 kt; wind chop 3.7 ft; period down to 8 s
-  Sun Oct 11  no: models differ by 7 kt; wind chop 2.0 ft
+  Thu Oct 8  no: wind 17 kt at Kaiwi mid-channel 7 AM; channel average 12.9 kt; models differ by 8 kt; wind chop 3.1 ft; NWS Kaiwi 15 kt
+  Fri Oct 9  no: NWS Kaiwi 15 kt
+  Sat Oct 10  no: models differ by 10 kt; wind chop 2.2 ft; NWS Kaiwi 15 kt
+  Sun Oct 11  no: models differ by 7 kt; wind chop 1.8 ft
+  Mon Oct 12  no: models differ by 6 kt
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
