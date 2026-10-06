@@ -56,17 +56,17 @@ ok   Hawaii Mesonet (windward stations)
 ...  Penguin Bank forecast
 ok   Channel wind, 3 models (Open-Meteo)
 ok   Channel waves + wind chop (Open-Meteo Marine)
-ok   NWS wind forecast @ Kailua offshore
-ok   NWS wind forecast @ Makapuu corner
-ok   NWS wind forecast @ Hawaii Kai exit
-ok   NWS wind forecast @ P FAD
 ok   NWS wind forecast @ Kaiwi mid-channel
+ok   NWS wind forecast @ Hawaii Kai exit
+ok   NWS wind forecast @ Makapuu corner
+ok   NWS wind forecast @ P FAD
+ok   NWS wind forecast @ Kailua offshore
 ok   NWS wind forecast @ Bank N ledge
-ok   WW3 waves @ Bank N ledge
 ok   WW3 waves @ P FAD
-ok   WW3 waves @ Kaiwi mid-channel
-ok   WW3 waves @ Hawaii Kai exit
+ok   WW3 waves @ Bank N ledge
 ok   WW3 waves @ Makapuu corner
+ok   WW3 waves @ Hawaii Kai exit
+ok   WW3 waves @ Kaiwi mid-channel
 ok   WW3 waves @ Kailua offshore
 ok   NWS Kaiwi Channel forecast (PHZ116)
 ok   NWS Maui County Leeward Waters forecast (PHZ118)
@@ -90,12 +90,12 @@ Day-by-day (trip window 6:00-14:00 HST):
   Sun Oct 11  7.9  Good      North toward Kahuku  wind 9–11 mph, waves 4.9–5.0 ft @ 9–10 s
 
 Penguin Bank check:
-  Mon Oct 5  no: wind 19 kt at Kaiwi mid-channel 5 AM; channel average 15.2 kt; wind chop 3.8 ft; period down to 7 s; windy day before (15 kt)
-  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 6 AM; channel average 9.0 kt; wind chop 2.6 ft; windy day before (15 kt); NWS Kaiwi 15 kt
-  Wed Oct 7  WINDOW (1st run)
+  Mon Oct 5  no: wind 19 kt at Kaiwi mid-channel 5 AM; channel average 15.2 kt; wind chop 3.8 ft; period down to 7 s
+  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 6 AM; channel average 9.0 kt; wind chop 2.6 ft; NWS Kaiwi 15 kt
+  Wed Oct 7  WINDOW (confirmed)
   Thu Oct 8  no: wind 12 kt at Kaiwi mid-channel 7 AM; channel average 9.6 kt
   Fri Oct 9  no: wind 12 kt at Kaiwi mid-channel 5 AM; channel average 9.2 kt; wind chop 2.4 ft
-  Sat Oct 10  no: models differ by 7 kt; waves 6.5 ft
+  Sat Oct 10  no: models differ by 7 kt
   Sun Oct 11  no: models differ by 6 kt; wind chop 3.5 ft
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
