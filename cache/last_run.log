@@ -5,7 +5,8 @@ ok   Open-Meteo Marine waves (all spots)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-ok   WW3 waves + chop @ Bay mouth
+FAIL WW3 waves + chop @ Bay mouth: network error: <urlopen error _ssl.c:993: The handshake operation timed out>
+     using saved WW3 waves + chop from 6 h ago
 ...  SWAN waves @ Bay mouth
 ok   SWAN waves @ Bay mouth
 ...  NWS wind forecast @ U FAD
@@ -50,28 +51,28 @@ ok   Coconut Island (HIMB) wind
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      2 kt from N  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           3 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   3 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0533 Maunawili Palawai      0 kt from N  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0541 Kaaawa Makai           1 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0552 Laie                   3 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
   Tue Oct 6   no forecast
-  Wed Oct 7   8.7  Good      East to MM & T       wind 7–10 mph, waves 5.4–5.6 ft @ 13–15 s  [Wind from the SSE – windward side in the lee]
-  Thu Oct 8   8.4  Good      North toward Kahuku  wind 9–13 mph, waves 4.5–4.8 ft @ 12 s  [Wind from the SSW – windward side in the lee]
-  Fri Oct 9   8.5  Good      North toward Kahuku  wind 5–11 mph, waves 5.3–5.5 ft @ 10–11 s  [Wind from the SSE – windward side in the lee]
-  Sat Oct 10  6.2  Marginal  North toward Kahuku  wind 9–11 mph, waves 5.7–5.8 ft @ 10–11 s
-  Sun Oct 11  8.6  Good      North toward Kahuku  wind 8 mph, waves 4.3–4.8 ft @ 9–10 s
-  Mon Oct 12  9.4  Epic      North toward Kahuku  wind 6 mph, waves 4.3–4.9 ft @ 8–12 s
+  Wed Oct 7   8.5  Good      East to MM & T       wind 8–10 mph, waves 5.4–5.6 ft @ 13–15 s  [Wind from the SE – windward side in the lee]
+  Thu Oct 8   7.0  Marginal  North toward Kahuku  wind 11–12 mph, waves 4.5–4.8 ft @ 12 s  [Wind from the SSW – windward side in the lee]
+  Fri Oct 9   7.1  Marginal  East to MM & T       wind 10–11 mph, waves 5.7–5.8 ft @ 10–11 s  [Wind from the SSE – windward side in the lee]
+  Sat Oct 10  5.5  Marginal  North toward Kahuku  wind 11–12 mph, waves 5.7–5.8 ft @ 10–11 s
+  Sun Oct 11  9.0  Epic      North toward Kahuku  wind 7–9 mph, waves 4.3–4.8 ft @ 9–10 s
+  Mon Oct 12  9.4  Epic      North toward Kahuku  wind 5–7 mph, waves 4.3–4.9 ft @ 8–12 s
 
 Penguin Bank check:
-  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.5 kt; wind chop 1.8 ft; NWS Kaiwi 15 kt
+  Tue Oct 6  no: wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.5 kt; wind chop 1.8 ft
   Wed Oct 7  WINDOW (confirmed)
-  Thu Oct 8  no: wind 19 kt at Kaiwi mid-channel 10 AM; channel average 14.8 kt; models differ by 4 kt; wind chop 4.9 ft; waves 6.4 ft; period down to 8 s; NWS Kaiwi 15 kt
-  Fri Oct 9  no: models differ by 5 kt; NWS Kaiwi 15 kt
-  Sat Oct 10  no: wind 13 kt at Kaiwi mid-channel 8 AM; models differ by 9 kt; NWS Kaiwi 15 kt
-  Sun Oct 11  WINDOW (1st run)
-  Mon Oct 12  no: models differ by 5 kt
+  Thu Oct 8  no: wind 17 kt at Kaiwi mid-channel 9 AM; channel average 14.1 kt; wind chop 4.9 ft; waves 6.4 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Fri Oct 9  no: models differ by 5 kt
+  Sat Oct 10  no: wind 13 kt at Kaiwi mid-channel 6 AM; channel average 10.5 kt; models differ by 10 kt; NWS Kaiwi 15 kt
+  Sun Oct 11  no: wind 14 kt at Kaiwi mid-channel 2 PM; channel average 8.3 kt
+  Mon Oct 12  no: wind 15 kt at Kaiwi mid-channel 8 AM; channel average 9.0 kt; models differ by 10 kt
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
