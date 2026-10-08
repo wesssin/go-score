@@ -5,33 +5,42 @@ ok   Open-Meteo Marine waves (all spots)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-ok   WW3 waves + chop @ Bay mouth
+FAIL WW3 waves + chop @ Bay mouth: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  SWAN waves @ Bay mouth
-ok   SWAN waves @ Bay mouth
+FAIL SWAN waves @ Bay mouth: network error: <urlopen error timed out>
+     using saved SWAN waves from 3 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-ok   WW3 waves + chop @ U FAD
+FAIL WW3 waves + chop @ U FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  SWAN waves @ U FAD
-ok   SWAN waves @ U FAD
+FAIL SWAN waves @ U FAD: network error: <urlopen error timed out>
+     using saved SWAN waves from 3 h ago
 ...  NWS wind forecast @ MM FAD
 ok   NWS wind forecast @ MM FAD
 ...  WW3 waves + chop @ MM FAD
-ok   WW3 waves + chop @ MM FAD
+FAIL WW3 waves + chop @ MM FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  NWS wind forecast @ T FAD
 ok   NWS wind forecast @ T FAD
 ...  WW3 waves + chop @ T FAD
-ok   WW3 waves + chop @ T FAD
+FAIL WW3 waves + chop @ T FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  NWS wind forecast @ LL FAD
 ok   NWS wind forecast @ LL FAD
 ...  WW3 waves + chop @ LL FAD
-ok   WW3 waves + chop @ LL FAD
+FAIL WW3 waves + chop @ LL FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  SWAN waves @ LL FAD
-ok   SWAN waves @ LL FAD
+FAIL SWAN waves @ LL FAD: network error: <urlopen error timed out>
+     using saved SWAN waves from 3 h ago
 ...  NWS wind forecast @ X FAD
 ok   NWS wind forecast @ X FAD
 ...  WW3 waves + chop @ X FAD
-ok   WW3 waves + chop @ X FAD
+FAIL WW3 waves + chop @ X FAD: network error: <urlopen error timed out>
+     using saved WW3 waves + chop from 3 h ago
 ...  NWS Oahu Windward Waters forecast
 ok   NWS Oahu Windward Waters forecast
 ...  buoy 51202 Mokapu (your buoy)
@@ -49,14 +58,11 @@ ok   buoy 51101 NW Hawaii (backup)
 ...  Kaneohe airport wind
 ok   Kaneohe airport wind
 ...  Coconut Island (HIMB) wind
-ok   Coconut Island (HIMB) wind
+FAIL Coconut Island (HIMB) wind: timed out after 40s
 ...  Lifeguard surf reports
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
-ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      0 kt from S  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           3 kt from S  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   0 kt from WSW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+FAIL Hawaii Mesonet (windward stations): network error: <urlopen error timed out>
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
@@ -70,11 +76,11 @@ Day-by-day (trip window 6:00-14:00 HST):
 
 Penguin Bank check:
   Wed Oct 7  WINDOW (confirmed)
-  Thu Oct 8  no: wind 21 kt at Kaiwi mid-channel 11 AM; channel average 16.6 kt; models differ by 6 kt; wind chop 5.6 ft; waves 7.3 ft; period down to 8 s; NWS Kaiwi 15 kt
-  Fri Oct 9  no: channel average 8.1 kt; NWS Kaiwi 15 kt
-  Sat Oct 10  no: wind 16 kt at Kaiwi mid-channel 2 PM; channel average 9.1 kt; wind chop 1.6 ft; NWS Kaiwi 15 kt
-  Sun Oct 11  no: wind 13 kt at Kaiwi mid-channel 5 AM; channel average 8.6 kt
-  Mon Oct 12  no: wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.3 kt; models differ by 5 kt; NWS Kaiwi 15 kt
+  Thu Oct 8  no: wind 19 kt at Kaiwi mid-channel 10 AM; channel average 15.7 kt; wind chop 5.6 ft; waves 7.3 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Fri Oct 9  no: channel average 8.3 kt; NWS Kaiwi 15 kt
+  Sat Oct 10  no: wind 17 kt at Kaiwi mid-channel 2 PM; channel average 10.1 kt; wind chop 1.6 ft; NWS Kaiwi 15 kt
+  Sun Oct 11  no: wind 13 kt at Kaiwi mid-channel 5 AM; channel average 9.1 kt; models differ by 4 kt
+  Mon Oct 12  no: wind 12 kt at Kaiwi mid-channel 2 PM; NWS Kaiwi 15 kt
   Tue Oct 13  WINDOW (confirmed)
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
