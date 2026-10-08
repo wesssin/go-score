@@ -50,28 +50,28 @@ ok   Coconut Island (HIMB) wind
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      0 kt from SSW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           4 kt from ESE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   4 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0533 Maunawili Palawai      1 kt from SSW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0541 Kaaawa Makai           5 kt from SW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0552 Laie                   3 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Wed Oct 7   9.0  Epic      East to MM & T       wind 6–10 mph, waves 4.3–5.6 ft @ 10–15 s  [Watch day: 2nd light day after the trades – leftover chop should have laid down; Wind from the SSE – windward side in the lee]
-  Thu Oct 8   3.0  Stay home East to MM & T       wind 16–18 mph, waves 4.9–5.1 ft @ 12 s  [Wind from the S – windward side in the lee]
-  Fri Oct 9   7.5  Good      North toward Kahuku  wind 7–12 mph, waves 5.3–5.5 ft @ 10–11 s  [Wind from the SSE – windward side in the lee]
-  Sat Oct 10  3.0  Stay home North toward Kahuku  wind 13–14 mph, waves 5.7–5.8 ft @ 10–11 s
-  Sun Oct 11  8.3  Good      North toward Kahuku  wind 8–10 mph, waves 4.3–4.8 ft @ 9–10 s
-  Mon Oct 12  8.2  Good      North toward Kahuku  wind 8–9 mph, waves 4.3–4.9 ft @ 8–12 s
-  Tue Oct 13  9.0  Epic      North toward Kahuku  wind 8 mph, waves 4.2–5.4 ft @ 8–15 s
+  Wed Oct 7   no forecast
+  Thu Oct 8   3.0  Stay home East to MM & T       wind 15–18 mph, waves 5.0–5.1 ft @ 12 s  [Wind from the S – windward side in the lee]
+  Fri Oct 9   6.4  Marginal  East to MM & T       wind 9–11 mph, waves 5.7–5.8 ft @ 11 s  [Wind from the SSE – windward side in the lee]
+  Sat Oct 10  0.5  Stay home North toward Kahuku  wind 13–14 mph, waves 6.1–6.3 ft @ 6–11 s
+  Sun Oct 11  3.7  Stay home North toward Kahuku  wind 9–10 mph, waves 4.5–4.9 ft @ 7 s
+  Mon Oct 12  8.2  Good      North toward Kahuku  wind 9–10 mph, waves 4.8–5.2 ft @ 8 s
+  Tue Oct 13  1.0  Stay home North toward Kahuku  wind 8 mph, waves 7.4–7.6 ft @ 8 s
 
 Penguin Bank check:
   Wed Oct 7  WINDOW (confirmed)
-  Thu Oct 8  no: wind 19 kt at Kaiwi mid-channel 8 AM; channel average 15.8 kt; models differ by 6 kt; wind chop 3.9 ft; waves 6.0 ft; period down to 9 s; NWS Kaiwi 15 kt
+  Thu Oct 8  no: wind 19 kt at Kaiwi mid-channel 9 AM; channel average 16.1 kt; models differ by 5 kt; wind chop 5.6 ft; waves 7.3 ft; period down to 8 s; NWS Kaiwi 15 kt
   Fri Oct 9  no: channel average 8.1 kt; NWS Kaiwi 15 kt
-  Sat Oct 10  no: wind 17 kt at Kaiwi mid-channel 2 PM; channel average 9.1 kt; wind chop 2.6 ft; NWS Kaiwi 15 kt
-  Sun Oct 11  no: wind 12 kt at Kaiwi mid-channel 5 AM
-  Mon Oct 12  no: wind 12 kt at Kaiwi mid-channel 2 PM; channel average 8.2 kt
-  Tue Oct 13  no: models differ by 4 kt
+  Sat Oct 10  no: wind 19 kt at Kaiwi mid-channel 2 PM; channel average 10.3 kt; wind chop 1.6 ft; NWS Kaiwi 15 kt
+  Sun Oct 11  no: wind 11 kt at Kaiwi mid-channel 7 AM; channel average 8.3 kt
+  Mon Oct 12  no: wind 12 kt at Kaiwi mid-channel 5 AM; channel average 9.2 kt
+  Tue Oct 13  no: models differ by 6 kt
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
