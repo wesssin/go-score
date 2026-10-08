@@ -52,10 +52,12 @@ SPOTS = [("Bay mouth", 21.480, -157.770, True),
          ("U FAD", 21.582, -157.692, False),
          ("MM FAD", 21.607, -157.520, False),
          ("T FAD", 21.503, -157.430, False),
-         ("LL FAD", 21.748, -157.755, False)]          # Hauula FAD, toward Kahuku
+         ("LL FAD", 21.748, -157.755, False),          # Hauula FAD, toward Kahuku
+         ("X FAD", 21.863, -157.993, False)]           # Kahuku FAD (HIMB X, 21-51.8N 157-59.6W), where the east side meets the north shore
 # Routes you might run. Each day is scored per route and the page shows the best one.
 ROUTES = [("East to MM & T", ["Bay mouth", "U FAD", "MM FAD", "T FAD"]),
-          ("North toward Kahuku", ["Bay mouth", "U FAD", "LL FAD"])]
+          ("North toward Kahuku", ["Bay mouth", "U FAD", "LL FAD"]),
+          ("North to X", ["Bay mouth", "LL FAD", "X FAD"])]
 # Lee effect: wind blowing FROM these directions (degrees) crosses Oahu or only a short stretch of water
 # before reaching the spot, so it builds less chop. The factor multiplies the wind penalty (1 = no help).
 # Hand-set from the map, not yet tested against a south-wind day - tune as you log trips.
@@ -63,7 +65,8 @@ LEE = {"Bay mouth": [(150, 330, 0.35), (120, 150, 0.7)],
        "U FAD": [(190, 300, 0.55), (160, 190, 0.75), (300, 330, 0.8)],
        "LL FAD": [(170, 280, 0.45), (140, 170, 0.75), (280, 320, 0.7)],
        "MM FAD": [(210, 290, 0.8)],
-       "T FAD": [(230, 290, 0.85)]}
+       "T FAD": [(230, 290, 0.85)],
+       "X FAD": [(150, 240, 0.5), (120, 150, 0.8), (240, 270, 0.75)]}   # south of X is the Kahuku end of Oahu
 TRADES = (20, 120)                  # wind from these directions = normal trades
 # Settle-then-watch pattern (from Sep 7-9 2026): after a windy trade day, the first light day still carries
 # leftover slop ("settling day"); the SECOND light day in a row is when the sea has had time to lay down ("watch day").
@@ -630,7 +633,7 @@ def compute_spots(spot_wind, spot_waves, days):
                 for src in order:
                     w = spot_waves.get(name, {}).get(src, {}).get(ut)
                     if w and w.get("hs") is not None and w.get("tp"):
-                        rec.update(hs=w["hs"], tp=w["tp"], wave_src=src)
+                        rec.update(hs=w["hs"], tp=w["tp"], wave_src=src, wave_dir=w.get("dir"))
                         break
                 ww3 = spot_waves.get(name, {}).get("WW3", {}).get(ut) or spot_waves.get(name, {}).get("Open-Meteo", {}).get(ut)
                 if ww3:
@@ -814,6 +817,7 @@ def render(days, ctx, status, demo):
     if pb_ok:
         hero = (hero[0], hero[1], hero[2] + " \u00b7 \u2693 Penguin Bank window: %s" % ", ".join(d.strftime("%a %b %-d") for d in pb_ok))
 
+    route_plans = make_route_plans(days, per_spot, meta, spot_scores, summaries)
     cards, strips, rows = [], [], []
     for d, hrs in days.items():
         s = summaries[d]
@@ -831,6 +835,9 @@ def render(days, ctx, status, demo):
                 extra += '<p class="route">Best: <b>%s</b>%s</p>' % (esc(m["best"]), (" · " + esc(others)) if others else "")
             for kind, text in flags.get(d.date(), []):
                 extra += '<p class="flag %s">%s %s</p>' % (kind, "★" if kind == "watch" else "↻", esc(text))
+            rp = route_plans.get(d)
+            if rp:
+                extra += '<p class="routeplan">\u27A4 %s</p>' % esc(rp[2])
             if pbc:
                 import penguin as pb_mod
                 extra += pb_mod.card_badge(pb_days.get(d.date()), esc)
@@ -938,11 +945,42 @@ def render(days, ctx, status, demo):
            "%%CARDS%%": "".join(cards), "%%HOURS_HDR%%": hours_hdr, "%%STRIPS%%": "".join(strips), "%%NOW%%": now_html,
            "%%UP%%": "".join(up_rows), "%%CWF%%": cwf_html or '<p class="muted">NWS text forecast not available this run.</p>',
            "%%ROWS%%": "".join(rows), "%%STATUS%%": status_html, "%%WIN%%": win_txt,
-           "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES)), "%%PENGUIN%%": penguin_section(pbc)}
+           "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES)), "%%PENGUIN%%": penguin_section(pbc),
+           "%%ROUTEPLANS%%": route_section(route_plans)}
     page = PAGE
     for k, v in rep.items():
         page = page.replace(k, v)
     return page
+
+
+def make_route_plans(days, per_spot, meta, spot_scores, summaries):
+    """{day: (best, reverse, card_line)} for Good/Epic days."""
+    out = {}
+    try:
+        import route as rt
+    except Exception:  # noqa
+        return out
+    me = sys.modules[__name__]
+    for d in days:
+        s = summaries.get(d)
+        if not s or s["score"] < rt.MIN_SCORE:
+            continue
+        try:
+            prefer = dict(ROUTES).get(meta.get(d, {}).get("best"))
+            best, rev = rt.best_plan(me, per_spot, d, spot_scores.get(d, {}), prefer)
+            if best:
+                out[d] = (best, rev, rt.summary(me, best, rev))
+        except Exception as e:  # noqa
+            print("route plan failed for %s: %s" % (d.date(), str(e)[:120]))
+    return out
+
+
+def route_section(route_plans):
+    try:
+        import route as rt
+    except Exception:  # noqa
+        return ""
+    return rt.details_html(sys.modules[__name__], [(d, v[0], v[1]) for d, v in sorted(route_plans.items())])
 
 
 def penguin_section(pbc):
@@ -973,7 +1011,7 @@ main{max-width:1100px;margin:0 auto;padding:20px 16px 48px}h1{font-size:22px;mar
 .card{background:var(--surface);border:1px solid var(--ring);border-left:5px solid var(--muted);border-radius:10px;padding:12px}.card h3{margin:0;font-size:13px;color:var(--ink2);font-weight:600}
 .card.good{border-left-color:var(--good)}.card.warning{border-left-color:var(--warning)}.card.critical{border-left-color:var(--critical)}.big{font-size:34px;font-weight:700;line-height:1.1}
 .tier{font-weight:600}.dot{display:inline-block;width:1.3em;text-align:center;border-radius:50%;color:#fff;font-size:12px;line-height:1.3em}.dot.good{background:var(--good)}.dot.warning{background:var(--warning);color:#000}.dot.critical{background:var(--critical)}
-.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.flag.penguin{color:var(--ink)}.flag.penguin a{color:inherit}.pb-yes td{font-weight:600}.note{color:var(--muted);font-size:12px;margin:0}
+.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.flag.penguin{color:var(--ink)}.routeplan{font-size:12px;margin:0 0 4px;color:var(--ink)}.plan{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:10px 12px;margin:0 0 8px;font-size:13px}.plan ul{margin:6px 0 0;padding-left:18px}.flag.penguin a{color:inherit}.pb-yes td{font-weight:600}.note{color:var(--muted);font-size:12px;margin:0}
 .strip-row{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;margin:4px 0}.strip-label{font-size:12px;color:var(--ink2)}
 .strip,.strip-head{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}.cell{position:relative;text-align:center;font-size:12px;padding:6px 0;border-radius:4px;font-variant-numeric:tabular-nums}
 .cell.hdr{background:none;color:var(--muted);font-size:11px;padding:2px 0}.cell.nodata{background:var(--grid);color:var(--muted)}.cell.win{box-shadow:0 0 0 2px var(--ink2) inset}
@@ -998,6 +1036,7 @@ ul.status{list-style:none;padding:0;margin:0;font-size:13px}ul.status li{margin:
 <h2>Right now</h2><div class="tiles">%%NOW%%</div>
 <h2>Buoys, nearest first then upstream</h2><div class="wrap"><table><thead><tr><th>Buoy</th><th>Reading</th><th>Waves</th><th>Period</th><th>From</th><th>Last 6 h</th></tr></thead><tbody>%%UP%%</tbody></table></div>
 <h2>NWS forecast – Oahu Windward Waters</h2>%%CWF%%
+<h2>Suggested routes (Good and Epic days)</h2>%%ROUTEPLANS%%
 <h2>Details</h2><div class="wrap"><table><thead><tr><th>Day</th><th>Score</th><th>Call</th><th>Best route</th><th>Wind</th><th>Waves</th><th>Period</th><th>By spot</th><th>Wind models</th><th>Held back by</th></tr></thead><tbody>%%ROWS%%</tbody></table></div>
 <h2>Penguin Bank check</h2>%%PENGUIN%%
 <h2>Data sources this run</h2><ul class="status">%%STATUS%%</ul>
@@ -1036,7 +1075,9 @@ def demo_ctx():
 
 # =============================================================== backtest
 CALIBRATION = [("2026-09-08", "sloppy but manageable, nearshore, day before epic"), ("2026-09-09", "epic"), ("2026-09-13", "good"),
-               ("2026-06-13", "nice"), ("2026-06-21", "nice"), ("2026-06-16", "MISERABLE")]
+               ("2026-06-13", "nice"), ("2026-06-21", "nice"), ("2026-06-16", "MISERABLE"),
+               ("2026-10-07", "nearshore only - kayak Lanikai/Mokes 12-3 PM, NOT on the boat (offshore sea state not seen): "
+                              "SE breeze peaked 12-1 PM (felt, before checking data), tips not whitecaps, calmer by 3 PM; felt like a mid-8")]
 SEQUENCE = ("2026-09-03", "2026-09-12")    # storm -> settle -> epic run, checked against the pattern flags
 
 
@@ -1149,7 +1190,8 @@ def push_summary(days, meta, flags, heads, n_days=5):
         name = tier_for(s["score"])[0]
         kinds = [k for k, _ in flags.get(d.date(), [])]
         mark = " \u2605 watch" if "watch" in kinds else (" \u21BB settling" if "settle" in kinds else "")
-        route = "Kahuku side" if meta.get(d, {}).get("best", "").startswith("North") else "MM & T"
+        best_rn = meta.get(d, {}).get("best", "")
+        route = "X side" if best_rn == "North to X" else "Kahuku side" if best_rn.startswith("North") else "MM & T"
         lines.append("%s: %.1f %s (%s)%s" % (d.strftime("%a %-d"), s["score"], name, route, mark))
         if best is None or s["score"] > best[1]:
             best = (d, s["score"], name)
@@ -1253,7 +1295,9 @@ def main():
                 ctx["buoys"][sid] = v
         ctx["airport"] = job("Kaneohe airport wind", fetch_airport, 40)
         past = {}
-        for k in (1, 2):   # observed wind for the last two days, so the settle/watch pattern knows what came before
+        # observed wind for the last two days (and today, once today's window is over), so the settle/watch
+        # pattern knows what came before
+        for k in ((0, 1, 2) if datetime.now(HST).hour >= WINDOW[1] else (1, 2)):
             dd = (datetime.now(HST) - timedelta(days=k)).replace(hour=0, minute=0, second=0, microsecond=0)
             try:
                 w = run_with_timeout(lambda: airport_day(dd), 30)
@@ -1298,7 +1342,7 @@ def main():
         os.makedirs("forecast_history", exist_ok=True)
         def rnd(v):
             return round(v, 2) if isinstance(v, float) else v
-        snap = {n: [{"t": r["t"].isoformat(), **{k: rnd(r.get(k)) for k in ("score", "wind", "wdir", "lee", "hs", "tp", "ws_hs", "wave_src")}}
+        snap = {n: [{"t": r["t"].isoformat(), **{k: rnd(r.get(k)) for k in ("score", "wind", "wdir", "lee", "hs", "tp", "ws_hs", "wave_src", "wave_dir")}}
                     for r in recs if r["hour"] in STRIP_HOURS] for n, recs in per_spot.items()}
         with gzip.open(os.path.join("forecast_history", datetime.now(HST).strftime("forecast_%Y%m%d_%H%M.json.gz")), "wt") as f:
             json.dump(snap, f)
