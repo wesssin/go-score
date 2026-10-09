@@ -2,7 +2,7 @@
 """
 go_score.py (v3) - windward Oahu go / no-go forecast for a 15' RIB out of Heeia Kea.
 
-Scores every hour 0-10 along your route (bay mouth, U FAD, MM FAD, T FAD), scores each day over
+Scores every hour 0-10 at the offshore spots on each route (U, MM, T, LL, X FADs; the bay mouth is shown, not scored), scores each day over
 your trip window (6 AM-2 PM HST), and writes a self-contained page: go_score.html
 
   python go_score.py --open        live forecast, opens the page
@@ -55,9 +55,12 @@ SPOTS = [("Bay mouth", 21.480, -157.770, True),
          ("LL FAD", 21.748, -157.755, False),          # Hauula FAD, toward Kahuku
          ("X FAD", 21.863, -157.993, False)]           # Kahuku FAD (HIMB X, 21-51.8N 157-59.6W), where the east side meets the north shore
 # Routes you might run. Each day is scored per route and the page shows the best one.
-ROUTES = [("East to MM & T", ["Bay mouth", "U FAD", "MM FAD", "T FAD"]),
-          ("North toward Kahuku", ["Bay mouth", "U FAD", "LL FAD"]),
-          ("North to X", ["Bay mouth", "LL FAD", "X FAD"])]
+# Only offshore spots count toward the score (Wes: a rough bay mouth never stops him if it's clean offshore,
+# and a calm bay mouth never makes a bad offshore day worth it). The bay mouth is shown as a "getting out" line.
+ROUTES = [("East to MM & T", ["U FAD", "MM FAD", "T FAD"]),
+          ("North toward Kahuku", ["U FAD", "LL FAD"]),
+          ("North to X", ["LL FAD", "X FAD"])]
+NWS_CHOP_FACTOR = 0.8   # NWS short-period wind swell (period <= 8 s, 3 ft+) counts as this much wind chop offshore
 # Lee effect: wind blowing FROM these directions (degrees) crosses Oahu or only a short stretch of water
 # before reaching the spot, so it builds less chop. The factor multiplies the wind penalty (1 = no help).
 # Hand-set from the map, not yet tested against a south-wind day - tune as you log trips.
@@ -421,6 +424,33 @@ def parse_cwf(text, today):
     return heads, issued, days
 
 
+WAVE_PART = re.compile(r"(north|south|east|west|northeast|northwest|southeast|southwest|"
+                       r"north northeast|east northeast|east southeast|south southeast|south southwest|west southwest|"
+                       r"west northwest|north northwest)\s+(\d+)\s+feet\s+at\s+(\d+)\s+seconds", re.I)
+COMPASS16 = {"north": 0, "north northeast": 22, "northeast": 45, "east northeast": 68, "east": 90, "east southeast": 112,
+             "southeast": 135, "south southeast": 158, "south": 180, "south southwest": 202, "southwest": 225,
+             "west southwest": 248, "west": 270, "west northwest": 292, "northwest": 315, "north northwest": 338}
+
+
+def nws_wave_parts(body):
+    """'Wave Detail: East 4 feet at 7 seconds and north northwest 3 feet at 13 seconds' -> [(dir_deg, ft, s, name)]"""
+    out = []
+    for name, ft, sec in WAVE_PART.findall(body or ""):
+        out.append((COMPASS16.get(name.lower()), int(ft), int(sec), name.lower()))
+    return out
+
+
+def nws_short_swell(cwf_days):
+    """{date: {"ft", "s", "dir", "name"}} for days whose NWS daytime text has a short-period (<= 8 s) component of 3 ft or more."""
+    out = {}
+    for d, parts in (cwf_days or {}).items():
+        short = [p for p in nws_wave_parts(parts.get("day")) if p[2] <= 8 and p[1] >= 3]
+        if short:
+            p = max(short, key=lambda x: x[1])
+            out[d] = {"ft": p[1], "s": p[2], "dir": p[0], "name": p[3]}
+    return out
+
+
 def nws_wind_range(body):
     if not body:
         return None
@@ -610,7 +640,7 @@ def vec_mean_dir(dirs, weights=None):
     return math.degrees(math.atan2(y, x)) % 360
 
 
-def compute_spots(spot_wind, spot_waves, days):
+def compute_spots(spot_wind, spot_waves, days, nws_short=None):
     """Per-spot hourly records (list of days*24) with wind, direction, lee factor, waves and score."""
     today = datetime.now(HST).replace(hour=0, minute=0, second=0, microsecond=0)
     per_spot = {}
@@ -635,9 +665,16 @@ def compute_spots(spot_wind, spot_waves, days):
                     if w and w.get("hs") is not None and w.get("tp"):
                         rec.update(hs=w["hs"], tp=w["tp"], wave_src=src, wave_dir=w.get("dir"))
                         break
-                ww3 = spot_waves.get(name, {}).get("WW3", {}).get(ut) or spot_waves.get(name, {}).get("Open-Meteo", {}).get(ut)
-                if ww3:
-                    rec["ws_hs"], rec["ws_tp"] = ww3.get("ws_hs"), ww3.get("ws_tp")
+                for csrc in ("WW3", "Open-Meteo"):      # wind chop: first source that has a value for this hour
+                    cw = spot_waves.get(name, {}).get(csrc, {}).get(ut)
+                    if cw and cw.get("ws_hs") is not None:
+                        rec["ws_hs"], rec["ws_tp"], rec["chop_src"] = cw["ws_hs"], cw.get("ws_tp"), csrc
+                        break
+                ns = (nws_short or {}).get(lt.date())
+                if ns and not near and 5 <= h < 18:
+                    floor = ns["ft"] * NWS_CHOP_FACTOR
+                    if (rec.get("ws_hs") or 0) < floor:
+                        rec["ws_hs"], rec["ws_tp"], rec["chop_src"] = floor, ns["s"], "NWS"
                 recs.append(rec)
         for i, r in enumerate(recs):
             nb = [recs[j]["wind_raw"] for j in range(max(0, i - 1), min(len(recs), i + 2)) if "wind_raw" in recs[j]]
@@ -824,7 +861,13 @@ def render(days, ctx, status, demo):
         title = fmt_day(d) + ("  · weekend" if d.weekday() >= 5 else "")
         nws = cwf_days.get(d.date(), {}).get("day")
         nws_w = nws_wind_range(nws)
-        spots_line = " · ".join("%s %.1f" % (n.replace(" FAD", ""), v) for n, v in spot_scores[d].items())
+        spots_line = " · ".join("%s %.1f" % (n.replace(" FAD", ""), v) for n, v in spot_scores[d].items() if n != "Bay mouth")
+        bay = [r for r in per_spot.get("Bay mouth", []) if r["t"].date() == d.date() and WINDOW[0] <= r["hour"] < WINDOW[1] and "hs" in r]
+        bay_line = ("Getting out (bay mouth, not scored): %s kt, %s ft @ %s s" % (
+            rng(min(r.get("wind", 0) for r in bay), max(r.get("wind", 0) for r in bay)),
+            rng(min(r["hs"] for r in bay), max(r["hs"] for r in bay), 1), rng(min(r["tp"] for r in bay), max(r["tp"] for r in bay)))) if bay else ""
+        ns = ctx.get("nws_short", {}).get(d.date())
+        short_txt = ("<br>+ %d ft @ %d s %s wind swell (NWS, counted as chop)" % (ns["ft"], ns["s"], ns["name"])) if ns else ""
         if s:
             name, icon, role = tier_for(s["score"])
             note = s["notes"][0] if s["notes"] else ("held back by " + s["limiter"] if s["limiter"] and s["score"] < 9 else "clean across the window")
@@ -847,10 +890,11 @@ def render(days, ctx, status, demo):
             cards.append(
                 '<article class="card %s"><h3>%s</h3><div class="big">%.1f</div>'
                 '<div class="tier"><span class="dot %s" aria-hidden="true">%s</span> %s</div>'
-                '<p class="meta">wind %s mph<br>waves %s ft @ %s s%s</p><p class="spots">%s</p>%s<p class="note">%s</p></article>'
+                '<p class="meta">wind %s mph<br>waves %s ft @ %s s%s%s</p><p class="spots">%s</p>%s%s<p class="note">%s</p></article>'
                 % (role, title, s["score"], role, icon, name, rng(mph(s["wind_min"]), mph(s["wind_max"])),
-                   rng(s["hs_min"], s["hs_max"], 1), rng(s["tp_min"], s["tp_max"]),
-                   ("<br>chop up to %.1f ft" % s["chop_max"]) if s["chop_max"] else "", esc(spots_line), extra, esc(note)))
+                   rng(s["hs_min"], s["hs_max"], 1), rng(s["tp_min"], s["tp_max"]), short_txt,
+                   ("<br>chop up to %.1f ft" % s["chop_max"]) if s["chop_max"] else "", esc(spots_line),
+                   ('<p class="bay">%s</p>' % esc(bay_line)) if bay_line else "", extra, esc(note)))
         else:
             past = d.date() == datetime.now(HST).date() and datetime.now(HST).hour >= WINDOW[1]
             cards.append('<article class="card none"><h3>%s</h3><div class="big">–</div><div class="tier">%s</div>%s</article>'
@@ -942,7 +986,7 @@ def render(days, ctx, status, demo):
            "%%UPDATED%%": datetime.now(HST).strftime("%a %b %-d, %-I:%M %p HST"),
            "%%DEMO%%": '<p class="demo">DEMO DATA – made-up numbers, just to show the layout.</p>' if demo else "",
            "%%BANNER%%": banner, "%%HERO_K%%": esc(hero[0]), "%%HERO_V%%": esc(hero[1]), "%%HERO_S%%": esc(hero[2]),
-           "%%CARDS%%": "".join(cards), "%%HOURS_HDR%%": hours_hdr, "%%STRIPS%%": "".join(strips), "%%NOW%%": now_html,
+           "%%CARDS%%": saved_copy_note(status) + "".join(cards), "%%HOURS_HDR%%": hours_hdr, "%%STRIPS%%": "".join(strips), "%%NOW%%": now_html,
            "%%UP%%": "".join(up_rows), "%%CWF%%": cwf_html or '<p class="muted">NWS text forecast not available this run.</p>',
            "%%ROWS%%": "".join(rows), "%%STATUS%%": status_html, "%%WIN%%": win_txt,
            "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES)), "%%PENGUIN%%": penguin_section(pbc),
@@ -983,6 +1027,17 @@ def route_section(route_plans):
     return rt.details_html(sys.modules[__name__], [(d, v[0], v[1]) for d, v in sorted(route_plans.items())])
 
 
+def saved_copy_note(status):
+    saved = [m for ok, m in status if "saved copy" in m]
+    failed = [m for ok, m in status if not ok and ("WW3" in m or "SWAN" in m)]
+    if not saved and not failed:
+        return ""
+    txt = ("The PacIOOS wave model timed out this run for %d spot(s); %s" % (len(failed),
+           "offshore waves come from saved copies (up to %d h old) and Open-Meteo." % CACHE_MAX_HOURS if saved else
+           "offshore waves come from Open-Meteo only."))
+    return '<p class="muted" style="grid-column:1/-1;margin:0 0 4px">\u24D8 %s</p>' % esc(txt)
+
+
 def penguin_section(pbc):
     try:
         import penguin as pb_mod
@@ -1011,7 +1066,7 @@ main{max-width:1100px;margin:0 auto;padding:20px 16px 48px}h1{font-size:22px;mar
 .card{background:var(--surface);border:1px solid var(--ring);border-left:5px solid var(--muted);border-radius:10px;padding:12px}.card h3{margin:0;font-size:13px;color:var(--ink2);font-weight:600}
 .card.good{border-left-color:var(--good)}.card.warning{border-left-color:var(--warning)}.card.critical{border-left-color:var(--critical)}.big{font-size:34px;font-weight:700;line-height:1.1}
 .tier{font-weight:600}.dot{display:inline-block;width:1.3em;text-align:center;border-radius:50%;color:#fff;font-size:12px;line-height:1.3em}.dot.good{background:var(--good)}.dot.warning{background:var(--warning);color:#000}.dot.critical{background:var(--critical)}
-.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.flag.penguin{color:var(--ink)}.routeplan{font-size:12px;margin:0 0 4px;color:var(--ink)}.plan{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:10px 12px;margin:0 0 8px;font-size:13px}.plan ul{margin:6px 0 0;padding-left:18px}.flag.penguin a{color:inherit}.pb-yes td{font-weight:600}.note{color:var(--muted);font-size:12px;margin:0}
+.meta{color:var(--ink2);font-size:13px;margin:8px 0 4px}.spots{font-size:12px;color:var(--ink2);margin:0 0 4px;font-variant-numeric:tabular-nums}.nws{font-size:12px;margin:0 0 4px;color:var(--ink)}.route{font-size:12px;margin:0 0 4px;color:var(--ink2)}.flag{font-size:12px;margin:0 0 4px;font-weight:600;color:var(--okt)}.flag.settle,.flag.lee{font-weight:500;color:var(--ink2)}.flag.penguin{color:var(--ink)}.bay{font-size:12px;margin:0 0 4px;color:var(--muted)}.routeplan{font-size:12px;margin:0 0 4px;color:var(--ink)}.plan{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:10px 12px;margin:0 0 8px;font-size:13px}.plan ul{margin:6px 0 0;padding-left:18px}.flag.penguin a{color:inherit}.pb-yes td{font-weight:600}.note{color:var(--muted);font-size:12px;margin:0}
 .strip-row{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;margin:4px 0}.strip-label{font-size:12px;color:var(--ink2)}
 .strip,.strip-head{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}.cell{position:relative;text-align:center;font-size:12px;padding:6px 0;border-radius:4px;font-variant-numeric:tabular-nums}
 .cell.hdr{background:none;color:var(--muted);font-size:11px;padding:2px 0}.cell.nodata{background:var(--grid);color:var(--muted)}.cell.win{box-shadow:0 0 0 2px var(--ink2) inset}
@@ -1040,7 +1095,7 @@ ul.status{list-style:none;padding:0;margin:0;font-size:13px}ul.status li{margin:
 <h2>Details</h2><div class="wrap"><table><thead><tr><th>Day</th><th>Score</th><th>Call</th><th>Best route</th><th>Wind</th><th>Waves</th><th>Period</th><th>By spot</th><th>Wind models</th><th>Held back by</th></tr></thead><tbody>%%ROWS%%</tbody></table></div>
 <h2>Penguin Bank check</h2>%%PENGUIN%%
 <h2>Data sources this run</h2><ul class="status">%%STATUS%%</ul>
-<p class="fine">How to read this: the score takes points off 10 for sustained wind (3-hour average), short-period chop and big waves, at each spot on the route, then averages the spots. Long, smooth swell costs almost nothing; small waves with a short period cost a lot. Epic needs 9+ with no rough hour; the day is capped at 3 if the route-average wind holds at 12 kt or more for 2+ hours, or any spot hits 15 kt. WW3 wind chop over 2.5 ft costs points even when the swell period looks long. Offshore spots use the WW3 model, which separates wind chop from swell. Fitted to five of your days, so treat the tiers as a starting point.</p>
+<p class="fine">How to read this: the score takes points off 10 for sustained wind (3-hour average), short-period chop and big waves, at each offshore spot on the route, then averages the spots (the bay mouth is shown for getting out but never counts). Long, smooth swell costs almost nothing; small waves with a short period cost a lot. Epic needs 9+ with no rough hour; the day is capped at 3 if the route-average wind holds at 12 kt or more for 2+ hours, or any spot hits 15 kt. WW3 wind chop over 2.5 ft costs points even when the swell period looks long. Offshore spots use the WW3 model, which separates wind chop from swell. Fitted to five of your days, so treat the tiers as a starting point.</p>
 </main></body></html>"""
 
 
@@ -1319,7 +1374,8 @@ def main():
         else:
             status.append((False, "Hawaii Mesonet: no token yet - put your free API token in hcdp_token.txt"))
 
-    per_spot = compute_spots(spot_wind, spot_waves, DAYS_AHEAD)
+    ctx["nws_short"] = nws_short_swell(ctx.get("cwf_days", {}))
+    per_spot = compute_spots(spot_wind, spot_waves, DAYS_AHEAD, ctx["nws_short"])
     days, meta = pick_best(per_spot)
     ctx.update(per_spot=per_spot, route_meta=meta, flags=pattern_flags(per_spot, ctx.get("past_days")))
     out_dir = os.path.dirname(os.path.abspath(a.out))
