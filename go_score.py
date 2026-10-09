@@ -29,6 +29,7 @@ import argparse
 import csv
 import gzip
 import html
+import http.client
 import io
 import json
 import math
@@ -215,6 +216,10 @@ def http_get(url, timeout=25, tries=2, accept=None, headers=None):
                 body = e.read().decode("utf-8", "replace")[:160].replace("\n", " ")
             except Exception:  # noqa
                 pass
+            if (e.code >= 500 or e.code == 429) and attempt < tries - 1:   # temporary server trouble: wait and retry
+                last = RuntimeError("HTTP %s %s" % (e.code, body))
+                time.sleep(4 * (attempt + 1))
+                continue
             raise RuntimeError("HTTP %s %s" % (e.code, body))
         except Exception as e:  # noqa
             last = e
@@ -246,9 +251,81 @@ def parse_dds(text, var):
     return [(a, int(b)) for a, b in re.findall(r"\[\s*(\w+)\s*=\s*(\d+)\s*\]", m.group(1))]
 
 
+ERDDAP_HOST = "pae-paha.pacioos.hawaii.edu"
+ERDDAP_GIVE_UP = 3          # after this many network failures in a row, skip PacIOOS for the rest of the run (use saved copies)
+ERDDAP_SOCKET_S = 45        # per-request socket timeout
+
+
+class ErddapSession:
+    """One kept-alive HTTPS connection to PacIOOS for the whole run, instead of a new connection per request.
+    From GitHub's servers most PacIOOS failures are timeouts while connecting, so fewer connections = fewer failures."""
+    def __init__(self):
+        self.conn, self.fails, self.lock = None, 0, threading.Lock()
+
+    def get(self, path):
+        if self.fails >= ERDDAP_GIVE_UP:
+            raise RuntimeError("skipped: PacIOOS did not answer earlier this run")
+        if not self.lock.acquire(timeout=100):
+            raise RuntimeError("PacIOOS connection busy")
+        try:
+            last = None
+            for attempt in range(2):
+                try:
+                    if self.conn is None:
+                        self.conn = http.client.HTTPSConnection(ERDDAP_HOST, timeout=ERDDAP_SOCKET_S)
+                    self.conn.request("GET", path, headers={"User-Agent": UA, "Connection": "keep-alive"})
+                    r = self.conn.getresponse()
+                    body = r.read().decode("utf-8", "replace")
+                    if r.status >= 500:
+                        last = RuntimeError("HTTP %s" % r.status)
+                        self._close()
+                        time.sleep(3)
+                        continue
+                    if r.status != 200:
+                        raise RuntimeError("HTTP %s %s" % (r.status, body[:160].replace("\n", " ")))
+                    self.fails = 0
+                    return body
+                except (OSError, http.client.HTTPException) as e:
+                    last = e
+                    self._close()
+            self.fails += 1
+            raise RuntimeError("network error: %s" % last)
+        finally:
+            self.lock.release()
+
+    def _close(self):
+        try:
+            if self.conn:
+                self.conn.close()
+        except Exception:  # noqa
+            pass
+        self.conn = None
+
+
+ERDDAP_SESSION = ErddapSession()
+
+
+def erddap_dds(dataset):
+    """Dataset layout (dimension names). It doesn't change, so it is saved in cache/ after the first fetch."""
+    path = os.path.join("cache", "dds_%s.txt" % dataset)
+    try:
+        with open(path) as f:
+            return f.read()
+    except Exception:  # noqa
+        pass
+    dds = ERDDAP_SESSION.get("/erddap/griddap/%s.dds" % dataset)
+    try:
+        os.makedirs("cache", exist_ok=True)
+        with open(path, "w") as f:
+            f.write(dds)
+    except Exception:  # noqa
+        pass
+    return dds
+
+
 def erddap_point(dataset, variables, t0, t1, lat, lon_west):
     """t1=None means 'through the end of the forecast' (ERDDAP rejects stop times past the last step)."""
-    dds = http_get(ERDDAP + "griddap/" + dataset + ".dds")
+    dds = erddap_dds(dataset)
     pieces = []
     for v in variables:
         q = ""
@@ -258,8 +335,8 @@ def erddap_point(dataset, variables, t0, t1, lat, lon_west):
                   "[(%.4f)]" % lat if n.startswith("lat") else
                   "[(%.4f)]" % (lon_west + 360.0) if n.startswith("lon") else "[0]")
         pieces.append(v + q)
-    url = ERDDAP + "griddap/" + dataset + ".csv?" + urllib.parse.quote(",".join(pieces), safe="[]():,=-.")
-    rows = list(csv.reader(io.StringIO(http_get(url, timeout=60))))
+    path = "/erddap/griddap/" + dataset + ".csv?" + urllib.parse.quote(",".join(pieces), safe="[]():,=-.")
+    rows = list(csv.reader(io.StringIO(ERDDAP_SESSION.get(path))))
     out = {}
     for r in rows[2:]:
         rec = dict(zip(rows[0], r))
@@ -323,6 +400,9 @@ def fetch_nws(lat, lon, t0, t1):
     return out
 
 
+GFS_WAVE_MODELS = ["ncep_gfswave016", "ncep_gfswave025"]   # NOAA GFS-Wave (same WAVEWATCH III engine as PacIOOS WW3)
+
+
 def om_multi(url, hourly, extra=None):
     """Open-Meteo accepts several points at once; returns a list of 'hourly' dicts in SPOTS order."""
     q = {"latitude": ",".join("%.4f" % s[1] for s in SPOTS), "longitude": ",".join("%.4f" % s[2] for s in SPOTS),
@@ -345,12 +425,14 @@ def fetch_om_wind():
     return res
 
 
-def fetch_om_marine():
-    last = None
-    for hourly in ("wave_height,wave_peak_period,wave_period,wave_direction,wind_wave_height,wind_wave_period",
-                   "wave_height,wave_period,wave_direction"):
+def fetch_om_marine(models=None):
+    last, data = None, None
+    tries = [(h, m) for m in (models or [None]) for h in
+             ("wave_height,wave_peak_period,wave_period,wave_direction,wind_wave_height,wind_wave_period",
+              "wave_height,wave_period,wave_direction")]
+    for hourly, model in tries:
         try:
-            data = om_multi("https://marine-api.open-meteo.com/v1/marine", hourly)
+            data = om_multi("https://marine-api.open-meteo.com/v1/marine", hourly, {"models": model} if model else None)
             break
         except Exception as e:  # noqa
             last, data = e, None
@@ -527,6 +609,16 @@ def fetch_airport():
     return best
 
 
+def fetch_mokh1():
+    """NOAA Mokuoloe (Coconut Island) station MOKH1 - NOAA-hosted, much more reliable from GitHub than PacIOOS."""
+    for r in ndbc_rows("MOKH1", "txt"):
+        kt = fnum(r.get("WSPD"))
+        if kt is not None:
+            g = fnum(r.get("GST"))
+            return {"t": r["t"], "kt": kt * MS_TO_KT, "gust": g * MS_TO_KT if g is not None else None, "dir": fnum(r.get("WDIR"))}
+    raise RuntimeError("no wind in recent rows")
+
+
 def fetch_himb():
     since = iso(datetime.now(UTC) - timedelta(hours=8))
     q = "time,wind_speed,gust_speed,wind_from_direction&time>=" + since
@@ -589,7 +681,7 @@ def is_windward(lat, lon):
 def fetch_mesonet(token):
     """Experimental: Hawaii Mesonet stations inside WINDWARD_BOX, latest wind. Prints what it finds."""
     h = {"Authorization": "Bearer " + token}
-    st = json.loads(http_get(HCDP_BASE + "/mesonet/db/stations?location=hawaii&limit=500", headers=h))
+    st = json.loads(http_get(HCDP_BASE + "/mesonet/db/stations?location=hawaii&limit=500", timeout=12, tries=1, headers=h))
     st = st if isinstance(st, list) else st.get("stations") or st.get("data") or []
     picks = []
     for s in st:
@@ -603,7 +695,7 @@ def fetch_mesonet(token):
         raise RuntimeError("no Mesonet stations in the windward box (found %d statewide)" % len(st))
     start = (datetime.now(UTC) - timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
     q = {"station_ids": ",".join(p["id"] for p in picks), "start_date": start, "location": "hawaii", "limit": 5000}
-    ms = json.loads(http_get(HCDP_BASE + "/mesonet/db/measurements?" + urllib.parse.urlencode(q), headers=h))
+    ms = json.loads(http_get(HCDP_BASE + "/mesonet/db/measurements?" + urllib.parse.urlencode(q), timeout=15, tries=1, headers=h))
     ms = ms if isinstance(ms, list) else ms.get("measurements") or ms.get("data") or []
     out = []
     for p in picks:
@@ -645,7 +737,7 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
     today = datetime.now(HST).replace(hour=0, minute=0, second=0, microsecond=0)
     per_spot = {}
     for name, lat, lon, near in SPOTS:
-        order = (["SWAN", "WW3", "Open-Meteo"] if near else ["WW3", "SWAN", "Open-Meteo"])
+        order = (["SWAN", "WW3", "GFS-Wave", "Open-Meteo"] if near else ["WW3", "SWAN", "GFS-Wave", "Open-Meteo"])
         recs = []
         for d in range(days):
             for h in range(24):
@@ -665,7 +757,7 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
                     if w and w.get("hs") is not None and w.get("tp"):
                         rec.update(hs=w["hs"], tp=w["tp"], wave_src=src, wave_dir=w.get("dir"))
                         break
-                for csrc in ("WW3", "Open-Meteo"):      # wind chop: first source that has a value for this hour
+                for csrc in ("WW3", "GFS-Wave", "Open-Meteo"):      # wind chop: first source that has a value for this hour
                     cw = spot_waves.get(name, {}).get(csrc, {}).get(ut)
                     if cw and cw.get("ws_hs") is not None:
                         rec["ws_hs"], rec["ws_tp"], rec["chop_src"] = cw["ws_hs"], cw.get("ws_tp"), csrc
@@ -942,7 +1034,7 @@ def render(days, ctx, status, demo):
                      '<div class="s">NDBC calls it <b>%s</b>%s%s</div></div>' % (
                          age_txt(b["t"]), b["hs"], fmt0(b.get("tp")), esc(label or "n/a"),
                          (" · steepness %.3f" % b["steep"]) if b.get("steep") else "", split))
-    for key, title in (("airport", "Kaneohe airport wind"), ("himb", "Coconut Island wind (in the bay)")):
+    for key, title in (("airport", "Kaneohe airport wind"), ("himb", "Coconut Island wind (NOAA Mokuoloe, in the bay)")):
         a = ctx.get(key)
         if a:
             tiles.append('<div class="tile"><div class="k">%s · %s</div><div class="v">%.0f mph (%.0f kt)</div><div class="s">from the %s%s</div></div>' % (
@@ -1280,6 +1372,33 @@ def send_push(days, meta, ctx):
         print("push sent (%s)" % r.status)
 
 
+# =============================================================== hourly model refresh
+def refresh_models():
+    """Fetch PacIOOS WW3/SWAN for every spot (and the Penguin Bank points) and save them in cache/, so the 4x-daily
+    runs always have a recent copy even when PacIOOS doesn't answer at run time."""
+    t0 = hour_floor(datetime.now(UTC) - timedelta(hours=2))
+    pts = [(n, la, lo, ("WW3", "SWAN") if in_swan_grid(la, lo) else ("WW3",), "") for n, la, lo, _near in SPOTS]
+    try:
+        import penguin as pb
+        pts += [(n, la, lo, ("WW3",), "PB_") for n, la, lo, _r in pb.POINTS]
+    except Exception:  # noqa
+        pass
+    ok = bad = 0
+    for name, lat, lon, models, prefix in pts:
+        for key in models:
+            fn = fetch_ww3 if key == "WW3" else fetch_swan
+            try:
+                v = run_with_timeout(lambda: fn(lat, lon, t0, None), 120)
+                save_cache("%s_%s%s" % (key, prefix, name.replace(" ", "_")), v)
+                ok += 1
+                print("ok   %s @ %s" % (key, name), flush=True)
+            except Exception as e:  # noqa
+                bad += 1
+                print("FAIL %s @ %s: %s" % (key, name, str(e)[:120]), flush=True)
+    print("refreshed %d, failed %d" % (ok, bad))
+    return 0
+
+
 # =============================================================== main
 def main():
     ap = argparse.ArgumentParser()
@@ -1289,7 +1408,10 @@ def main():
     ap.add_argument("--open", action="store_true")
     ap.add_argument("--notify", action="store_true", help="send a phone push via ntfy (needs NTFY_TOPIC)")
     ap.add_argument("--penguin", action="store_true", help="also write the detailed Penguin Bank forecast (penguin.html)")
+    ap.add_argument("--refresh-models", action="store_true", help="only refresh the saved PacIOOS WW3/SWAN copies in cache/ (hourly job)")
     a = ap.parse_args()
+    if a.refresh_models:
+        return refresh_models()
     if a.backtest:
         return backtest()
 
@@ -1321,6 +1443,9 @@ def main():
         omm = job("Open-Meteo Marine waves (all spots)", fetch_om_marine)
         for name in (omm or {}):
             spot_waves[name]["Open-Meteo"] = omm[name]
+        gfw = job("NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)", lambda: fetch_om_marine(GFS_WAVE_MODELS))
+        for name in (gfw or {}):
+            spot_waves[name]["GFS-Wave"] = gfw[name]
         for name, lat, lon, near in SPOTS:
             v = job("NWS wind forecast @ %s" % name, lambda: fetch_nws(lat, lon, t0, t1), 45)
             if v:
@@ -1362,11 +1487,11 @@ def main():
             except Exception:  # noqa
                 pass
         ctx["past_days"] = past
-        ctx["himb"] = job("Coconut Island (HIMB) wind", fetch_himb, 40)
+        ctx["himb"] = job("Coconut Island wind (NOAA Mokuoloe MOKH1)", fetch_mokh1, 40)
         ctx["lifeguards"] = job("Lifeguard surf reports", fetch_lifeguards, 40)
         tok = hcdp_token()
         if tok:
-            ctx["mesonet"] = job("Hawaii Mesonet (windward stations)", lambda: fetch_mesonet(tok), 60)
+            ctx["mesonet"] = job("Hawaii Mesonet (windward stations)", lambda: fetch_mesonet(tok), 30)
             for m in ctx["mesonet"] or []:
                 print("     mesonet %s %-22s %s  vars=%s" % (m["id"], m["name"][:22],
                       ("%.0f kt from %s" % (m["kt"], compass(m.get("dir")))) if m.get("kt") is not None else "no wind reading",

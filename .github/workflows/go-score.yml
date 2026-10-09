@@ -46,7 +46,7 @@ jobs:
           git config user.email "go-score-bot@users.noreply.github.com"
           for d in forecast_history cache penguin; do [ -d "$d" ] && git add "$d"; done
           git commit -m "Forecast snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing new to save"
-          git pull --rebase -q || true
+          git pull --rebase -X theirs -q || git rebase --abort
           git push || echo "push skipped"
       - uses: actions/upload-pages-artifact@v3
         with:

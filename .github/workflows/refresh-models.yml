@@ -1,0 +1,35 @@
+name: Refresh wave models
+
+# PacIOOS (WW3/SWAN) is often slow from GitHub's servers. This job only tries PacIOOS, once an hour,
+# and saves whatever it gets in cache/, so the 4x-daily Go Score runs nearly always have a recent copy.
+on:
+  schedule:
+    - cron: "37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: go-score-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch PacIOOS WW3/SWAN
+        run: python go_score.py --refresh-models
+      - name: Save
+        run: |
+          git config user.name "go-score-bot"
+          git config user.email "go-score-bot@users.noreply.github.com"
+          git add cache
+          git commit -q -m "Refresh wave models $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "nothing new"; exit 0; }
+          git pull --rebase -X theirs -q || git rebase --abort
+          git push || echo "push skipped"
