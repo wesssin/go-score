@@ -1,0 +1,87 @@
+Dataset {
+  Float64 time[time = 132684];
+  Float32 depth[depth = 1];
+  Float32 latitude[latitude = 101];
+  Float32 longitude[longitude = 141];
+  GRID {
+    ARRAY:
+      Float32 Tdir[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } Tdir;
+  GRID {
+    ARRAY:
+      Float32 Tper[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } Tper;
+  GRID {
+    ARRAY:
+      Float32 Thgt[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } Thgt;
+  GRID {
+    ARRAY:
+      Float32 sdir[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } sdir;
+  GRID {
+    ARRAY:
+      Float32 sper[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } sper;
+  GRID {
+    ARRAY:
+      Float32 shgt[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } shgt;
+  GRID {
+    ARRAY:
+      Float32 wdir[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } wdir;
+  GRID {
+    ARRAY:
+      Float32 wper[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } wper;
+  GRID {
+    ARRAY:
+      Float32 whgt[time = 132684][depth = 1][latitude = 101][longitude = 141];
+    MAPS:
+      Float64 time[time = 132684];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 101];
+      Float32 longitude[longitude = 141];
+  } whgt;
+} ww3_hawaii;

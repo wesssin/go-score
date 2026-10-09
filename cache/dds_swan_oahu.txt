@@ -1,0 +1,51 @@
+Dataset {
+  Float64 time[time = 141008];
+  Float32 depth[depth = 1];
+  Float32 latitude[latitude = 111];
+  Float32 longitude[longitude = 151];
+  GRID {
+    ARRAY:
+      Float32 mdir[time = 141008][depth = 1][latitude = 111][longitude = 151];
+    MAPS:
+      Float64 time[time = 141008];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 111];
+      Float32 longitude[longitude = 151];
+  } mdir;
+  GRID {
+    ARRAY:
+      Float32 mper[time = 141008][depth = 1][latitude = 111][longitude = 151];
+    MAPS:
+      Float64 time[time = 141008];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 111];
+      Float32 longitude[longitude = 151];
+  } mper;
+  GRID {
+    ARRAY:
+      Float32 pdir[time = 141008][depth = 1][latitude = 111][longitude = 151];
+    MAPS:
+      Float64 time[time = 141008];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 111];
+      Float32 longitude[longitude = 151];
+  } pdir;
+  GRID {
+    ARRAY:
+      Float32 pper[time = 141008][depth = 1][latitude = 111][longitude = 151];
+    MAPS:
+      Float64 time[time = 141008];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 111];
+      Float32 longitude[longitude = 151];
+  } pper;
+  GRID {
+    ARRAY:
+      Float32 shgt[time = 141008][depth = 1][latitude = 111][longitude = 151];
+    MAPS:
+      Float64 time[time = 141008];
+      Float32 depth[depth = 1];
+      Float32 latitude[latitude = 111];
+      Float32 longitude[longitude = 151];
+  } shgt;
+} swan_oahu;
