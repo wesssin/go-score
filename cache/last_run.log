@@ -7,14 +7,13 @@ ok   NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-FAIL WW3 waves + chop @ Bay mouth: timed out after 130s
+ok   WW3 waves + chop @ Bay mouth
 ...  SWAN waves @ Bay mouth
-FAIL SWAN waves @ Bay mouth: timed out after 130s
+ok   SWAN waves @ Bay mouth
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-FAIL WW3 waves + chop @ U FAD: timed out after 130s
-     using saved WW3 waves + chop from 12 h ago
+ok   WW3 waves + chop @ U FAD
 ...  SWAN waves @ U FAD
 ok   SWAN waves @ U FAD
 ...  NWS wind forecast @ MM FAD
@@ -57,19 +56,19 @@ ok   Coconut Island wind (NOAA Mokuoloe MOKH1)
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      3 kt from SSW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           1 kt from WNW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   1 kt from W  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0533 Maunawili Palawai      1 kt from WSW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0541 Kaaawa Makai           2 kt from SW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0552 Laie                   1 kt from WNW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
   Thu Oct 8   no forecast  [Wind from the SSE – windward side in the lee]
   Fri Oct 9   2.5  Stay home North to X           wind 10–13 mph, waves 6.5 ft @ 11 s  [Wind from the SSE – windward side in the lee]
   Sat Oct 10  0.0  Stay home East to MM & T       wind 17–18 mph, waves 7.1–7.5 ft @ 11–20 s
-  Sun Oct 11  1.2  Stay home North toward Kahuku  wind 11–14 mph, waves 5.0–5.4 ft @ 15–18 s
-  Mon Oct 12  1.4  Stay home North toward Kahuku  wind 10–12 mph, waves 5.5–6.0 ft @ 13–18 s
-  Tue Oct 13  0.0  Stay home East to MM & T       wind 16–17 mph, waves 8.1–8.2 ft @ 14–15 s
-  Wed Oct 14  3.1  Stay home North toward Kahuku  wind 10–11 mph, waves 5.8–6.6 ft @ 13 s
+  Sun Oct 11  1.4  Stay home North toward Kahuku  wind 11–14 mph, waves 5.0–5.4 ft @ 15–18 s
+  Mon Oct 12  1.3  Stay home North toward Kahuku  wind 10–12 mph, waves 5.7–6.3 ft @ 12–18 s
+  Tue Oct 13  0.0  Stay home East to MM & T       wind 16–17 mph, waves 7.9–8.1 ft @ 14–15 s
+  Wed Oct 14  3.5  Stay home North toward Kahuku  wind 10–11 mph, waves 5.9–6.3 ft @ 13 s
 
 Penguin Bank check:
   Thu Oct 8  no: wind 21 kt at Kaiwi mid-channel 12 PM; channel average 17.4 kt; wind chop 5.4 ft; waves 7.3 ft; period down to 8 s
