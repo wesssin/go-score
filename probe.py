@@ -10,7 +10,8 @@ from datetime import datetime, timezone
 TARGETS = [
     ("PacIOOS ERDDAP (WW3/SWAN/HIMB)", "pae-paha.pacioos.hawaii.edu", "/erddap/griddap/ww3_hawaii.dds"),
     ("PacIOOS WW3 one point (real request)", "pae-paha.pacioos.hawaii.edu",
-     "/erddap/griddap/ww3_hawaii.csv?Thgt%5B(last)%5D%5B0%5D%5B(21.6)%5D%5B(202.5)%5D"),
+     "/erddap/griddap/ww3_hawaii.csv?Thgt[(last)][0][(21.6070)][(202.4800)]"),
+    ("PacIOOS ERDDAP home page", "pae-paha.pacioos.hawaii.edu", "/erddap/index.html"),
     ("Hawaii Mesonet (HCDP)", "api.hcdp.ikewai.org", "/"),
     ("NWS api", "api.weather.gov", "/"),
     ("Open-Meteo marine", "marine-api.open-meteo.com", "/v1/marine?latitude=21.6&longitude=-157.5&hourly=wave_height&forecast_days=1"),
@@ -49,14 +50,17 @@ def probe(host, path, family, timeout=25):
         ss.sendall(("GET %s HTTP/1.1\r\nHost: %s\r\nUser-Agent: windward-go-score-probe/1.0\r\nConnection: close\r\n\r\n" % (path, host)).encode())
         first = ss.recv(1)
         out["first_byte_s"] = time.time() - t3
-        n = len(first)
+        buf = first
         while True:
             b = ss.recv(65536)
             if not b:
                 break
-            n += len(b)
+            buf += b
         out["total_s"] = time.time() - t3
-        out["bytes"] = n
+        out["bytes"] = len(buf)
+        head, _, body = buf.partition(b"\r\n\r\n")
+        out["status"] = head.split(b"\r\n")[0].decode("latin1")
+        out["body"] = body[:220].decode("utf-8", "replace").replace("\n", " | ")
     except Exception as e:  # noqa
         out["error"] = "request: %s after %.1fs" % (e, time.time() - t3)
     finally:
