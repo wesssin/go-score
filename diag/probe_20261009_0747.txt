@@ -1,0 +1,28 @@
+Probe from GitHub runner at 2026-10-09 07:47 UTC
+PacIOOS ERDDAP (WW3/SWAN/HIMB)           IPv4 try 1: dns_s=0.00, addr=128.171.219.10, tcp_s=19.56, tls_s=0.13, first_byte_s=0.21, total_s=0.21, bytes=583
+PacIOOS ERDDAP (WW3/SWAN/HIMB)           IPv4 try 2: dns_s=0.00, addr=128.171.219.10, tcp_s=0.11, tls_s=0.13, error=request: The read operation timed out after 25.0s
+PacIOOS ERDDAP (WW3/SWAN/HIMB)           IPv4 try 3: dns_s=0.00, addr=128.171.219.10, tcp_s=0.11, tls_s=0.13, first_byte_s=9.41, total_s=9.41, bytes=459
+PacIOOS WW3 one point (real request)     IPv4 try 1: dns_s=0.00, addr=128.171.219.10, tcp_s=0.11, tls_s=0.13, first_byte_s=1.21, total_s=1.21, bytes=459
+PacIOOS WW3 one point (real request)     IPv4 try 2: dns_s=0.00, addr=128.171.219.10, tcp_s=0.11, tls_s=0.13, first_byte_s=1.21, total_s=1.21, bytes=459
+PacIOOS WW3 one point (real request)     IPv4 try 3: dns_s=0.00, addr=128.171.219.10, tcp_s=0.11, tls_s=0.13, first_byte_s=1.21, total_s=1.21, bytes=459
+Hawaii Mesonet (HCDP)                    IPv4 try 1: dns_s=0.00, addr=128.171.121.6, tcp_s=0.12, tls_s=0.15, first_byte_s=0.24, total_s=0.24, bytes=628
+Hawaii Mesonet (HCDP)                    IPv4 try 2: dns_s=0.00, addr=128.171.121.6, tcp_s=0.12, tls_s=0.14, first_byte_s=0.24, total_s=0.24, bytes=628
+Hawaii Mesonet (HCDP)                    IPv4 try 3: dns_s=0.00, addr=128.171.121.6, tcp_s=0.12, tls_s=0.15, first_byte_s=0.24, total_s=0.24, bytes=628
+NWS api                                  IPv4 try 1: dns_s=0.00, addr=23.64.114.137, tcp_s=0.00, tls_s=0.02, first_byte_s=0.11, total_s=0.11, bytes=9598
+NWS api                                  IPv4 try 2: dns_s=0.00, addr=23.64.114.134, tcp_s=0.00, tls_s=0.02, first_byte_s=0.13, total_s=0.13, bytes=9597
+NWS api                                  IPv4 try 3: dns_s=0.00, addr=23.64.114.134, tcp_s=0.00, tls_s=0.02, first_byte_s=0.11, total_s=0.11, bytes=9597
+NWS api                                  IPv6 try 1: dns_s=0.00, addr=2600:1407:3c00:17::1740:728a, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+NWS api                                  IPv6 try 2: dns_s=0.00, addr=2600:1407:3c00:17::1740:7288, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+NWS api                                  IPv6 try 3: dns_s=0.00, addr=2600:1407:3c00:17::1740:728e, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+Open-Meteo marine                        IPv4 try 1: dns_s=0.00, addr=152.53.84.37, tcp_s=0.11, tls_s=0.21, first_byte_s=0.21, total_s=0.21, bytes=994
+Open-Meteo marine                        IPv4 try 2: dns_s=0.00, addr=152.53.84.37, tcp_s=0.10, tls_s=0.21, first_byte_s=0.21, total_s=0.21, bytes=994
+Open-Meteo marine                        IPv4 try 3: dns_s=0.00, addr=152.53.84.37, tcp_s=0.11, tls_s=0.21, first_byte_s=0.21, total_s=0.21, bytes=994
+Open-Meteo marine                        IPv6 try 1: dns_s=0.00, addr=2a0a:4cc0:c0:2004:a820:cbff:fea6:1fc, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+Open-Meteo marine                        IPv6 try 2: dns_s=0.00, addr=2a0a:4cc0:c0:2004:a820:cbff:fea6:1fc, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+Open-Meteo marine                        IPv6 try 3: dns_s=0.00, addr=2a0a:4cc0:c0:2004:a820:cbff:fea6:1fc, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+NDBC                                     IPv4 try 1: dns_s=0.00, addr=18.160.225.40, tcp_s=0.00, tls_s=0.02, first_byte_s=0.01, total_s=0.01, bytes=203697
+NDBC                                     IPv4 try 2: dns_s=0.00, addr=18.160.225.19, tcp_s=0.00, tls_s=0.02, first_byte_s=0.01, total_s=0.01, bytes=203697
+NDBC                                     IPv4 try 3: dns_s=0.00, addr=18.160.225.40, tcp_s=0.00, tls_s=0.02, first_byte_s=0.01, total_s=0.01, bytes=203697
+NDBC                                     IPv6 try 1: dns_s=0.00, addr=2600:9000:24d3:7800:f:a185:9800:93a1, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+NDBC                                     IPv6 try 2: dns_s=0.00, addr=2600:9000:24d3:4200:f:a185:9800:93a1, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
+NDBC                                     IPv6 try 3: dns_s=0.00, addr=2600:9000:24d3:1a00:f:a185:9800:93a1, error=TCP connect: [Errno 101] Network is unreachable after 0.0s
