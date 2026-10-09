@@ -1,0 +1,28 @@
+name: Probe data servers
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe
+        run: python probe.py
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "go-score-bot"
+          git config user.email "go-score-bot@users.noreply.github.com"
+          git add diag
+          git commit -m "Probe $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing"
+          git pull --rebase -q || true
+          git push
