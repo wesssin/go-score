@@ -7,35 +7,42 @@ ok   NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-FAIL WW3 waves + chop @ Bay mouth: network error: _ssl.c:993: The handshake operation timed out
-     using saved WW3 waves + chop from 8 h ago
+FAIL WW3 waves + chop @ Bay mouth: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  SWAN waves @ Bay mouth
-FAIL SWAN waves @ Bay mouth: network error: _ssl.c:993: The handshake operation timed out
-     using saved SWAN waves from 8 h ago
+FAIL SWAN waves @ Bay mouth: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 1 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-ok   WW3 waves + chop @ U FAD
+FAIL WW3 waves + chop @ U FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  SWAN waves @ U FAD
-ok   SWAN waves @ U FAD
+FAIL SWAN waves @ U FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 1 h ago
 ...  NWS wind forecast @ MM FAD
 ok   NWS wind forecast @ MM FAD
 ...  WW3 waves + chop @ MM FAD
-ok   WW3 waves + chop @ MM FAD
+FAIL WW3 waves + chop @ MM FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  NWS wind forecast @ T FAD
 ok   NWS wind forecast @ T FAD
 ...  WW3 waves + chop @ T FAD
-ok   WW3 waves + chop @ T FAD
+FAIL WW3 waves + chop @ T FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  NWS wind forecast @ LL FAD
 ok   NWS wind forecast @ LL FAD
 ...  WW3 waves + chop @ LL FAD
-ok   WW3 waves + chop @ LL FAD
+FAIL WW3 waves + chop @ LL FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  SWAN waves @ LL FAD
-ok   SWAN waves @ LL FAD
+FAIL SWAN waves @ LL FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 1 h ago
 ...  NWS wind forecast @ X FAD
 ok   NWS wind forecast @ X FAD
 ...  WW3 waves + chop @ X FAD
-ok   WW3 waves + chop @ X FAD
+FAIL WW3 waves + chop @ X FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 1 h ago
 ...  NWS Oahu Windward Waters forecast
 ok   NWS Oahu Windward Waters forecast
 ...  buoy 51202 Mokapu (your buoy)
@@ -58,19 +65,19 @@ ok   Coconut Island wind (NOAA Mokuoloe MOKH1)
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      0 kt from W  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           3 kt from SE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0533 Maunawili Palawai      1 kt from N  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0541 Kaaawa Makai           3 kt from ESE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
      mesonet 0552 Laie                   4 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
   Sat Oct 10  0.0  Stay home East to MM & T       wind 17–18 mph, waves 6.7–7.3 ft @ 11–20 s
-  Sun Oct 11  0.7  Stay home North toward Kahuku  wind 13–15 mph, waves 4.8–5.1 ft @ 15–17 s
-  Mon Oct 12  8.5  Good      North toward Kahuku  wind 8–10 mph, waves 5.0–5.5 ft @ 12–18 s
+  Sun Oct 11  0.6  Stay home North toward Kahuku  wind 13–15 mph, waves 4.8–5.1 ft @ 15–17 s
+  Mon Oct 12  8.6  Good      North toward Kahuku  wind 9 mph, waves 5.0–5.5 ft @ 12–18 s
   Tue Oct 13  0.0  Stay home East to MM & T       wind 17–18 mph, waves 6.8–7.3 ft @ 14–15 s
-  Wed Oct 14  6.8  Marginal  North toward Kahuku  wind 10–12 mph, waves 5.9–6.1 ft @ 13 s
-  Thu Oct 15  3.0  Stay home North toward Kahuku  wind 14 mph, waves 5.3–5.6 ft @ 12 s
-  Fri Oct 16  0.0  Stay home East to MM & T       wind 18–19 mph, waves 5.1–6.3 ft @ 11–13 s
+  Wed Oct 14  6.0  Marginal  North toward Kahuku  wind 11–12 mph, waves 5.9–6.1 ft @ 13 s
+  Thu Oct 15  2.9  Stay home North toward Kahuku  wind 14–15 mph, waves 5.3–5.6 ft @ 12 s
+  Fri Oct 16  0.0  Stay home East to MM & T       wind 19–20 mph, waves 5.1–6.3 ft @ 11–13 s
 
 Penguin Bank check:
   Sat Oct 10  no: wind 14 kt at Makapuu corner 2 PM; channel average 8.2 kt; wind chop 2.6 ft; NWS Kaiwi 20 kt
