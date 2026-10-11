@@ -7,10 +7,10 @@ ok   NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-FAIL WW3 waves + chop @ Bay mouth: network error: The read operation timed out
+FAIL WW3 waves + chop @ Bay mouth: network error: timed out
      using saved WW3 waves + chop from 0 h ago
 ...  SWAN waves @ Bay mouth
-FAIL SWAN waves @ Bay mouth: network error: _ssl.c:993: The handshake operation timed out
+FAIL SWAN waves @ Bay mouth: network error: timed out
      using saved SWAN waves from 0 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
@@ -64,36 +64,8 @@ ok   Coconut Island wind (NOAA Mokuoloe MOKH1)
 ...  Lifeguard surf reports
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
-ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      1 kt from W  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           2 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   3 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-...  Penguin Bank forecast
-ok   Channel wind, 3 models (Open-Meteo)
-ok   Channel waves + wind chop (Open-Meteo Marine)
-FAIL WW3 waves @ Kailua offshore: skipped: PacIOOS did not answer earlier this run
-FAIL WW3 waves @ Makapuu corner: skipped: PacIOOS did not answer earlier this run
-FAIL WW3 waves @ Kaiwi mid-channel: skipped: PacIOOS did not answer earlier this run
-FAIL WW3 waves @ Hawaii Kai exit: skipped: PacIOOS did not answer earlier this run
-FAIL WW3 waves @ Bank N ledge: skipped: PacIOOS did not answer earlier this run
-FAIL WW3 waves @ P FAD: skipped: PacIOOS did not answer earlier this run
-ok   NWS wind forecast @ Makapuu corner
-ok   NWS wind forecast @ Bank N ledge
-ok   NWS wind forecast @ Kaiwi mid-channel
-ok   NWS wind forecast @ P FAD
-ok   NWS wind forecast @ Hawaii Kai exit
-ok   NWS wind forecast @ Kailua offshore
-ok   NWS Kaiwi Channel forecast (PHZ116)
-ok   NWS Maui County Leeward Waters forecast (PHZ118)
-ok   buoy 51202 Mokapu
-ok   buoy 51211 Pearl Harbor entrance
-ok   buoy 51212 Kalaeloa (Barbers Pt)
-ok   buoy 51205 Pauwela
-ok   Honolulu Harbor wind (OOUH1)
-ok   Mokuoloe (Kaneohe Bay) wind (MOKH1)
-ok   Kahului Harbor, Maui wind (KLIH1)
-ok   Molokai airport (Hoolehua) wind (PHMK)
-Wrote /home/runner/work/go-score/go-score/site/penguin.html
+FAIL Hawaii Mesonet (windward stations): network error: <urlopen error timed out>
+...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
   Sat Oct 10  no forecast
@@ -106,11 +78,11 @@ Day-by-day (trip window 6:00-14:00 HST):
 
 Penguin Bank check:
   Sat Oct 10  no: wind 14 kt at Makapuu corner 1 PM; channel average 8.4 kt; models differ by 4 kt; wind chop 2.8 ft; period down to 9 s
-  Sun Oct 11  no: wind 14 kt at Kaiwi mid-channel 2 PM; channel average 10.1 kt; wind chop 3.2 ft; NWS Kaiwi 15 kt
-  Mon Oct 12  no: NWS Kaiwi 15 kt
-  Tue Oct 13  no: wind 14 kt at Makapuu corner 2 PM; channel average 8.1 kt; models differ by 5 kt; wind chop 4.6 ft; NWS Kaiwi 15 kt
-  Wed Oct 14  no: wind 14 kt at Kaiwi mid-channel 2 PM; channel average 9.6 kt; wind chop 2.5 ft; NWS Kaiwi 15 kt
-  Thu Oct 15  no: wind 16 kt at Kaiwi mid-channel 2 PM; channel average 12.2 kt; models differ by 5 kt; wind chop 1.9 ft; NWS Kaiwi 15 kt
-  Fri Oct 16  no: wind 20 kt at Kaiwi mid-channel 2 PM; channel average 15.9 kt; wind chop 4.1 ft; waves 6.3 ft; period down to 8 s
+  Sun Oct 11  no: wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.7 kt; wind chop 2.0 ft; NWS Kaiwi 15 kt
+  Mon Oct 12  no: wind chop 1.5 ft; NWS Kaiwi 15 kt
+  Tue Oct 13  no: wind 14 kt at Kaiwi mid-channel 2 PM; wind chop 3.2 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Wed Oct 14  no: wind 15 kt at Kaiwi mid-channel 2 PM; channel average 9.4 kt; wind chop 2.6 ft; period down to 9 s; NWS Kaiwi 15 kt
+  Thu Oct 15  no: wind 17 kt at Kaiwi mid-channel 2 PM; channel average 11.9 kt; models differ by 5 kt; wind chop 3.5 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Fri Oct 16  no: wind 21 kt at Kaiwi mid-channel 2 PM; channel average 16.2 kt; wind chop 5.1 ft; waves 6.1 ft; period down to 7 s
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
