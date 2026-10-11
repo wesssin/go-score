@@ -61,7 +61,8 @@ SPOTS = [("Bay mouth", 21.480, -157.770, True),
 ROUTES = [("East to MM & T", ["U FAD", "MM FAD", "T FAD"]),
           ("North toward Kahuku", ["U FAD", "LL FAD"]),
           ("North to X", ["LL FAD", "X FAD"])]
-NWS_CHOP_FACTOR = 0.8   # NWS short-period wind swell (period <= 8 s, 3 ft+) counts as this much wind chop offshore
+# NWS short-period secondary swell (period <= 8 s, 3 ft+, from the Wave Detail text) is scored with the same steepness
+# scale as the main swell (STEEP_PEN), so 4 ft @ 5 s (steep chop) costs much more than 4 ft @ 7 s (rolling lumps).
 # Lee effect: wind blowing FROM these directions (degrees) crosses Oahu or only a short stretch of water
 # before reaching the spot, so it builds less chop. The factor multiplies the wind penalty (1 = no help).
 # Hand-set from the map, not yet tested against a south-wind day - tune as you log trips.
@@ -764,9 +765,7 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
                         break
                 ns = (nws_short or {}).get(lt.date())
                 if ns and not near and 5 <= h < 18:
-                    floor = ns["ft"] * NWS_CHOP_FACTOR
-                    if (rec.get("ws_hs") or 0) < floor:
-                        rec["ws_hs"], rec["ws_tp"], rec["chop_src"] = floor, ns["s"], "NWS"
+                    rec["nws_sec"] = (ns["ft"], ns["s"])
                 recs.append(rec)
         for i, r in enumerate(recs):
             nb = [recs[j]["wind_raw"] for j in range(max(0, i - 1), min(len(recs), i + 2)) if "wind_raw" in recs[j]]
@@ -775,6 +774,12 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
             if "wind" in r and "hs" in r:
                 r["lee"] = lee_factor(name, r.get("wdir"))
                 r["score"], r["pen"] = hour_score(r["wind"], r["hs"], r["tp"], r.get("ws_hs"), r["lee"])
+                if r.get("nws_sec"):            # NWS secondary short swell: same steepness scale as the main swell
+                    ft, sec = r["nws_sec"]
+                    sp = interp(steepness(ft, sec), STEEP_PEN)
+                    if sp > r["pen"]["short-period chop"]:
+                        r["score"] = max(0.0, r["score"] - (sp - r["pen"]["short-period chop"]))
+                        r["pen"]["short-period chop"] = sp
         per_spot[name] = recs
     return per_spot
 
@@ -959,7 +964,7 @@ def render(days, ctx, status, demo):
             rng(min(r.get("wind", 0) for r in bay), max(r.get("wind", 0) for r in bay)),
             rng(min(r["hs"] for r in bay), max(r["hs"] for r in bay), 1), rng(min(r["tp"] for r in bay), max(r["tp"] for r in bay)))) if bay else ""
         ns = ctx.get("nws_short", {}).get(d.date())
-        short_txt = ("<br>+ %d ft @ %d s %s wind swell (NWS, counted as chop)" % (ns["ft"], ns["s"], ns["name"])) if ns else ""
+        short_txt = ("<br>+ %d ft @ %d s %s wind swell (NWS, scored by steepness)" % (ns["ft"], ns["s"], ns["name"])) if ns else ""
         if s:
             name, icon, role = tier_for(s["score"])
             note = s["notes"][0] if s["notes"] else ("held back by " + s["limiter"] if s["limiter"] and s["score"] < 9 else "clean across the window")
