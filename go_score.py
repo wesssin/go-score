@@ -774,9 +774,9 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
             if "wind" in r and "hs" in r:
                 r["lee"] = lee_factor(name, r.get("wdir"))
                 r["score"], r["pen"] = hour_score(r["wind"], r["hs"], r["tp"], r.get("ws_hs"), r["lee"])
-                if r.get("nws_sec"):            # NWS secondary short swell: same steepness scale as the main swell
+                if r.get("nws_sec"):            # NWS secondary short swell: steepness scale, capped at the chop scale for that height
                     ft, sec = r["nws_sec"]
-                    sp = interp(steepness(ft, sec), STEEP_PEN)
+                    sp = min(interp(steepness(ft, sec), STEEP_PEN), interp(ft, CHOP_PEN))
                     if sp > r["pen"]["short-period chop"]:
                         r["score"] = max(0.0, r["score"] - (sp - r["pen"]["short-period chop"]))
                         r["pen"]["short-period chop"] = sp
