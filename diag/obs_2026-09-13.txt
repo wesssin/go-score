@@ -1,0 +1,136 @@
+Observations 2026-09-13, 5:00-15:00 HST (pulled 2026-10-13 03:25 UTC)
+
+== 51202 Mokapu buoy: waves split into swell and wind sea
+time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
+05:26     3.9     1.3 @ 10.5 ENE        3.6 @  9.1 NE      AVERAGE
+05:56     4.3     1.0 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+06:26     4.3     1.3 @ 10.5 NE         4.3 @  9.9 NE      AVERAGE
+06:56     4.3     1.0 @ 10.5 ENE        3.9 @  9.1 NE      AVERAGE
+07:26     3.9     1.0 @ 10.5 NE         3.9 @  9.1 NE      AVERAGE
+07:56     3.9     1.3 @ 10.5 NE         3.6 @  9.9 NE      AVERAGE
+08:26     3.9     1.3 @ 11.1 NE         3.6 @  9.1 NE      AVERAGE
+08:56     4.3     1.3 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+09:26     3.9     1.0 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+09:56     3.9     1.3 @ 10.5 NE         3.6 @  9.1 ENE     AVERAGE
+10:26     4.3     1.3 @ 10.5 NE         4.3 @  9.9 NNE     AVERAGE
+10:56     3.9     1.3 @ 10.5 NE         3.6 @  9.9 NE      AVERAGE
+11:26     3.9     1.6 @ 10.5 NNE        3.6 @  9.9 NNE     AVERAGE
+11:56     3.9     1.3 @ 10.5 NNE        3.9 @  9.9 NE      AVERAGE
+12:26     3.9     1.3 @ 10.5 NE         3.9 @  9.9 NNE     AVERAGE
+12:56     4.3     1.3 @ 10.5 NE         3.9 @  9.1 NE      AVERAGE
+13:26     4.3     1.3 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+13:56     4.3     1.6 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+14:26     4.6     1.6 @ 10.5 NE         3.9 @  9.9 NE      AVERAGE
+14:56     4.3     1.6 @ 10.5 NE         3.9 @  9.1 NE      AVERAGE
+
+== 51211 Pearl Harbor entrance buoy (south): waves split into swell and wind sea
+time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
+05:00     2.6     1.3 @ 15.4 SSE        2.0 @  4.4 ESE     N/A
+05:30     2.6     1.0 @ 13.3 SSE        2.3 @  4.9 SE      N/A
+06:00     2.3     1.0 @ 15.4 S          2.0 @  4.5 SE      N/A
+06:30     2.3     1.3 @ 15.4 SSE        2.0 @  4.7 SE      N/A
+07:00     2.0     1.3 @ 15.4 SSE        1.6 @  5.1 SE      N/A
+07:30     2.0     1.3 @ 16.7 SSE        1.6 @  5.1 SSE     N/A
+08:00     2.0     1.0 @ 16.7 SSE        1.6 @  4.5 SE      N/A
+08:30     2.0     1.3 @ 15.4 SSE        1.6 @  9.5 SSE     N/A
+09:00     2.0     1.0 @ 15.4 SSE        1.6 @  9.5 SSE     N/A
+09:30     2.0     1.3 @ 15.4 SSE        1.6 @  8.3 SSE     N/A
+10:00     2.0     1.3 @ 15.4 SSE        1.6 @  9.5 S       N/A
+10:30     2.0     1.3 @ 15.4 SSE        1.6 @  9.5 SSE     N/A
+11:00     2.0     1.0 @ 15.4 SSE        1.6 @  9.1 SSE     N/A
+11:30     2.0     1.3 @ 15.4 SSE        1.6 @  8.3 SSE     N/A
+12:00     2.0     1.3 @ 14.3 SSE        1.6 @  9.5 SSE     N/A
+12:30     2.0     1.0 @ 14.3 S          1.6 @  8.7 SSE     N/A
+13:00     2.0     1.3 @ 15.4 SSE        1.6 @  9.1 SSE     N/A
+13:30     2.0     1.3 @ 15.4 SSE        1.6 @  8.7 SSE     N/A
+14:00     2.0     1.3 @ 14.3 S          1.3 @  9.5 SSE     N/A
+14:30     1.6     1.0 @ 15.4 SSE        1.3 @  8.7 SSE     N/A
+15:00     1.6     1.0 @ 15.4 SSE        1.3 @  9.5 S       N/A
+
+== 51202 Mokapu buoy (standard file: height, dominant period, direction)
+05:26  3.9 ft @ 9 s (avg 6.1 s) from NE
+05:56  4.3 ft @ 10 s (avg 6.5 s) from NE
+06:26  4.3 ft @ 10 s (avg 6.6 s) from NE
+06:56  4.3 ft @ 9 s (avg 6.3 s) from NE
+07:26  3.9 ft @ 9 s (avg 6.2 s) from NE
+07:56  3.9 ft @ 10 s (avg 6.6 s) from NE
+08:26  3.9 ft @ 9 s (avg 6.2 s) from NE
+08:56  4.3 ft @ 10 s (avg 6.6 s) from NE
+09:26  3.9 ft @ 10 s (avg 6.5 s) from NE
+09:56  3.9 ft @ 9 s (avg 6.3 s) from ENE
+10:26  4.3 ft @ 10 s (avg 6.8 s) from NNE
+10:56  3.9 ft @ 10 s (avg 6.3 s) from NE
+11:26  3.9 ft @ 10 s (avg 6.3 s) from NNE
+11:56  4.3 ft @ 10 s (avg 6.3 s) from NE
+12:26  3.9 ft @ 10 s (avg 6.5 s) from NNE
+12:56  4.3 ft @ 9 s (avg 6.6 s) from NE
+13:26  4.3 ft @ 10 s (avg 6.4 s) from NE
+13:56  4.3 ft @ 10 s (avg 6.8 s) from NE
+14:26  4.6 ft @ 10 s (avg 6.8 s) from NE
+14:56  4.3 ft @ 9 s (avg 6.6 s) from NE
+
+== MOKH1 Coconut Island wind
+05:00  2 kt (gust 3) from W
+05:30  2 kt (gust 3) from WSW
+06:00  1 kt (gust 2) from SW
+06:30  1 kt (gust 2) from SW
+07:00  0 kt (gust 2) from MM
+07:30  0 kt (gust 1) from MM
+08:00  7 kt (gust 8) from NE
+08:30  8 kt (gust 10) from ENE
+09:00  8 kt (gust 10) from NE
+09:30  8 kt (gust 12) from E
+10:00  8 kt (gust 10) from ENE
+10:30  8 kt (gust 10) from ENE
+11:00  8 kt (gust 11) from ENE
+11:30  9 kt (gust 11) from NE
+12:00  8 kt (gust 10) from NE
+12:30  7 kt (gust 11) from NE
+13:00  9 kt (gust 12) from ENE
+13:30  7 kt (gust 11) from NE
+14:00  8 kt (gust 10) from ENE
+14:30  8 kt (gust 11) from NNE
+15:00  10 kt (gust 12) from NE
+
+== PHNG Kaneohe MCBH airport wind
+PHNG failed: HTTP Error 422: Unprocessable Content
+
+== Model Open-Meteo default at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)
+05:00  4.6 @ 8 NE | 0.6 @ 2 ENE | 4.4 @ 7 NE | 1.1 @ 9 S
+07:00  4.5 @ 8 NE | 0.5 @ 2 ENE | 4.3 @ 7 NE | 1.1 @ 10 S
+09:00  4.7 @ 9 NE | 0.5 @ 2 ENE | 4.2 @ 7 NE | 1.5 @ 9 SE
+11:00  4.9 @ 9 NE | 0.6 @ 2 ENE | 4.1 @ 8 ENE | 2.2 @ 7 NNE
+13:00  4.6 @ 9 NE | 0.6 @ 2 NE | 4.1 @ 7 NE | 1.6 @ 9 SE
+15:00  4.4 @ 9 NE | 0.6 @ 2 NE | 4.1 @ 7 NE | 1.2 @ 10 S
+
+== Model ncep_gfswave016 at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)
+05:00  3.9 @ 9 NE | 1.9 @ 4 ENE | 3.1 @ 9 NE | 1.3 @ 9 ENE
+07:00  3.8 @ 9 NE | 1.8 @ 4 ENE | 3.1 @ 9 NE | 1.2 @ 9 ENE
+09:00  3.8 @ 9 NE | 1.6 @ 4 ENE | 3.1 @ 9 NE | 1.1 @ 9 ENE
+11:00  3.7 @ 9 NE | 0.0 @ ? N | 3.4 @ 9 NE | 1.1 @ 9 ENE
+13:00  3.6 @ 9 NE | 0.0 @ ? N | 3.4 @ 9 NE | 0.9 @ 9 ENE
+15:00  3.7 @ 9 NE | 0.0 @ ? N | 3.5 @ 9 NE | 0.6 @ 10 S
+
+== Model ncep_gfswave025 at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)
+05:00  3.9 @ 9 NE | 1.9 @ 4 ENE | 3.1 @ 9 NE | 1.3 @ 9 ENE
+07:00  3.8 @ 9 NE | 1.8 @ 4 ENE | 3.1 @ 9 NE | 1.2 @ 9 ENE
+09:00  3.8 @ 9 NE | 1.6 @ 4 ENE | 3.1 @ 9 NE | 1.1 @ 9 ENE
+11:00  3.7 @ 9 NE | 0.0 @ ? N | 3.4 @ 9 NE | 1.1 @ 9 ENE
+13:00  3.6 @ 9 NE | 0.0 @ ? N | 3.4 @ 9 NE | 0.9 @ 9 ENE
+15:00  3.7 @ 9 NE | 0.0 @ ? N | 3.5 @ 9 NE | 0.6 @ 10 S
+
+== Model ecmwf_wam025 at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)
+05:00  4.3 @ 8 NE | - | - | -
+07:00  4.3 @ 8 NE | - | - | -
+09:00  4.1 @ 8 NE | - | - | -
+11:00  4.1 @ 8 NE | - | - | -
+13:00  4.1 @ 8 NE | - | - | -
+15:00  4.0 @ 8 NE | - | - | -
+
+== Model meteofrance_wave at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)
+05:00  4.6 @ 8 NE | 0.6 @ 2 ENE | 4.4 @ 7 NE | 1.1 @ 9 S
+07:00  4.5 @ 8 NE | 0.5 @ 2 ENE | 4.3 @ 7 NE | 1.1 @ 10 S
+09:00  4.7 @ 9 NE | 0.5 @ 2 ENE | 4.2 @ 7 NE | 1.5 @ 9 SE
+11:00  4.9 @ 9 NE | 0.6 @ 2 ENE | 4.1 @ 8 ENE | 2.2 @ 7 NNE
+13:00  4.6 @ 9 NE | 0.6 @ 2 NE | 4.1 @ 7 NE | 1.6 @ 9 SE
+15:00  4.4 @ 9 NE | 0.6 @ 2 NE | 4.1 @ 7 NE | 1.2 @ 10 S
