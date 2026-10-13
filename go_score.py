@@ -1229,7 +1229,10 @@ def demo_ctx():
 CALIBRATION = [("2026-09-08", "sloppy but manageable, nearshore, day before epic"), ("2026-09-09", "epic"), ("2026-09-13", "good"),
                ("2026-06-13", "nice"), ("2026-06-21", "nice"), ("2026-06-16", "MISERABLE"),
                ("2026-10-07", "nearshore only - kayak Lanikai/Mokes 12-3 PM, NOT on the boat (offshore sea state not seen): "
-                              "SE breeze peaked 12-1 PM (felt, before checking data), tips not whitecaps, calmer by 3 PM; felt like a mid-8")]
+                              "SE breeze peaked 12-1 PM (felt, before checking data), tips not whitecaps, calmer by 3 PM; felt like a mid-8"),
+               ("2026-10-12", "ON THE BOAT, felt ~8.0 (app said 6.9): bay ~9.8/10 at 6:10; LL by 7:45 at 13-15 mph, lumpy/confused "
+                              "east slop + north swell crossing, no whitecaps, dry; light wind; ono ledge off Hauula pleasant; "
+                              "MM-first-then-LL would have been the best route")]
 SEQUENCE = ("2026-09-03", "2026-09-12")    # storm -> settle -> epic run, checked against the pattern flags
 
 
