@@ -2,8 +2,8 @@ name: Go Score
 
 on:
   schedule:
-    # GitHub uses UTC. These are 5 AM, 11 AM, 5 PM and 11 PM Hawaii time.
-    - cron: "0 3,9,15,21 * * *"
+    # GitHub uses UTC. Once a day at 5 PM Hawaii time (after the NWS afternoon update). Was 4x/day; tap Run workflow for extra runs.
+    - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
       mode:

@@ -4,7 +4,7 @@ name: Refresh wave models
 # and saves whatever it gets in cache/, so the 4x-daily Go Score runs nearly always have a recent copy.
 on:
   schedule:
-    - cron: "37 * * * *"
+    - cron: "37 0,6,12,18 * * *"   # every 6 h (2:37 PM HST is ahead of the 5 PM report); was hourly
   workflow_dispatch: {}
 
 permissions:
