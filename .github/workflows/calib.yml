@@ -1,12 +1,18 @@
 name: Calibration check
 on:
   workflow_dispatch:
+    inputs:
+      what:
+        description: "Which check"
+        type: choice
+        options: ["calib_east.py", "go_score.py --backtest"]
+        default: "calib_east.py"
 permissions:
   contents: read
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - run: python calib_east.py
+      - run: python ${{ inputs.what || 'calib_east.py' }}
