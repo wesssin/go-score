@@ -88,6 +88,30 @@ try:
             L.append("%s  %s kt (gust %s) from %s" % (t.strftime("%H:%M"), p[2], p[4], comp(p[3])))
 except Exception as e:  # noqa
     L.append("PHNG failed: %s" % e)
+# Model wave partitions at the Mokapu buoy for the same hours (to compare with the buoy's swell / wind-sea split)
+import json
+MARINE = ("https://marine-api.open-meteo.com/v1/marine?latitude=21.417&longitude=-157.668&hourly=wave_height,wave_period,"
+          "wave_direction,wind_wave_height,wind_wave_period,wind_wave_direction,swell_wave_height,swell_wave_period,"
+          "swell_wave_direction,secondary_swell_wave_height,secondary_swell_wave_period,secondary_swell_wave_direction"
+          "&start_date=%s&end_date=%s&timezone=Pacific/Honolulu&length_unit=imperial" % (sys.argv[1], sys.argv[1]))
+for m in ("", "ncep_gfswave016", "ncep_gfswave025", "ecmwf_wam025", "meteofrance_wave"):
+    L.append("\n== Model %s at Mokapu buoy: total | wind sea | swell 1 | swell 2  (ft @ s from)" % (m or "Open-Meteo default"))
+    try:
+        h = json.loads(get(MARINE + ("&models=" + m if m else "")))["hourly"]
+    except Exception as e:  # noqa
+        L.append("failed: %s" % e)
+        continue
+
+    def part(i, a, b, c):
+        v = [h.get(k, [None] * 99)[i] for k in (a, b, c)]
+        return "-" if v[0] is None else "%.1f @ %s %s" % (v[0], "%.0f" % v[1] if v[1] else "?", comp(v[2]) if v[2] is not None else "")
+    for i, tm in enumerate(h["time"]):
+        hr = int(tm[11:13])
+        if h0 <= hr <= h1 and hr % 2 == 1:
+            L.append("%s  %s | %s | %s | %s" % (tm[11:16], part(i, "wave_height", "wave_period", "wave_direction"),
+                     part(i, "wind_wave_height", "wind_wave_period", "wind_wave_direction"),
+                     part(i, "swell_wave_height", "swell_wave_period", "swell_wave_direction"),
+                     part(i, "secondary_swell_wave_height", "secondary_swell_wave_period", "secondary_swell_wave_direction")))
 txt = "\n".join(L)
 print(txt)
 os.makedirs("diag", exist_ok=True)
