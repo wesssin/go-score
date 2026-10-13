@@ -1,0 +1,23 @@
+name: Trip-day observations
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "Date (YYYY-MM-DD, HST)"
+        required: true
+permissions:
+  contents: write
+jobs:
+  obs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python obs_day.py "${{ inputs.day }}"
+      - name: Save
+        run: |
+          git config user.name "go-score-bot"; git config user.email "go-score-bot@users.noreply.github.com"
+          git add diag/
+          git commit -qm "Observations ${{ inputs.day }}" || exit 0
+          git pull --rebase -X theirs -q || git rebase --abort
+          git push -q
