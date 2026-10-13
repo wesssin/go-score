@@ -1,7 +1,27 @@
-Observations 2026-10-12, 5:00-15:00 HST (pulled 2026-10-13 01:51 UTC)
+Observations 2026-10-12, 5:00-15:00 HST (pulled 2026-10-13 01:52 UTC)
 
 == 51202 Mokapu buoy: waves split into swell and wind sea
 time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
+05:26     4.6     2.0 @ 15.4 ESE        3.9 @  8.3 ENE     AVERAGE
+05:56     4.6     2.0 @ 10.5 E          3.9 @  7.7 ENE     AVERAGE
+06:26     4.6     2.0 @ 11.1 E          4.3 @  8.3 ENE     AVERAGE
+06:56     4.3     2.3 @ 15.4 SE         3.6 @  7.7 ENE     AVERAGE
+07:26     4.6     2.3 @ 11.8 E          4.3 @  8.3 ENE     AVERAGE
+07:56     4.3     2.3 @ 11.8 ENE        3.6 @  8.3 ENE     AVERAGE
+08:26     3.9     2.0 @ 11.8 ENE        3.6 @  8.3 NE      AVERAGE
+08:56     4.6     2.0 @ 12.5 ENE        4.3 @  7.7 ENE     AVERAGE
+09:26     4.3     2.3 @ 15.4 SE         3.6 @  7.7 ENE     AVERAGE
+09:56     4.6     2.0 @ 11.8 E          3.9 @  8.3 ENE     AVERAGE
+10:26     4.6     2.0 @ 11.8 ENE        3.9 @  8.3 ENE     AVERAGE
+10:56     4.9     2.3 @ 11.8 ENE        4.3 @  8.3 ENE     AVERAGE
+11:26     4.6     2.0 @ 15.4 SE         4.3 @  8.3 ENE     AVERAGE
+11:56     4.9     2.3 @ 11.8 E          4.3 @  8.3 ENE     AVERAGE
+12:26     4.9     2.6 @ 11.8 E          3.9 @  8.3 ENE     AVERAGE
+12:56     4.6     2.3 @ 11.8 E          4.3 @  7.7 ENE     AVERAGE
+13:26     5.6     2.3 @ 15.4 SE         4.9 @  8.3 ENE     AVERAGE
+13:56     4.6     2.0 @ 11.8 ENE        4.3 @  8.3 ENE     AVERAGE
+14:26     5.2     2.0 @ 11.8 E          4.6 @  8.3 ENE     AVERAGE
+14:56     4.9     2.0 @ 15.4 SE         4.6 @  8.3 ENE     AVERAGE
 
 == 51211 Pearl Harbor entrance buoy (south): waves split into swell and wind sea
 time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
@@ -27,6 +47,27 @@ time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
 14:30     3.0     2.3 @ 15.4 SSE        2.0 @  9.5 S       SWELL
 15:00     2.6     2.0 @ 15.4 SSE        2.0 @  9.5 S       SWELL
 
+== 51202 Mokapu buoy (standard file: height, dominant period, direction)
+05:26  4.6 ft @ 8 s (avg 6.5 s) from ENE
+05:56  4.6 ft @ 8 s (avg 6.3 s) from ENE
+06:26  4.6 ft @ 8 s (avg 6.8 s) from ENE
+06:56  4.3 ft @ 8 s (avg 6.7 s) from ENE
+07:26  4.6 ft @ 8 s (avg 7.0 s) from ENE
+07:56  4.3 ft @ 8 s (avg 7.1 s) from ENE
+08:26  4.3 ft @ 8 s (avg 6.9 s) from NE
+08:56  4.6 ft @ 8 s (avg 7.0 s) from ENE
+09:26  4.3 ft @ 8 s (avg 7.2 s) from ENE
+09:56  4.6 ft @ 8 s (avg 7.1 s) from ENE
+10:26  4.6 ft @ 8 s (avg 7.2 s) from ENE
+10:56  4.9 ft @ 8 s (avg 7.3 s) from ENE
+11:26  4.6 ft @ 8 s (avg 7.0 s) from ENE
+11:56  4.9 ft @ 8 s (avg 7.3 s) from ENE
+12:26  4.9 ft @ 8 s (avg 7.5 s) from ENE
+12:56  4.9 ft @ 8 s (avg 7.2 s) from ENE
+13:56  4.6 ft @ 8 s (avg 6.8 s) from ENE
+14:26  5.2 ft @ 8 s (avg 6.9 s) from ENE
+14:56  4.9 ft @ 8 s (avg 7.0 s) from ENE
+
 == MOKH1 Coconut Island wind
 05:00  1 kt (gust 3) from SW
 05:30  1 kt (gust 2) from SSW
@@ -48,8 +89,6 @@ time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
 13:30  5 kt (gust 9) from E
 14:00  9 kt (gust 10) from NE
 14:30  7 kt (gust 9) from ENE
-
-== 51202 Mokapu buoy wind (if fitted)
 
 == PHNG Kaneohe MCBH airport wind
 PHNG failed: HTTP Error 422: Unprocessable Content
