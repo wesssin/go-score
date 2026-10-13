@@ -1,0 +1,55 @@
+Observations 2026-10-12, 5:00-15:00 HST (pulled 2026-10-13 01:51 UTC)
+
+== 51202 Mokapu buoy: waves split into swell and wind sea
+time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
+
+== 51211 Pearl Harbor entrance buoy (south): waves split into swell and wind sea
+time   total ft  swell ft @ s from   wind-sea ft @ s from   steepness
+05:00     3.0     2.3 @ 15.4 SSE        1.6 @  8.7 S       SWELL
+05:30     2.6     2.3 @ 15.4 SSE        1.6 @  8.7 S       SWELL
+06:00     2.6     2.0 @ 15.4 SSE        1.3 @  9.1 S       N/A
+06:30     2.6     2.0 @ 16.7 SSE        1.6 @  8.7 S       SWELL
+07:00     2.6     2.3 @ 15.4 SSE        1.6 @  9.1 S       SWELL
+07:30     2.6     2.0 @ 15.4 SSE        1.6 @  8.7 S       N/A
+08:00     2.6     2.0 @ 15.4 SSE        1.6 @  8.7 S       N/A
+08:30     2.6     2.0 @ 15.4 SSE        1.6 @  9.1 S       N/A
+09:00     2.6     2.0 @ 15.4 SSE        1.6 @  8.7 S       SWELL
+09:30     2.6     2.0 @ 15.4 SSE        1.6 @  8.7 S       N/A
+10:00     2.6     2.0 @ 15.4 SSE        1.6 @  9.5 S       N/A
+10:30     2.6     2.0 @ 15.4 SSE        1.6 @  8.7 S       N/A
+11:00     2.6     2.0 @ 15.4 SSE        1.6 @  9.5 S       N/A
+11:30     2.6     1.6 @ 15.4 SSE        2.0 @  8.3 S       N/A
+12:00     2.6     1.6 @ 15.4 SSE        1.6 @  9.5 S       N/A
+12:30     2.6     1.6 @ 15.4 SSE        2.0 @  9.5 S       N/A
+13:00     2.6     2.0 @ 15.4 SSE        2.0 @  9.5 S       SWELL
+13:30     2.6     2.0 @ 15.4 SSE        2.0 @  9.5 S       SWELL
+14:00     3.0     2.0 @ 15.4 SSE        2.0 @  9.1 S       SWELL
+14:30     3.0     2.3 @ 15.4 SSE        2.0 @  9.5 S       SWELL
+15:00     2.6     2.0 @ 15.4 SSE        2.0 @  9.5 S       SWELL
+
+== MOKH1 Coconut Island wind
+05:00  1 kt (gust 3) from SW
+05:30  1 kt (gust 2) from SSW
+06:00  2 kt (gust 2) from W
+06:30  1 kt (gust 3) from SW
+07:00  0 kt (gust 1) from MM
+07:30  0 kt (gust 0) from MM
+08:00  0 kt (gust 3) from MM
+08:30  1 kt (gust 2) from WNW
+09:00  5 kt (gust 6) from NE
+09:30  5 kt (gust 7) from NE
+10:00  8 kt (gust 10) from NE
+10:30  6 kt (gust 10) from NNE
+11:00  7 kt (gust 9) from N
+11:30  7 kt (gust 9) from N
+12:00  8 kt (gust 10) from NNE
+12:30  7 kt (gust 12) from ENE
+13:00  8 kt (gust 10) from NE
+13:30  5 kt (gust 9) from E
+14:00  9 kt (gust 10) from NE
+14:30  7 kt (gust 9) from ENE
+
+== 51202 Mokapu buoy wind (if fitted)
+
+== PHNG Kaneohe MCBH airport wind
+PHNG failed: HTTP Error 422: Unprocessable Content
