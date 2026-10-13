@@ -95,12 +95,15 @@ PERIOD_PEN = [(3, 7), (5, 6), (6, 4), (7, 1.5), (9, 0), (30, 0)]            # pe
 STEEP_PEN = [(0, 0), (0.012, 0), (0.018, 2), (0.025, 5), (0.035, 7)]       # Hs / (1.56 Tp^2)
 HEIGHT_PEN = [(0, 0), (6, 0), (8, 1.5), (12, 4), (20, 8)]                  # feet
 CHOP_PEN = [(0, 0), (2.0, 0), (2.5, 0.5), (3.0, 3), (3.5, 5), (4.5, 7)]     # WW3 wind-chop height, feet
-# East (trade) swell, taken from the models' swell trains by direction. Wes, Oct 12: "the east swell height plus period
-# and the wind are the biggest factors"; the long north swell "just made it lumpy".
-# Shown on every card. SCORED only when the NWS text has an east wind swell: then NWS + models are averaged (the NWS
-# line used to override everything, which made the score flip as it came and went). Not scored from the models alone
-# yet: on Oct 12 their east-swell period ran 1-2 s short of the Mokapu buoy (6-7 s vs 8 s), which would wrongly cost
-# good trade-swell days (Sep 13 would have lost ~1 point). Revisit once more trip days are logged.
+# East (trade) swell, scored on its own height and period every hour at every offshore spot.
+# Wes, Oct 12: "the east swell height plus period and the wind are the biggest factors"; the long north swell
+# "just made it lumpy"; "if it had been windier that same swell would have been nastier, and it doesn't take much wind".
+# Fitted to the Mokapu buoy (51202) on his rated days: ~4 ft @ 9-10 s = epic/good (Sep 9, Sep 13), ~4 ft @ 8 s with
+# light wind = ~8 (Oct 12), ~6 ft @ 9-10 s with 11-15 kt = sloppy (Sep 8).
+# Sources: height = average of MeteoFrance, GFS-Wave and the NWS text; period = GFS-Wave and NWS (MeteoFrance ran ~2 s
+# short of the buoy on 4 of 5 days; GFS-Wave was within ~0.5 s).
+EAST_PEN = [(0, 0), (0.010, 0), (0.012, 1.0), (0.016, 2.0), (0.020, 3.5), (0.025, 5), (0.035, 7)]   # east steepness
+EAST_WIND_MULT = [(0, 1.0), (6, 1.0), (10, 1.5), (14, 2.0)]   # same east swell gets nastier as the wind comes up
 EAST_SECTOR = (40, 140)             # swell coming from NE through SE counts as east swell (NNE and north = north swell)
 CROSS_PEN = [(0, 0), (3.0, 0), (4.0, 0.4), (6.0, 0.8), (8.0, 1.0)]   # other-direction swell height, ft -> crossed-seas lumpiness
 CROSS_MIN_EAST_FT = 2.0             # crossed seas only matter when there is real east swell to cross
@@ -149,6 +152,14 @@ def lee_factor(spot, deg):
     return 1.0
 
 
+def east_pen(ft, sec, wind_kt):
+    """East swell: its own steepness scale, capped at the chop scale for that height, made worse by wind."""
+    if not ft or not sec:
+        return 0.0
+    base = min(interp(steepness(ft, sec), EAST_PEN), interp(ft, CHOP_PEN))
+    return base * interp(wind_kt or 0, EAST_WIND_MULT)
+
+
 def component_pen(ft, sec):
     """One swell train scored by steepness, never more than the chop scale charges for that height."""
     if not ft or not sec:
@@ -160,7 +171,7 @@ def hour_score(wind_kt, hs_ft, tp_s, chop_ft=None, lee=1.0, east=None, cross_ft=
     wind_p = interp(wind_kt, WIND_PEN) * lee
     chop_p = max(interp(tp_s, PERIOD_PEN), interp(steepness(hs_ft, tp_s), STEEP_PEN),
                  interp(chop_ft, CHOP_PEN) if chop_ft is not None else 0.0,
-                 component_pen(*east) if east else 0.0)
+                 east_pen(east[0], east[1], wind_kt) if east else 0.0)
     height_p = interp(hs_ft, HEIGHT_PEN)
     ref = east or east_seen
     cross_p = interp(cross_ft, CROSS_PEN) if (cross_ft and ref and ref[0] >= CROSS_MIN_EAST_FT) else 0.0
@@ -811,24 +822,28 @@ def compute_spots(spot_wind, spot_waves, days, nws_short=None):
                     if cw and cw.get("ws_hs") is not None:
                         rec["ws_hs"], rec["ws_tp"], rec["chop_src"] = cw["ws_hs"], cw.get("ws_tp"), csrc
                         break
-                easts, others = [], []
+                esrc, others = {}, []
                 for psrc in ("Open-Meteo", "GFS-Wave"):            # swell trains by direction (WW3/SWAN give totals only)
                     pw = spot_waves.get(name, {}).get(psrc, {}).get(ut)
                     if pw and pw.get("parts"):
                         e, o = east_split(pw["parts"])
                         others.append(o)
                         if e:
-                            easts.append(e)
+                            esrc[psrc] = e
                 ns = (nws_short or {}).get(lt.date())
                 nws_east = bool(ns and ns.get("dir") is not None and EAST_SECTOR[0] <= ns["dir"] <= EAST_SECTOR[1])
-                if ns and not near and 5 <= h < 18:
-                    if nws_east and easts:          # NWS east wind swell joins the model average instead of overriding it
-                        easts.append((ns["ft"], ns["s"]))
-                    else:
+                if ns and 5 <= h < 18:
+                    if nws_east:                    # NWS east wind swell joins the east-swell average
+                        esrc["NWS"] = (ns["ft"], ns["s"])
+                    elif not near:
                         rec["nws_sec"] = (ns["ft"], ns["s"])
-                if easts:
-                    rec["east"] = (sum(e[0] for e in easts) / len(easts), sum(e[1] for e in easts) / len(easts))
-                    rec["east_scored"] = nws_east and not near and 5 <= h < 18
+                hts = [esrc[k][0] for k in ("Open-Meteo", "GFS-Wave", "NWS") if k in esrc]
+                pers = [esrc[k][1] for k in ("GFS-Wave", "NWS") if k in esrc]
+                if not pers and "Open-Meteo" in esrc:
+                    pers = [esrc["Open-Meteo"][1] + 2.0]     # MeteoFrance period runs ~2 s short of the buoy
+                if hts and pers:
+                    rec["east"] = (sum(hts) / len(hts), sum(pers) / len(pers))
+                    rec["east_scored"] = not near
                 if others:
                     rec["cross_ft"] = sum(others) / len(others)
                 recs.append(rec)
@@ -1035,9 +1050,9 @@ def render(days, ctx, status, demo):
         ew = [r for nm, recs in per_spot.items() if nm != "Bay mouth" for r in recs
               if r["t"].date() == d.date() and WINDOW[0] <= r["hour"] < WINDOW[1] and r.get("east")]
         if ew:
-            short_txt += "<br>east swell %s ft @ %s s (models%s)" % (rng(min(r["east"][0] for r in ew), max(r["east"][0] for r in ew), 1),
+            short_txt += "<br>east swell %s ft @ %s s (models + NWS%s)" % (rng(min(r["east"][0] for r in ew), max(r["east"][0] for r in ew), 1),
                                                                rng(min(r["east"][1] for r in ew), max(r["east"][1] for r in ew)),
-                                                               " + NWS, scored by steepness" if any(r.get("east_scored") for r in ew) else ", shown only")
+                                                               ", scored; worse with wind")
             cx = max(r.get("cross_ft") or 0 for r in ew)
             if cx >= 4:
                 short_txt += ", crossing a %.0f ft swell from another direction" % cx
@@ -1268,7 +1283,7 @@ ul.status{list-style:none;padding:0;margin:0;font-size:13px}ul.status li{margin:
 <h2>Details</h2><div class="wrap"><table><thead><tr><th>Day</th><th>Score</th><th>Call</th><th>Best route</th><th>Wind</th><th>Waves</th><th>Period</th><th>By spot</th><th>Wind models</th><th>Held back by</th></tr></thead><tbody>%%ROWS%%</tbody></table></div>
 <h2>Penguin Bank check</h2>%%PENGUIN%%
 <h2>Data sources this run</h2><ul class="status">%%STATUS%%</ul>
-<p class="fine">How to read this: the score takes points off 10 for sustained wind (3-hour average), short-period chop and big waves, at each offshore spot on the route, then averages the spots (the bay mouth is shown for getting out but never counts). Long, smooth swell costs almost nothing; small waves with a short period cost a lot. The east (trade) swell is shown on its own; when the NWS forecast has an east wind swell, it is averaged with the models and scored on its own height and period. A big swell crossing the east swell from another direction costs up to a point for lumpiness. Epic needs 9+ with no rough hour; the day is capped at 3 if the route-average wind holds at 12 kt or more for 2+ hours, or any spot hits 15 kt. WW3 wind chop over 2.5 ft costs points even when the swell period looks long. Offshore spots use the WW3 model, which separates wind chop from swell. Fitted to five of your days, so treat the tiers as a starting point.</p>
+<p class="fine">How to read this: the score takes points off 10 for sustained wind (3-hour average), short-period chop and big waves, at each offshore spot on the route, then averages the spots (the bay mouth is shown for getting out but never counts). Long, smooth swell costs almost nothing; small waves with a short period cost a lot. The east (trade) swell is scored on its own height and period at every spot, because it sets the tone even when a long swell from another direction sets the peak period: about 4 ft at 9-10 s costs nothing, 4 ft at 8 s about a point, 4 ft at 7 s about two, and the same swell costs up to twice as much as the wind comes up from 6 to 14 kt. A big swell crossing it from another direction costs up to a point for lumpiness. Epic needs 9+ with no rough hour; the day is capped at 3 if the route-average wind holds at 12 kt or more for 2+ hours, or any spot hits 15 kt. WW3 wind chop over 2.5 ft costs points even when the swell period looks long. Offshore spots use the WW3 model, which separates wind chop from swell. Fitted to five of your days, so treat the tiers as a starting point.</p>
 </main></body></html>"""
 
 
