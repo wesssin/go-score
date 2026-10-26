@@ -7,33 +7,42 @@ ok   NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-ok   WW3 waves + chop @ Bay mouth
+FAIL WW3 waves + chop @ Bay mouth: network error: timed out
+     using saved WW3 waves + chop from 4 h ago
 ...  SWAN waves @ Bay mouth
-ok   SWAN waves @ Bay mouth
+FAIL SWAN waves @ Bay mouth: network error: timed out
+     using saved SWAN waves from 4 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-ok   WW3 waves + chop @ U FAD
+FAIL WW3 waves + chop @ U FAD: network error: timed out
+     using saved WW3 waves + chop from 4 h ago
 ...  SWAN waves @ U FAD
-ok   SWAN waves @ U FAD
+FAIL SWAN waves @ U FAD: skipped: PacIOOS did not answer earlier this run
+     using saved SWAN waves from 4 h ago
 ...  NWS wind forecast @ MM FAD
 ok   NWS wind forecast @ MM FAD
 ...  WW3 waves + chop @ MM FAD
-ok   WW3 waves + chop @ MM FAD
+FAIL WW3 waves + chop @ MM FAD: skipped: PacIOOS did not answer earlier this run
+     using saved WW3 waves + chop from 4 h ago
 ...  NWS wind forecast @ T FAD
 ok   NWS wind forecast @ T FAD
 ...  WW3 waves + chop @ T FAD
-ok   WW3 waves + chop @ T FAD
+FAIL WW3 waves + chop @ T FAD: skipped: PacIOOS did not answer earlier this run
+     using saved WW3 waves + chop from 4 h ago
 ...  NWS wind forecast @ LL FAD
 ok   NWS wind forecast @ LL FAD
 ...  WW3 waves + chop @ LL FAD
-ok   WW3 waves + chop @ LL FAD
+FAIL WW3 waves + chop @ LL FAD: skipped: PacIOOS did not answer earlier this run
+     using saved WW3 waves + chop from 4 h ago
 ...  SWAN waves @ LL FAD
-ok   SWAN waves @ LL FAD
+FAIL SWAN waves @ LL FAD: skipped: PacIOOS did not answer earlier this run
+     using saved SWAN waves from 4 h ago
 ...  NWS wind forecast @ X FAD
 ok   NWS wind forecast @ X FAD
 ...  WW3 waves + chop @ X FAD
-ok   WW3 waves + chop @ X FAD
+FAIL WW3 waves + chop @ X FAD: skipped: PacIOOS did not answer earlier this run
+     using saved WW3 waves + chop from 4 h ago
 ...  NWS Oahu Windward Waters forecast
 ok   NWS Oahu Windward Waters forecast
 ...  buoy 51202 Mokapu (your buoy)
@@ -43,7 +52,7 @@ ok   buoy 51205 Pauwela, Maui
 ...  buoy 51201 Waimea
 ok   buoy 51201 Waimea
 ...  buoy 51208 Hanalei
-ok   buoy 51208 Hanalei
+FAIL buoy 51208 Hanalei: HTTP 404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found</h1> <p>Th
 ...  buoy 51001 NW Hawaii
 ok   buoy 51001 NW Hawaii
 ...  buoy 51101 NW Hawaii (backup)
@@ -55,29 +64,26 @@ ok   Coconut Island wind (NOAA Mokuoloe MOKH1)
 ...  Lifeguard surf reports
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
-ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      1 kt from NW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           5 kt from NNE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   3 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+FAIL Hawaii Mesonet (windward stations): network error: <urlopen error timed out>
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Sat Oct 24  no forecast
-  Sun Oct 25  6.2  Marginal  North to X           wind 10–13 mph, waves 5.5 ft @ 9 s
-  Mon Oct 26  9.9  Epic      North toward Kahuku  wind 5–7 mph, waves 5.4–5.8 ft @ 9–10 s
-  Tue Oct 27  4.0  Stay home North toward Kahuku  wind 10–12 mph, waves 7.0–7.3 ft @ 14 s
-  Wed Oct 28  0.0  Stay home East to MM & T       wind 12–16 mph, waves 6.6–7.5 ft @ 12–13 s
-  Thu Oct 29  1.1  Stay home East to MM & T       wind 11–14 mph, waves 6.7–7.2 ft @ 11–12 s
-  Fri Oct 30  3.5  Stay home North toward Kahuku  wind 12–13 mph, waves 6.2–6.5 ft @ 10 s
+  Sun Oct 25  no forecast
+  Mon Oct 26  9.6  Epic      North toward Kahuku  wind 5–8 mph, waves 5.4–5.8 ft @ 9–10 s
+  Tue Oct 27  7.2  Marginal  North toward Kahuku  wind 8–10 mph, waves 7.1–7.2 ft @ 14 s
+  Wed Oct 28  0.0  Stay home East to MM & T       wind 15–17 mph, waves 8.3–8.5 ft @ 12–13 s
+  Thu Oct 29  0.0  Stay home East to MM & T       wind 12–15 mph, waves 6.0–6.5 ft @ 11 s
+  Fri Oct 30  0.4  Stay home MM & LL              wind 14–15 mph, waves 5.7–5.8 ft @ 10 s
+  Sat Oct 31  4.4  Stay home North toward Kahuku  wind 9–13 mph, waves 5.8–5.9 ft @ 13–22 s
 
 Penguin Bank check:
-  Sat Oct 24  no: wind 17 kt at Bank N ledge 2 PM; channel average 12.4 kt; wind chop 2.4 ft
-  Sun Oct 25  no: wind 17 kt at P FAD 5 AM; channel average 12.2 kt; wind chop 3.2 ft; period down to 9 s; NWS Kaiwi 15 kt
-  Mon Oct 26  WINDOW (1st run)
-  Tue Oct 27  no: wind 12 kt at Kaiwi mid-channel 1 PM; channel average 8.1 kt; models differ by 5 kt; wind chop 2.4 ft
-  Wed Oct 28  no: wind 19 kt at P FAD 5 AM; channel average 12.1 kt; models differ by 7 kt; wind chop 3.9 ft; waves 6.0 ft; period down to 8 s; NWS Kaiwi 15 kt
-  Thu Oct 29  no: wind 13 kt at P FAD 9 AM; channel average 8.6 kt; models differ by 10 kt; wind chop 3.1 ft; period down to 9 s; NWS Kaiwi 15 kt
-  Fri Oct 30  no: wind 13 kt at Kaiwi mid-channel 8 AM; channel average 8.7 kt; models differ by 9 kt
+  Sun Oct 25  no: wind 17 kt at P FAD 5 AM; channel average 12.4 kt; wind chop 3.2 ft; period down to 9 s
+  Mon Oct 26  no: wind 11 kt at P FAD 8 AM; channel average 8.4 kt; NWS Kaiwi 15 kt
+  Tue Oct 27  no: wind chop 1.6 ft
+  Wed Oct 28  no: wind 17 kt at P FAD 9 AM; channel average 12.1 kt; models differ by 5 kt; wind chop 3.3 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Thu Oct 29  no: wind 13 kt at Kaiwi mid-channel 8 AM; channel average 8.1 kt; wind chop 4.1 ft; waves 6.2 ft; period down to 9 s
+  Fri Oct 30  no: wind 14 kt at Kaiwi mid-channel 9 AM; channel average 10.9 kt; models differ by 14 kt; wind chop 3.7 ft; period down to 9 s; NWS Kaiwi 15 kt
+  Sat Oct 31  no: wind 11 kt at Kaiwi mid-channel 8 AM; models differ by 9 kt; wind chop 2.2 ft; period down to 9 s
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
