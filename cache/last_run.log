@@ -1,5 +1,5 @@
 ...  Open-Meteo wind (all spots)
-FAIL Open-Meteo wind (all spots): network error: <urlopen error _ssl.c:994: The handshake operation timed out>
+ok   Open-Meteo wind (all spots)
 ...  Open-Meteo Marine waves (all spots)
 ok   Open-Meteo Marine waves (all spots)
 ...  NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
@@ -56,28 +56,28 @@ ok   Coconut Island wind (NOAA Mokuoloe MOKH1)
 ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 ok   Hawaii Mesonet (windward stations)
-     mesonet 0533 Maunawili Palawai      3 kt from NNW  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0541 Kaaawa Makai           6 kt from NE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
-     mesonet 0552 Laie                   8 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0533 Maunawili Palawai      3 kt from NNE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0541 Kaaawa Makai           4 kt from E  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
+     mesonet 0552 Laie                   5 kt from ENE  vars=WD_1_StdCS,WD_1_StdY,WDrs_1_Avg,WDuv_1_Avg,WS_1_Avg,WS_1_Max,WS_1_Min,WSrs_1_Avg
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Sun Nov 15  0.0  Stay home East to MM & T       wind 25–26 mph, waves 10.8–11.6 ft @ 15–17 s
-  Mon Nov 16  0.0  Stay home East to MM & T       wind 23 mph, waves 10.7–11.0 ft @ 13 s
-  Tue Nov 17  0.0  Stay home East to MM & T       wind 21 mph, waves 8.9–9.5 ft @ 11–12 s
-  Wed Nov 18  0.0  Stay home East to MM & T       wind 20–22 mph, waves 8.2–8.9 ft @ 9 s
-  Thu Nov 19  0.0  Stay home East to MM & T       wind 21–23 mph, waves 7.8–8.0 ft @ 8 s
-  Fri Nov 20  0.0  Stay home East to MM & T       wind 25 mph, waves 8.4–8.5 ft @ 8–16 s
-  Sat Nov 21  0.0  Stay home East to MM & T       wind 22–24 mph, waves 8.0–9.7 ft @ 7–8 s
+  Mon Nov 16  0.0  Stay home East to MM & T       wind 23–24 mph, waves 10.5–11.0 ft @ 13 s
+  Tue Nov 17  0.0  Stay home East to MM & T       wind 22–23 mph, waves 9.4–10.2 ft @ 9–12 s
+  Wed Nov 18  0.0  Stay home East to MM & T       wind 20–21 mph, waves 7.8–8.2 ft @ 9 s
+  Thu Nov 19  0.0  Stay home East to MM & T       wind 22–24 mph, waves 8.0–8.5 ft @ 8–9 s
+  Fri Nov 20  0.0  Stay home East to MM & T       wind 25 mph, waves 8.6–8.9 ft @ 8 s
+  Sat Nov 21  0.0  Stay home East to MM & T       wind 20–23 mph, waves 9.6–9.9 ft @ 8 s
+  Sun Nov 22  0.0  Stay home East to MM & T       wind 17–19 mph, waves 7.8–9.1 ft @ 9 s
 
 Penguin Bank check:
-  Sun Nov 15  no: wind 23 kt at Kaiwi mid-channel 9 AM; channel average 18.3 kt; models differ by 6 kt; wind chop 5.6 ft; waves 7.4 ft; period down to 6 s; NWS Kaiwi 25 kt; Small Craft Advisory
-  Mon Nov 16  no: wind 18 kt at Makapuu corner 2 PM; channel average 12.8 kt; models differ by 9 kt; wind chop 5.1 ft; waves 7.0 ft; period down to 7 s; NWS Kaiwi 20 kt
-  Tue Nov 17  no: wind 23 kt at Kaiwi mid-channel 2 PM; channel average 15.1 kt; models differ by 7 kt; wind chop 4.8 ft; waves 6.7 ft; period down to 7 s; NWS Kaiwi 20 kt
-  Wed Nov 18  no: wind 18 kt at Kaiwi mid-channel 10 AM; channel average 14.5 kt; models differ by 5 kt; wind chop 4.1 ft; period down to 7 s; NWS Kaiwi 20 kt
-  Thu Nov 19  no: wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.7 kt; wind chop 4.4 ft; period down to 7 s; NWS Kaiwi 25 kt
-  Fri Nov 20  no: wind 24 kt at Kaiwi mid-channel 2 PM; channel average 18.0 kt; models differ by 7 kt; wind chop 7.1 ft; waves 7.7 ft; period down to 7 s
-  Sat Nov 21  no: wind 24 kt at Kaiwi mid-channel 5 AM; channel average 17.6 kt; wind chop 5.8 ft; waves 7.0 ft; period down to 7 s
+  Mon Nov 16  no: wind 20 kt at Kaiwi mid-channel 1 PM; channel average 13.2 kt; models differ by 6 kt; wind chop 5.5 ft; waves 7.5 ft; period down to 7 s; NWS Kaiwi 25 kt; Small Craft Advisory
+  Tue Nov 17  no: wind 22 kt at Kaiwi mid-channel 2 PM; channel average 15.5 kt; models differ by 4 kt; wind chop 4.9 ft; waves 7.0 ft; period down to 7 s; NWS Kaiwi 20 kt
+  Wed Nov 18  no: wind 18 kt at Kaiwi mid-channel 7 AM; channel average 13.5 kt; models differ by 6 kt; wind chop 4.1 ft; period down to 7 s; NWS Kaiwi 20 kt
+  Thu Nov 19  no: wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.8 kt; models differ by 4 kt; wind chop 5.3 ft; waves 6.4 ft; period down to 7 s; NWS Kaiwi 25 kt
+  Fri Nov 20  no: wind 25 kt at Kaiwi mid-channel 11 AM; channel average 18.7 kt; models differ by 4 kt; wind chop 5.9 ft; waves 6.7 ft; period down to 7 s; NWS Kaiwi 25 kt
+  Sat Nov 21  no: wind 22 kt at Kaiwi mid-channel 12 PM; channel average 17.1 kt; wind chop 4.3 ft; period down to 7 s
+  Sun Nov 22  no: wind 23 kt at Kaiwi mid-channel 5 AM; channel average 16.7 kt; wind chop 4.1 ft; period down to 7 s
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
