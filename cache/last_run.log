@@ -59,22 +59,22 @@ FAIL Hawaii Mesonet (windward stations): network error: <urlopen error _ssl.c:99
 ...  Penguin Bank check
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Mon Nov 23  0.1  Stay home North toward Kahuku  wind 14–16 mph, waves 5.8–6.5 ft @ 8 s
-  Tue Nov 24  0.7  Stay home North toward Kahuku  wind 10–14 mph, waves 7.2–12.3 ft @ 16–18 s
-  Wed Nov 25  6.2  Marginal  North toward Kahuku  wind 4–6 mph, waves 8.7–10.0 ft @ 13–14 s  [Wind from the WSW – windward side in the lee]
-  Thu Nov 26  0.0  Stay home East to MM & T       wind 21–23 mph, waves 15.4–18.2 ft @ 15–16 s
-  Fri Nov 27  0.0  Stay home East to MM & T       wind 19–22 mph, waves 13.6–14.0 ft @ 13 s
-  Sat Nov 28  0.0  Stay home East to MM & T       wind 19–21 mph, waves 9.2–10.6 ft @ 11 s
-  Sun Nov 29  0.0  Stay home East to MM & T       wind 19–21 mph, waves 6.7–7.8 ft @ 10–11 s
+  Tue Nov 24  1.1  Stay home North toward Kahuku  wind 9–14 mph, waves 7.2–12.7 ft @ 16–18 s  [Settling day: wind backs off after the trades – expect leftover slop]
+  Wed Nov 25  6.2  Marginal  North toward Kahuku  wind 4–7 mph, waves 8.7–10.1 ft @ 13–14 s  [Watch day: 2nd light day after the trades – leftover chop should have laid down; Wind from the SW – windward side in the lee]
+  Thu Nov 26  0.0  Stay home East to MM & T       wind 24–27 mph, waves 14.9–18.0 ft @ 15–16 s
+  Fri Nov 27  0.0  Stay home East to MM & T       wind 15–19 mph, waves 13.3–14.1 ft @ 12–13 s
+  Sat Nov 28  0.0  Stay home East to MM & T       wind 15–17 mph, waves 9.1–10.4 ft @ 11 s
+  Sun Nov 29  0.8  Stay home North toward Kahuku  wind 11–12 mph, waves 8.2–8.5 ft @ 11 s
+  Mon Nov 30  0.0  Stay home East to MM & T       wind 26 mph, waves 7.5–10.8 ft @ 7–15 s
 
 Penguin Bank check:
-  Mon Nov 23  no: wind 19 kt at Bank N ledge 5 AM; channel average 14.9 kt; wind chop 3.7 ft; period down to 7 s; NWS Kaiwi 20 kt
-  Tue Nov 24  no: wind 16 kt at Kaiwi mid-channel 5 AM; channel average 9.2 kt; wind chop 2.0 ft; period down to 8 s; NWS Kaiwi 15 kt
-  Wed Nov 25  WINDOW (1st run)
-  Thu Nov 26  no: wind 21 kt at P FAD 7 AM; channel average 15.5 kt; wind chop 6.0 ft; waves 9.5 ft; period down to 9 s; NWS Kaiwi 25 kt
-  Fri Nov 27  no: wind 22 kt at Bank N ledge 5 AM; channel average 17.5 kt; models differ by 7 kt; wind chop 6.2 ft; waves 9.7 ft; period down to 8 s; NWS Kaiwi 20 kt
-  Sat Nov 28  no: wind 19 kt at Kaiwi mid-channel 5 AM; channel average 15.2 kt; models differ by 8 kt; wind chop 4.9 ft; waves 7.2 ft; period down to 7 s
-  Sun Nov 29  no: wind 17 kt at Kaiwi mid-channel 2 PM; channel average 12.0 kt; models differ by 15 kt; wind chop 5.1 ft; waves 6.6 ft; period down to 7 s
+  Tue Nov 24  no: wind 15 kt at Kaiwi mid-channel 5 AM; channel average 8.9 kt; wind chop 2.3 ft; period down to 7 s; NWS Kaiwi 15 kt
+  Wed Nov 25  no: wind 13 kt at Kaiwi mid-channel 2 PM
+  Thu Nov 26  no: wind 21 kt at P FAD 9 AM; channel average 14.9 kt; models differ by 5 kt; wind chop 6.8 ft; waves 10.2 ft; period down to 8 s; NWS Kaiwi 25 kt
+  Fri Nov 27  no: wind 18 kt at Bank N ledge 5 AM; channel average 14.1 kt; models differ by 5 kt; wind chop 3.9 ft; waves 9.2 ft; period down to 9 s; NWS Kaiwi 20 kt
+  Sat Nov 28  no: wind 14 kt at P FAD 7 AM; channel average 11.4 kt; models differ by 7 kt; wind chop 2.0 ft; waves 7.0 ft; NWS Kaiwi 15 kt
+  Sun Nov 29  no: wind 13 kt at Bank N ledge 2 PM; channel average 9.7 kt; models differ by 12 kt; wind chop 3.7 ft; period down to 8 s
+  Mon Nov 30  no: wind 24 kt at Kaiwi mid-channel 11 AM; channel average 19.1 kt; models differ by 9 kt; wind chop 7.5 ft; waves 8.3 ft; period down to 6 s
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
