@@ -1,0 +1,40 @@
+name: Surf backtest (No Can Tells)
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "First day (YYYY-MM-DD), blank = 2025-01-01"
+        required: false
+      end:
+        description: "Last day (YYYY-MM-DD), blank = 2 days ago"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the surf backtest
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: |
+          mkdir -p backtest
+          python surf_backtest.py 2>&1 | tee backtest/surf_backtest_log.txt
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "go-score-bot"
+          git config user.email "go-score-bot@users.noreply.github.com"
+          git add backtest
+          git commit -m "Surf backtest $(date -u +%Y-%m-%d)" || echo "nothing new"
+          git pull --rebase -q || true
+          git push
