@@ -1,5 +1,5 @@
 ...  Open-Meteo wind (all spots)
-FAIL Open-Meteo wind (all spots): network error: <urlopen error _ssl.c:994: The handshake operation timed out>
+ok   Open-Meteo wind (all spots)
 ...  Open-Meteo Marine waves (all spots)
 ok   Open-Meteo Marine waves (all spots)
 ...  NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
@@ -7,33 +7,42 @@ ok   NOAA GFS-Wave via Open-Meteo (backup for PacIOOS WW3)
 ...  NWS wind forecast @ Bay mouth
 ok   NWS wind forecast @ Bay mouth
 ...  WW3 waves + chop @ Bay mouth
-ok   WW3 waves + chop @ Bay mouth
+FAIL WW3 waves + chop @ Bay mouth: network error: The read operation timed out
+     using saved WW3 waves + chop from 7 h ago
 ...  SWAN waves @ Bay mouth
-ok   SWAN waves @ Bay mouth
+FAIL SWAN waves @ Bay mouth: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 7 h ago
 ...  NWS wind forecast @ U FAD
 ok   NWS wind forecast @ U FAD
 ...  WW3 waves + chop @ U FAD
-ok   WW3 waves + chop @ U FAD
+FAIL WW3 waves + chop @ U FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 7 h ago
 ...  SWAN waves @ U FAD
-ok   SWAN waves @ U FAD
+FAIL SWAN waves @ U FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 7 h ago
 ...  NWS wind forecast @ MM FAD
 ok   NWS wind forecast @ MM FAD
 ...  WW3 waves + chop @ MM FAD
-ok   WW3 waves + chop @ MM FAD
+FAIL WW3 waves + chop @ MM FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 7 h ago
 ...  NWS wind forecast @ T FAD
 ok   NWS wind forecast @ T FAD
 ...  WW3 waves + chop @ T FAD
-ok   WW3 waves + chop @ T FAD
+FAIL WW3 waves + chop @ T FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 7 h ago
 ...  NWS wind forecast @ LL FAD
 ok   NWS wind forecast @ LL FAD
 ...  WW3 waves + chop @ LL FAD
-ok   WW3 waves + chop @ LL FAD
+FAIL WW3 waves + chop @ LL FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 7 h ago
 ...  SWAN waves @ LL FAD
-ok   SWAN waves @ LL FAD
+FAIL SWAN waves @ LL FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=swan_oahu"; } 
+     using saved SWAN waves from 7 h ago
 ...  NWS wind forecast @ X FAD
 ok   NWS wind forecast @ X FAD
 ...  WW3 waves + chop @ X FAD
-ok   WW3 waves + chop @ X FAD
+FAIL WW3 waves + chop @ X FAD: HTTP 404 Error {     code=404;     message="Not Found: Currently unknown datasetID=ww3_hawaii"; } 
+     using saved WW3 waves + chop from 7 h ago
 ...  NWS Oahu Windward Waters forecast
 ok   NWS Oahu Windward Waters forecast
 ...  buoy 51202 Mokapu (your buoy)
@@ -57,24 +66,32 @@ ok   Lifeguard surf reports
 ...  Hawaii Mesonet (windward stations)
 FAIL Hawaii Mesonet (windward stations): network error: <urlopen error _ssl.c:994: The handshake operation timed out>
 ...  Penguin Bank check
+...  Surf check (No Can Tells, Manana)
+  surf Fri Nov 27  nct: no  manana: look
+  surf Sat Nov 28  nct: maybe  manana: look
+  surf Sun Nov 29  nct: maybe  manana: maybe
+  surf Mon Nov 30  nct: no  manana: no
+  surf Tue Dec 1  nct: no  manana: no
+  surf Wed Dec 2  nct: no  manana: no
+  surf Thu Dec 3  nct: no  manana: no
 
 Day-by-day (trip window 6:00-14:00 HST):
-  Fri Nov 27  0.0  Stay home East to MM & T       wind 16–23 mph, waves 13.2–13.9 ft @ 12–13 s
-  Sat Nov 28  0.0  Stay home East to MM & T       wind 15–17 mph, waves 10.1–11.1 ft @ 12 s
-  Sun Nov 29  0.0  Stay home East to MM & T       wind 15–16 mph, waves 8.3–8.6 ft @ 11 s
-  Mon Nov 30  0.0  Stay home East to MM & T       wind 25 mph, waves 11.1–11.6 ft @ 8 s
-  Tue Dec 1   0.0  Stay home East to MM & T       wind 20–23 mph, waves 11.1–12.1 ft @ 8–9 s
-  Wed Dec 2   0.0  Stay home East to MM & T       wind 20–21 mph, waves 9.2–9.9 ft @ 8–12 s
-  Thu Dec 3   0.0  Stay home East to MM & T       wind 26–27 mph, waves 10.2–13.5 ft @ 7–9 s
+  Fri Nov 27  0.0  Stay home East to MM & T       wind 18–23 mph, waves 13.2–13.9 ft @ 12–13 s
+  Sat Nov 28  0.0  Stay home East to MM & T       wind 16–17 mph, waves 10.1–11.1 ft @ 12 s
+  Sun Nov 29  0.0  Stay home East to MM & T       wind 15–18 mph, waves 8.3–8.6 ft @ 11 s
+  Mon Nov 30  0.0  Stay home East to MM & T       wind 25–26 mph, waves 11.1–11.6 ft @ 8 s
+  Tue Dec 1   0.0  Stay home East to MM & T       wind 21–25 mph, waves 11.1–12.1 ft @ 8–9 s
+  Wed Dec 2   0.0  Stay home East to MM & T       wind 21–22 mph, waves 9.2–9.9 ft @ 8–12 s
+  Thu Dec 3   0.0  Stay home East to MM & T       wind 23–24 mph, waves 9.0–13.5 ft @ 6–15 s
 
 Penguin Bank check:
-  Fri Nov 27  no: wind 23 kt at Bank N ledge 7 AM; channel average 18.3 kt; wind chop 5.7 ft; waves 9.6 ft; period down to 8 s; NWS Kaiwi 20 kt; Small Craft Advisory
-  Sat Nov 28  no: wind 18 kt at Kaiwi mid-channel 10 AM; channel average 13.0 kt; wind chop 3.0 ft; waves 7.0 ft; period down to 9 s; NWS Kaiwi 15 kt
-  Sun Nov 29  no: wind 20 kt at Kaiwi mid-channel 2 PM; channel average 12.5 kt; wind chop 1.9 ft; period down to 9 s; NWS Kaiwi 15 kt
-  Mon Nov 30  no: wind 23 kt at Kaiwi mid-channel 10 AM; channel average 17.0 kt; models differ by 5 kt; wind chop 4.7 ft; waves 6.0 ft; period down to 7 s; NWS Kaiwi 25 kt
-  Tue Dec 1  no: wind 19 kt at Kaiwi mid-channel 11 AM; channel average 13.1 kt; models differ by 7 kt; wind chop 2.3 ft; period down to 7 s; NWS Kaiwi 20 kt
-  Wed Dec 2  no: wind 23 kt at Kaiwi mid-channel 2 PM; channel average 17.9 kt; models differ by 5 kt; wind chop 4.6 ft; period down to 6 s
-  Thu Dec 3  no: wind 26 kt at Kaiwi mid-channel 2 PM; channel average 20.6 kt; models differ by 5 kt; wind chop 6.5 ft; waves 7.0 ft; period down to 6 s
+  Fri Nov 27  no: wind 22 kt at Kaiwi mid-channel 8 AM; channel average 17.9 kt; wind chop 5.6 ft; waves 9.4 ft; period down to 8 s; NWS Kaiwi 20 kt
+  Sat Nov 28  no: wind 17 kt at Kaiwi mid-channel 8 AM; channel average 12.9 kt; wind chop 2.7 ft; waves 7.0 ft; period down to 9 s; NWS Kaiwi 15 kt
+  Sun Nov 29  no: wind 18 kt at Kaiwi mid-channel 2 PM; channel average 12.1 kt; wind chop 3.8 ft; waves 6.1 ft; period down to 8 s; NWS Kaiwi 15 kt
+  Mon Nov 30  no: wind 22 kt at Kaiwi mid-channel 2 PM; channel average 16.9 kt; models differ by 5 kt; wind chop 5.1 ft; waves 6.7 ft; period down to 7 s; NWS Kaiwi 25 kt
+  Tue Dec 1  no: wind 18 kt at Kaiwi mid-channel 5 AM; channel average 11.8 kt; models differ by 6 kt; wind chop 5.5 ft; waves 7.0 ft; period down to 7 s; NWS Kaiwi 20 kt
+  Wed Dec 2  no: wind 21 kt at Kaiwi mid-channel 2 PM; channel average 15.2 kt; models differ by 5 kt; wind chop 5.7 ft; waves 6.4 ft; period down to 6 s
+  Thu Dec 3  no: wind 24 kt at Kaiwi mid-channel 9 AM; channel average 19.7 kt; models differ by 6 kt; wind chop 5.8 ft; waves 6.4 ft; period down to 6 s
 
 Wrote /home/runner/work/go-score/go-score/site/index.html
 push sent (200)
