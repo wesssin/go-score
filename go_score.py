@@ -1178,7 +1178,7 @@ def render(days, ctx, status, demo):
            "%%UP%%": "".join(up_rows), "%%CWF%%": cwf_html or '<p class="muted">NWS text forecast not available this run.</p>',
            "%%ROWS%%": "".join(rows), "%%STATUS%%": status_html, "%%WIN%%": win_txt,
            "%%SPOTS%%": esc(" / ".join(rn for rn, _ in ROUTES)), "%%PENGUIN%%": penguin_section(pbc),
-           "%%ROUTEPLANS%%": route_section(route_plans)}
+           "%%ROUTEPLANS%%": route_section(route_plans), "%%SURF%%": surf_section(ctx.get("surf"))}
     page = PAGE
     for k, v in rep.items():
         page = page.replace(k, v)
@@ -1224,6 +1224,14 @@ def saved_copy_note(status):
            "offshore waves come from saved copies (up to %d h old) and Open-Meteo." % CACHE_MAX_HOURS if saved else
            "offshore waves come from Open-Meteo only."))
     return '<p class="muted" style="grid-column:1/-1;margin:0 0 4px">\u24D8 %s</p>' % esc(txt)
+
+
+def surf_section(res):
+    try:
+        import surf as sf
+        return sf.section_html(res, sys.modules[__name__], esc)
+    except Exception as e:  # noqa
+        return '<p class="muted">Surf check section failed: %s</p>' % esc(str(e)[:120])
 
 
 def penguin_section(pbc):
@@ -1274,6 +1282,7 @@ ul.status{list-style:none;padding:0;margin:0;font-size:13px}ul.status li{margin:
 <h1>Windward Go Score</h1><div class="sub">Heeia Kea · 15' RIB · routes: %%SPOTS%% · scored over %%WIN%% · updated %%UPDATED%%</div>%%DEMO%%%%BANNER%%
 <section class="hero"><div class="k">%%HERO_K%%</div><div class="v">%%HERO_V%%</div><div class="s">%%HERO_S%%</div></section>
 <h2>Next 7 days</h2><div class="cards">%%CARDS%%</div>
+<h2>Surf check – No Can Tells &amp; Manana</h2>%%SURF%%
 <h2>Hour by hour (best route)</h2><div class="strip-row"><div></div><div class="strip-head">%%HOURS_HDR%%</div></div>%%STRIPS%%
 <p class="legend">Each cell is that hour's score out of 10 for that day's best route, averaged over its spots (the number is in the cell). Outlined cells are your trip window. Hover or tap a cell for each spot.</p>
 <h2>Right now</h2><div class="tiles">%%NOW%%</div>
@@ -1458,6 +1467,16 @@ def send_push(days, meta, ctx):
         print("push: NTFY_TOPIC not set, skipping")
         return
     title, msg, prio = push_summary(days, meta, ctx.get("flags", {}), ctx.get("cwf_heads"))
+    try:
+        import surf as sf
+        surf_lines, surf_hot = sf.push_lines(ctx.get("surf"))
+        if surf_lines:
+            msg += "\n" + "\n".join(surf_lines)
+            if surf_hot:
+                prio = max(prio, 3)
+                title += " \u00b7 \U0001F3C4 surf"
+    except Exception as e:  # noqa
+        print("surf push lines failed: %s" % str(e)[:120])
     body = {"topic": topic, "title": title, "message": msg, "priority": prio, "tags": ["ocean"]}
     if os.environ.get("PAGE_URL"):
         body["click"] = os.environ["PAGE_URL"]
@@ -1613,6 +1632,16 @@ def main():
         except Exception as e:  # noqa
             status.append((False, "Penguin Bank check failed: %s" % str(e)[:140]))
             print("FAIL Penguin Bank: %s" % str(e)[:140])
+    if not a.demo:
+        try:
+            import surf as sf
+            print("...  Surf check (No Can Tells, Manana)", flush=True)
+            ctx["surf"] = sf.check(sys.modules[__name__], status, (ctx.get("buoys") or {}).get("51202"))
+            for d, v in sorted(ctx["surf"]["days"].items()):
+                print("  surf %s  %s" % (d.strftime("%a %b %-d"), "  ".join("%s: %s" % (k, x["verdict"] or "no") for k, x in v.items())))
+        except Exception as e:  # noqa
+            status.append((False, "Surf check failed: %s" % str(e)[:140]))
+            print("FAIL Surf check: %s" % str(e)[:140])
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(render(days, ctx, status, a.demo))
     if pb_mod:
