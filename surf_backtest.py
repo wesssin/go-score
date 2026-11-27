@@ -35,16 +35,29 @@ HST = timezone(timedelta(hours=-10))
 UTC = timezone.utc
 OUT_DIR = "backtest"
 
-SPOT = (21.3739, -157.6929)       # Wes's pin, NE corner of the reef
-WAVE_PT = (21.39, -157.64)        # just outside the reef so the coarse wave model is over open water
-W0, W1 = 6, 12                    # window, local hours [W0, W1)
-
-KNOWN = {
-    date(2026, 9, 8): "epic (post-hurricane)",
-    date(2026, 3, 1): "good, clean, not huge",
-    date(2025, 12, 27): "good, clean, not huge",
-    date(2026, 7, 29): "probably good (no photos)",
+SPOTS = {
+    "nct": dict(
+        name="No Can Tells", pin=(21.3739, -157.6929), wave_pt=(21.39, -157.64), window=(6, 12),
+        known={
+            date(2026, 9, 8): "epic (post-hurricane)",
+            date(2026, 3, 1): "good, clean, not huge",
+            date(2025, 12, 27): "good, clean, not huge",
+            date(2026, 7, 29): "probably good (no photos)",
+            date(2026, 11, 25): "dud: mushy, wrong direction (due N swell)",
+        }),
+    "manana": dict(
+        name="Manana (Rabbit Island)", pin=(21.3280, -157.6605), wave_pt=(21.33, -157.63), window=(6, 17),
+        known={
+            date(2026, 11, 25): "good, better as tide dropped in the afternoon, near head high, some barrels",
+            date(2025, 12, 25): "rideable, not great",
+        }),
 }
+SPOT_KEY = (os.environ.get("SPOT") or "nct").strip().lower()
+CFG = SPOTS[SPOT_KEY]
+SPOT, WAVE_PT = CFG["pin"], CFG["wave_pt"]
+W0, W1 = CFG["window"]             # window, local hours [W0, W1)
+KNOWN = CFG["known"]
+GOODKNOWN = {d for d, v in KNOWN.items() if not v.startswith("dud")}
 START = date.fromisoformat(os.environ.get("START") or "2025-01-01")
 END = date.fromisoformat(os.environ.get("END") or (datetime.now(HST).date() - timedelta(days=2)).isoformat())
 BUOYS = {"51202": "Mokapu", "51201": "Waimea", "51207": "Kaneohe Bay"}
@@ -304,7 +317,7 @@ def east_ish(d):
 # ------------------------------------------------------------------ assemble
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    log("No Can Tells backtest %s to %s, window %d-%d HST" % (START, END, W0, W1))
+    log(CFG["name"] + " backtest %s to %s, window %d-%d HST" % (START, END, W0, W1))
     hourly = {}
     for part in [om_marine(), om_wind(), phng(), tides()] + [ndbc(s) for s in BUOYS]:
         for k, v in part.items():
@@ -342,6 +355,9 @@ def main():
         for h in range(0, 24):
             hilo += hourly.get((d, h), {}).get("hilo", [])
         r["tides"] = "; ".join(hilo)
+        # hourly wind for known days (afternoon matters at Manana)
+        r["wind_by_hour"] = " ".join("%d:%s" % (h, "%.0f%s" % (hourly[(d, h)]["obs_kt"], gs.compass(hourly[(d, h)]["obs_dir"]) if hourly[(d, h)].get("obs_dir") is not None else "")
+                                         if hourly.get((d, h), {}).get("obs_kt") is not None else "-") for h in range(W0, W1))
         for s in BUOYS:
             for f in ("ft", "dpd", "apd", "dir"):
                 r["b%s_%s" % (s, f)] = mean(col("b%s_%s" % (s, f))) if f != "dir" else circmean(col("b%s_dir" % s))
@@ -353,7 +369,7 @@ def main():
         write_report([], {}, [])
         sys.exit(1)
 
-    known = [r for k, r in days.items() if k in KNOWN]
+    known = [r for k, r in days.items() if k in GOODKNOWN]
     # lookalikes: wind no stronger than the windiest known day (+1 kt) and real swell energy from N or E
     wind_key = "obs_kt" if all(r["obs_kt"] is not None for r in known) and known else "om_kt"
     wmax = (max(r[wind_key] for r in known if r[wind_key] is not None) + 1) if known else 10
@@ -374,7 +390,7 @@ def main():
         for k in r:
             if k not in fields:
                 fields.append(k)
-    with open(os.path.join(OUT_DIR, "surf_days.csv"), "w", newline="") as f:
+    with open(os.path.join(OUT_DIR, "surf_days_%s.csv" % SPOT_KEY), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         w.writeheader()
         w.writerows(rows)
@@ -408,14 +424,14 @@ def fmt_buoy(r, s):
 
 
 def write_report(rows, days, look, wind_key="obs_kt", wmax=0, emin=0):
-    o = ["# No Can Tells surf backtest", "",
-         "%s to %s, %d days, window %d AM to %d PM HST. Generated %s." % (START, END, len(rows), W0, W1 - 12 if W1 > 12 else W1,
+    o = ["# %s surf backtest" % CFG["name"], "",
+         "%s to %s, %d days, window %d:00 to %d:00 HST. Generated %s." % (START, END, len(rows), W0, W1,
                                                                        datetime.now(HST).strftime("%Y-%m-%d %H:%M HST")), "",
          "## Sources", ""]
     o += ["- %s: %s" % s for s in STATUS]
     o += ["", "## Known days", "",
           "Swell partitions are Open-Meteo Marine just outside the reef. Wind: observed at Kaneohe MCBH, then model wind at the pin.", "",
-          "| Date | Wes | Swell 1 | Swell 2 | Swell 3 | Wind sea | Wind obs | Wind model | Tide 6-12 |",
+          "| Date | Wes | Swell 1 | Swell 2 | Swell 3 | Wind sea | Wind obs | Wind model | Tide in window |",
           "|---|---|---|---|---|---|---|---|---|"]
     known = [r for r in rows if r["rating"]]
     for r in known:
@@ -429,6 +445,9 @@ def write_report(rows, days, look, wind_key="obs_kt", wmax=0, emin=0):
         swan = ("%.1f ft %.0f s %s" % (r["swan_ft"], r["swan_tp"] or 0, cmp(r["swan_dir"]))) if r.get("swan_ft") else "--"
         o.append("| %s | %s | %s | %s | %s | %s | %s |" % (r["date"], fmt_buoy(r, "51202"), fmt_buoy(r, "51201"),
                                                             fmt_buoy(r, "51207"), ww3, swan, r["tides"]))
+    o += ["", "Hourly observed wind (PHNG) on known days:", ""]
+    for r in known:
+        o.append("- %s: %s" % (r["date"], r.get("wind_by_hour", "")))
     o += ["", "## How unusual each known day was (percentile vs all days; 90 = bigger/longer/windier than 90% of days)", "",
           "| Date | North energy | East energy | Swell 1 period | Wind obs | 51202 height | 51201 height |", "|---|---|---|---|---|---|---|"]
     for r in known:
@@ -439,11 +458,11 @@ def write_report(rows, days, look, wind_key="obs_kt", wmax=0, emin=0):
     o += ["", "## Lookalike days: %d" % len(look), "",
           "Wind (%s) at or under %.1f kt and N+E swell energy at least 70%% of the weakest known day. "
           "Wes: mark any you remember as good, flat or junk." % (wind_key, wmax), "",
-          "| Date | Swell 1 | Swell 2 | Wind obs | 51201 Waimea | Tide 6-12 |", "|---|---|---|---|---|---|"]
+          "| Date | Swell 1 | Swell 2 | Wind obs | 51201 Waimea | Tide in window |", "|---|---|---|---|---|---|"]
     for r in look:
         o.append("| %s | %s | %s | %s | %s | %s-%s %s |" % (r["date"], fmt_sw(r, "sw1"), fmt_sw(r, "sw2"), fmt_wind(r, "obs"),
                                                              fmt_buoy(r, "51201"), r["tide_min"], r["tide_max"], r["tide_trend"] or ""))
-    with open(os.path.join(OUT_DIR, "surf_report.md"), "w") as f:
+    with open(os.path.join(OUT_DIR, "surf_report_%s.md" % SPOT_KEY), "w") as f:
         f.write("\n".join(o) + "\n")
     log("\n".join(o))
 

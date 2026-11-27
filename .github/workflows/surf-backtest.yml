@@ -1,4 +1,4 @@
-name: Surf backtest (No Can Tells)
+name: Surf backtest
 
 on:
   workflow_dispatch:
@@ -6,6 +6,10 @@ on:
       start:
         description: "First day (YYYY-MM-DD), blank = 2025-01-01"
         required: false
+      spot:
+        description: "nct or manana"
+        required: false
+        default: nct
       end:
         description: "Last day (YYYY-MM-DD), blank = 2 days ago"
         required: false
@@ -26,9 +30,10 @@ jobs:
         env:
           START: ${{ inputs.start }}
           END: ${{ inputs.end }}
+          SPOT: ${{ inputs.spot }}
         run: |
           mkdir -p backtest
-          python surf_backtest.py 2>&1 | tee backtest/surf_backtest_log.txt
+          python surf_backtest.py 2>&1 | tee backtest/surf_backtest_${{ inputs.spot }}_log.txt
       - name: Save results
         if: always()
         run: |
