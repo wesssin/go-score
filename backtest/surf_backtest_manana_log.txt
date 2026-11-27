@@ -1,0 +1,175 @@
+Manana (Rabbit Island) backtest 2025-01-01 to 2026-11-25, window 6-17 HST
+ok   Open-Meteo Marine archive (swell partitions)
+ok   Open-Meteo historical forecast wind at the pin
+ok   Observed wind, Kaneohe MCBH (PHNG)
+ok   NOAA tide predictions, Mokuoloe 1612480
+ok   NDBC 51202 Mokapu
+ok   NDBC 51201 Waimea
+ok   NDBC 51207 Kaneohe Bay
+lookalikes: 116 (wind obs_kt <= 11.4 kt, N+E energy >= 59)
+# Manana (Rabbit Island) surf backtest
+
+2025-01-01 to 2026-11-25, 694 days, window 6:00 to 17:00 HST. Generated 2026-11-27 07:27 HST.
+
+## Sources
+
+- Open-Meteo Marine archive (swell partitions): ok
+- Open-Meteo historical forecast wind at the pin: ok
+- Observed wind, Kaneohe MCBH (PHNG): ok
+- NOAA tide predictions, Mokuoloe 1612480: ok
+- NDBC 51202 Mokapu: ok
+- NDBC 51201 Waimea: ok
+- NDBC 51207 Kaneohe Bay: ok
+- PacIOOS WW3 at the pin (42 of 42 days): ok
+- PacIOOS SWAN at the pin (42 of 42 days): ok
+
+## Known days
+
+Swell partitions are Open-Meteo Marine just outside the reef. Wind: observed at Kaneohe MCBH, then model wind at the pin.
+
+| Date | Wes | Swell 1 | Swell 2 | Swell 3 | Wind sea | Wind obs | Wind model | Tide in window |
+|---|---|---|---|---|---|---|---|---|
+| 2025-12-25 | rideable, not great | 3.1 ft 8 s ENE | 1.9 ft 7 s NE | -- | 3.06 ft | 10 kt ENE g24 | 12 kt ENE g33 | 0.673-2.156 ft falling |
+| 2026-11-25 | good, better as tide dropped in the afternoon, near head high, some barrels | 2.6 ft 9 s SE | 1.4 ft 11 s N | -- | 0.48 ft | 7 kt SW g27 | 7 kt WSW g29 | 0.809-2.282 ft falling |
+
+Buoys (height, dominant/average period, dominant direction) and PacIOOS models at the pin:
+
+| Date | 51202 Mokapu | 51201 Waimea | 51207 Kaneohe | WW3 at pin | SWAN at pin | Tides |
+|---|---|---|---|---|---|---|
+| 2025-12-25 | 8.2 ft 12/7 s NNE | 6.8 ft 12/8 s N | -- | 7.4 ft 12 s NNE, chop 5.13 | 5.1 ft 12 s NNE | H 06:21 2.2; L 13:52 0.7; H 17:49 0.9; L 23:06 0.5 |
+| 2026-11-25 | 6.0 ft 13/9 s N | 8.4 ft 13/10 s NNW | -- | 6.4 ft 13 s N, chop 1.63 | 4.1 ft 13 s NNE | H 03:41 2.8; L 10:25 1.1; H 13:17 1.2; L 20:31 -0.6 |
+
+Hourly observed wind (PHNG) on known days:
+
+- 2025-12-25: 6:9ENE 7:8E 8:12ENE 9:11ENE 10:9E 11:14ENE 12:12ENE 13:11E 14:9E 15:8E 16:11E
+- 2026-11-25: 6:3SSW 7:0N 8:0N 9:4S 10:8S 11:9SW 12:13WSW 13:9SW 14:10SW 15:4WSW 16:19SW
+
+## How unusual each known day was (percentile vs all days; 90 = bigger/longer/windier than 90% of days)
+
+| Date | North energy | East energy | Swell 1 period | Wind obs | 51202 height | 51201 height |
+|---|---|---|---|---|---|---|
+| 2025-12-25 | 93 | 86 | 41 | 58 | 89 | 79 |
+| 2026-11-25 | 90 | 80 | 63 | 22 | 54 | 90 |
+
+## Lookalike days: 116
+
+Wind (obs_kt) at or under 11.4 kt and N+E swell energy at least 70% of the weakest known day. Wes: mark any you remember as good, flat or junk.
+
+| Date | Swell 1 | Swell 2 | Wind obs | 51201 Waimea | Tide in window |
+|---|---|---|---|---|---|
+| 2025-01-09 | 3.3 ft 8 s N | -- | 5 kt E g17 | 11.1 ft 15/10 s NW | -0.281-1.324 falling |
+| 2025-01-23 | 2.8 ft 9 s NNW | -- | 4 kt NE | 12.7 ft 13/10 s NNW | 0.04-1.254 falling |
+| 2025-02-02 | 2.8 ft 10 s NNE | -- | 10 kt NNE | 8.5 ft 13/9 s N | 0.124-1.95 falling |
+| 2025-02-03 | 3.5 ft 11 s NNE | -- | 8 kt NNE | 8.4 ft 14/10 s N | 0.031-1.739 falling |
+| 2025-02-04 | 4.0 ft 11 s NNE | -- | 11 kt NNE g20 | -- | -0.058-1.508 falling |
+| 2025-02-05 | 3.5 ft 10 s NNE | -- | 5 kt ESE | -- | -0.1-1.314 falling |
+| 2025-02-06 | 3.8 ft 10 s NE | -- | 6 kt E g19 | -- | -0.142-1.192 falling |
+| 2025-02-07 | 3.3 ft 10 s NE | -- | 7 kt E g18 | 8.7 ft 15/11 s NW | -0.202-1.15 falling |
+| 2025-02-24 | 2.6 ft 9 s ENE | -- | 6 kt E g16 | 7.9 ft 13/11 s NW | 0.01-1.026 falling |
+| 2025-03-06 | 3.5 ft 8 s E | -- | 11 kt E g24 | 6.1 ft 9/7 s NNE | -0.072-0.946 falling |
+| 2025-03-14 | 3.5 ft 6 s ESE | -- | 8 kt E | 5.7 ft 17/8 s NW | 0.072-1.583 rising |
+| 2025-04-07 | 3.1 ft 11 s NE | -- | 11 kt ENE g21 | 8.6 ft 15/9 s NNW | 0.344-0.899 slack/turning |
+| 2025-04-12 | 3.3 ft 7 s ENE | -- | 11 kt ENE g25 | 5.6 ft 9/7 s NNE | -0.228-1.898 rising |
+| 2025-04-13 | 3.1 ft 6 s E | -- | 11 kt ENE g22 | 4.8 ft 9/6 s NE | -0.298-1.959 rising |
+| 2025-04-15 | 2.5 ft 6 s E | 1.6 ft 11 s E | 11 kt ENE g20 | 4.9 ft 13/7 s NW | -0.355-1.923 rising |
+| 2025-04-18 | 2.5 ft 6 s E | 1.7 ft 9 s ENE | 5 kt NE g17 | 6.9 ft 12/9 s NNW | -0.158-1.139 rising |
+| 2025-05-03 | 3.3 ft 8 s ESE | 2.8 ft 9 s ESE | 10 kt ENE g20 | 4.7 ft 10/6 s NNW | 0.139-0.744 rising |
+| 2025-05-04 | 3.0 ft 7 s ESE | 2.1 ft 9 s E | 10 kt ENE g19 | 4.0 ft 9/5 s NNE | 0.391-0.555 slack/turning |
+| 2025-05-14 | 2.3 ft 10 s SE | 1.8 ft 8 s SE | 11 kt ENE g22 | 4.4 ft 9/6 s N | -0.427-2.149 rising |
+| 2025-05-16 | 2.7 ft 7 s ENE | 1.7 ft 8 s NE | 11 kt ENE g25 | 5.0 ft 8/6 s NE | -0.315-1.727 rising |
+| 2025-05-17 | 2.9 ft 7 s ENE | 1.3 ft 12 s E | 10 kt E g24 | 4.4 ft 9/6 s NE | -0.2-1.424 rising |
+| 2025-06-02 | 3.1 ft 6 s E | 1.9 ft 9 s ESE | 10 kt E g21 | 3.4 ft 10/5 s NNW | 0.591-0.977 rising |
+| 2025-06-06 | 2.9 ft 9 s E | 1.7 ft 13 s SSE | 10 kt ENE g19 | 4.7 ft 11/6 s NNE | -0.034-1.861 rising |
+| 2025-06-19 | 2.6 ft 9 s E | 2.0 ft 9 s SSE | 11 kt ENE g21 | 4.0 ft 8/5 s NE | 0.474-1.446 rising |
+| 2025-06-27 | 2.7 ft 8 s ESE | 1.8 ft 7 s SE | 11 kt ENE g20 | 3.6 ft 7/5 s NE | -0.39-2.408 rising |
+| 2025-07-02 | 2.8 ft 10 s ESE | 2.0 ft 7 s SE | 8 kt ENE | 2.9 ft 6/5 s NE | 0.776-1.364 rising |
+| 2025-07-11 | 2.7 ft 7 s ENE | 2.1 ft 9 s ESE | 11 kt ENE g22 | 4.5 ft 8/6 s NE | -0.434-2.571 rising |
+| 2025-07-12 | 3.0 ft 6 s ENE | 2.1 ft 7 s ENE | 10 kt ENE g23 | 4.2 ft 8/6 s NE | -0.363-2.507 rising |
+| 2025-07-17 | 2.7 ft 8 s ESE | 2.2 ft 8 s SE | 10 kt ENE | 4.5 ft 8/6 s NE | 1.063-1.522 rising |
+| 2025-07-18 | 2.7 ft 7 s E | 1.5 ft 10 s ENE | 11 kt ENE g19 | 5.2 ft 9/7 s NE | 0.777-1.817 rising |
+| 2025-07-19 | 2.9 ft 6 s ENE | 1.6 ft 11 s ENE | 10 kt ENE g23 | 5.7 ft 9/7 s NE | 0.389-2.172 rising |
+| 2025-07-20 | 2.8 ft 6 s ENE | 1.8 ft 8 s ENE | 10 kt E g21 | 4.8 ft 8/6 s NE | -0.007-2.455 rising |
+| 2025-07-22 | 3.1 ft 5 s E | 1.9 ft 7 s E | 10 kt E g23 | 4.1 ft 9/6 s NNE | -0.445-2.733 rising |
+| 2025-07-23 | 2.6 ft 7 s E | 1.9 ft 7 s E | 10 kt E g22 | 3.6 ft 8/5 s NE | -0.491-2.758 rising |
+| 2025-07-30 | 3.5 ft 6 s ESE | 2.4 ft 13 s S | 10 kt ENE g23 | 3.8 ft 7/5 s NE | 1.076-1.666 rising |
+| 2025-09-09 | 3.4 ft 9 s SE | 2.5 ft 10 s SE | 9 kt NE | 3.4 ft 13/6 s N | 0.548-2.111 rising |
+| 2025-09-21 | 2.8 ft 8 s ENE | 2.0 ft 12 s S | 11 kt ENE g21 | 5.1 ft 9/6 s NNE | 0.437-2.128 rising |
+| 2025-10-17 | 2.4 ft 7 s ENE | 1.6 ft 9 s E | 10 kt ENE g22 | 7.1 ft 15/8 s NW | 0.573-2.123 rising |
+| 2025-10-19 | 3.1 ft 6 s ENE | 1.9 ft 6 s ENE | 9 kt ENE g19 | 5.4 ft 10/6 s N | 0.752-1.911 rising |
+| 2025-11-02 | 2.3 ft 8 s ESE | 1.4 ft 11 s N | 8 kt E g21 | 10.7 ft 12/10 s NW | 0.686-2.026 slack/turning |
+| 2025-11-03 | 3.1 ft 7 s E | 1.9 ft 9 s NNE | 8 kt ENE g16 | 9.8 ft 11/9 s NNW | 0.716-1.887 slack/turning |
+| 2025-11-14 | 3.7 ft 8 s ENE | 1.8 ft 6 s ENE | 11 kt ENE g21 | 7.3 ft 10/7 s NNE | 0.592-1.909 falling |
+| 2025-11-15 | 3.0 ft 7 s ENE | 2.2 ft 7 s SE | 8 kt ENE | 5.2 ft 9/6 s NNE | 0.531-1.773 falling |
+| 2025-11-20 | 2.7 ft 8 s ENE | 2.0 ft 8 s ESE | 11 kt ENE g23 | 8.7 ft 14/8 s NW | 0.705-1.819 falling |
+| 2025-11-21 | 3.6 ft 6 s E | 2.7 ft 7 s ENE | 9 kt E g22 | 6.7 ft 13/8 s NW | 0.802-2.012 falling |
+| 2025-11-22 | 2.6 ft 6 s E | 1.6 ft 8 s ENE | 8 kt ENE g18 | 6.5 ft 16/9 s NW | 0.883-2.16 falling |
+| 2025-11-24 | 2.7 ft 6 s E | 1.7 ft 7 s ENE | 7 kt ENE g18 | 5.0 ft 12/7 s NW | 0.958-2.24 falling |
+| 2025-11-30 | 2.1 ft 10 s ESE | 1.5 ft 12 s NW | 6 kt E | 13.7 ft 17/14 s NW | 0.116-1.767 falling |
+| 2025-12-01 | 2.3 ft 9 s ENE | 1.2 ft 12 s NW | 5 kt NE | 9.0 ft 15/12 s NW | 0.03-1.628 falling |
+| 2025-12-05 | 3.0 ft 6 s E | 2.1 ft 7 s E | 10 kt E g23 | 7.8 ft 13/10 s NW | 0.692-2.263 falling |
+| 2025-12-06 | 2.7 ft 6 s E | 1.8 ft 8 s E | 8 kt E | 7.0 ft 13/9 s NNW | 0.858-2.543 falling |
+| 2025-12-07 | 2.5 ft 6 s E | 1.9 ft 8 s ENE | 8 kt ENE g21 | 5.3 ft 11/8 s NNW | 0.932-2.648 falling |
+| 2025-12-22 | 2.8 ft 6 s E | 1.7 ft 8 s NE | 8 kt E g18 | 6.3 ft 12/8 s N | 0.898-2.272 falling |
+| 2025-12-24 | 2.7 ft 7 s ENE | 2.0 ft 8 s ENE | 11 kt E g23 | 7.3 ft 10/7 s NNE | 0.816-2.283 falling |
+| 2025-12-26 | 3.0 ft 9 s ENE | 1.8 ft 9 s NE | 8 kt E g24 | 6.5 ft 12/8 s NNE | 0.496-2.006 falling |
+| 2025-12-27 | 2.7 ft 6 s E | 1.8 ft 8 s NE | 4 kt WSW | 4.5 ft 11/8 s NNE | 0.257-1.821 falling |
+| 2025-12-30 | 2.5 ft 7 s E | 1.5 ft 8 s NNE | 8 kt ENE g20 | 7.9 ft 14/10 s NNW | -0.309-1.32 falling |
+| 2025-12-31 | 2.5 ft 8 s ENE | 1.5 ft 9 s N | 10 kt ENE g21 | 7.9 ft 14/9 s NNW | -0.22-1.382 falling |
+| 2026-01-03 | 3.0 ft 7 s ENE | 2.1 ft 9 s NNE | 6 kt E g18 | 7.7 ft 12/9 s N | 0.67-2.093 falling |
+| 2026-01-04 | 2.6 ft 8 s ENE | 1.6 ft 10 s NNE | 2 kt SSW | 6.7 ft 12/9 s N | 0.811-2.312 falling |
+| 2026-01-06 | 4.6 ft 7 s ESE | 3.8 ft 7 s ESE | 10 kt E g24 | 7.3 ft 10/7 s NNE | 0.642-2.372 falling |
+| 2026-01-13 | 2.6 ft 9 s NNE | 1.5 ft 9 s NNW | 4 kt E | 11.7 ft 14/10 s NW | -0.01-1.278 falling |
+| 2026-01-17 | 2.7 ft 9 s NNE | 1.6 ft 8 s NNW | 11 kt ENE g22 | 9.8 ft 13/9 s NNW | 0.43-1.592 falling |
+| 2026-01-18 | 3.3 ft 5 s ENE | 1.3 ft 10 s NNW | 9 kt E g21 | 6.5 ft 14/9 s NNW | 0.659-1.764 falling |
+| 2026-01-19 | 3.0 ft 5 s ENE | 1.4 ft 8 s SE | 6 kt ESE g16 | 5.2 ft 13/8 s NW | 0.751-1.931 falling |
+| 2026-01-21 | 2.3 ft 10 s NNE | 1.7 ft 9 s ENE | 11 kt NE g28 | 8.3 ft 11/7 s NW | 0.551-2.109 falling |
+| 2026-02-04 | 3.4 ft 8 s N | 1.7 ft 11 s NNW | 4 kt ESE g19 | 14.1 ft 15/12 s NW | 0.306-1.887 falling |
+| 2026-02-05 | 2.5 ft 8 s WNW | 1.4 ft 7 s N | 6 kt SW g20 | 8.6 ft 13/10 s NW | 0.222-1.79 falling |
+| 2026-02-13 | 3.1 ft 6 s ESE | 2.3 ft 7 s ENE | 10 kt ENE g27 | 6.1 ft 14/7 s NW | 0.081-1.097 falling |
+| 2026-02-20 | 4.9 ft 8 s ENE | 2.8 ft 6 s ENE | 10 kt E g23 | 7.1 ft 10/8 s NE | -0.021-1.537 slack/turning |
+| 2026-02-21 | 3.6 ft 7 s ENE | 2.2 ft 8 s E | 8 kt E g24 | 5.9 ft 10/7 s NE | -0.133-1.452 slack/turning |
+| 2026-02-22 | 2.7 ft 8 s ENE | 1.7 ft 10 s E | 7 kt N g22 | 5.2 ft 9/7 s NNE | -0.177-1.33 falling |
+| 2026-02-26 | 3.1 ft 6 s ENE | 2.0 ft 9 s NNE | 9 kt E g20 | -- | -0.183-0.96 falling |
+| 2026-03-01 | 2.4 ft 8 s E | 1.6 ft 9 s NE | 4 kt ENE | -- | 0.466-1.177 falling |
+| 2026-03-04 | 3.6 ft 5 s E | 2.3 ft 6 s ENE | 10 kt E g23 | -- | 0.07-1.582 rising |
+| 2026-03-05 | 3.6 ft 5 s E | 2.8 ft 7 s ENE | 8 kt E g21 | -- | -0.045-1.646 rising |
+| 2026-03-06 | 3.4 ft 6 s ENE | 2.5 ft 6 s E | 9 kt E g19 | -- | -0.102-1.579 rising |
+| 2026-03-07 | 4.1 ft 6 s ENE | 2.2 ft 7 s ENE | 11 kt E g26 | -- | -0.09-1.404 rising |
+| 2026-03-08 | 4.6 ft 7 s ENE | 3.0 ft 6 s ENE | 11 kt E g22 | -- | -0.073-1.155 slack/turning |
+| 2026-03-09 | 3.5 ft 7 s ENE | 1.9 ft 11 s E | 9 kt E g19 | -- | 0.003-0.959 slack/turning |
+| 2026-03-22 | 2.6 ft 10 s ENE | 1.8 ft 11 s SW | 6 kt N | -- | -0.425-1.619 rising |
+| 2026-03-26 | 3.2 ft 8 s ENE | 2.0 ft 11 s SSE | 11 kt NNE | -- | 0.042-0.7 falling |
+| 2026-04-01 | 3.7 ft 9 s NE | 2.1 ft 11 s SSE | 9 kt NE g17 | -- | -0.154-1.831 rising |
+| 2026-04-02 | 2.9 ft 8 s NE | 1.9 ft 10 s NE | 10 kt ENE | -- | -0.239-1.917 rising |
+| 2026-04-18 | 2.5 ft 8 s ESE | 1.8 ft 6 s SE | 8 kt E | -- | -0.653-2.374 rising |
+| 2026-04-22 | 3.0 ft 11 s NNE | 1.9 ft 11 s SSE | 7 kt NE | -- | -0.168-0.901 rising |
+| 2026-04-25 | 2.8 ft 6 s ENE | 1.6 ft 9 s NE | 11 kt NE | -- | 0.385-0.877 slack/turning |
+| 2026-04-27 | 2.8 ft 6 s ENE | 1.6 ft 8 s NE | 9 kt ENE g21 | -- | 0.081-1.513 rising |
+| 2026-05-14 | 2.9 ft 7 s E | 1.9 ft 8 s ENE | 10 kt ENE g17 | 5.4 ft 15/7 s NW | -0.429-2.216 rising |
+| 2026-05-15 | 3.4 ft 6 s ENE | 2.4 ft 8 s ENE | 9 kt E g23 | 5.4 ft 12/8 s NNW | -0.658-2.445 rising |
+| 2026-07-09 | 3.2 ft 8 s ESE | 2.5 ft 10 s SE | 11 kt ENE g21 | 4.8 ft 8/6 s NE | 0.263-2.088 rising |
+| 2026-07-10 | 2.8 ft 8 s ESE | 2.1 ft 8 s SE | 11 kt ENE g18 | 4.5 ft 8/5 s NE | -0.139-2.411 rising |
+| 2026-07-13 | 3.0 ft 8 s E | 2.3 ft 8 s ENE | 11 kt ENE g22 | 4.4 ft 8/5 s NNE | -0.668-2.865 rising |
+| 2026-07-17 | 2.6 ft 10 s E | 1.9 ft 12 s S | 10 kt ENE | 4.6 ft 8/6 s NNE | 0.094-2.176 rising |
+| 2026-07-18 | 3.0 ft 10 s ESE | 2.2 ft 9 s SSE | 11 kt ENE g25 | 4.6 ft 8/6 s NE | 0.48-1.879 rising |
+| 2026-07-28 | 4.2 ft 9 s E | 2.7 ft 11 s SSE | 10 kt NE | 5.3 ft 10/6 s NE | -0.241-2.47 rising |
+| 2026-07-29 | 3.5 ft 9 s SSE | 2.8 ft 10 s E | 8 kt NNE | 4.4 ft 8/6 s NE | -0.253-2.462 rising |
+| 2026-07-30 | 3.0 ft 9 s ESE | 2.3 ft 9 s SE | 10 kt ENE g21 | 3.8 ft 8/6 s NE | -0.163-2.468 rising |
+| 2026-08-03 | 3.1 ft 7 s E | 2.0 ft 9 s ENE | 10 kt ENE | 5.0 ft 8/6 s NE | 0.831-1.868 rising |
+| 2026-08-09 | 2.9 ft 9 s E | 2.1 ft 9 s SE | 11 kt ENE | 4.0 ft 8/5 s NE | -0.25-2.665 rising |
+| 2026-08-24 | 2.9 ft 10 s ESE | 2.1 ft 8 s SE | 9 kt ENE g19 | 4.3 ft 8/5 s N | 0.082-2.342 rising |
+| 2026-08-25 | 2.7 ft 10 s SE | 1.8 ft 8 s SE | 11 kt ENE g21 | 3.4 ft 6/5 s NE | 0.0-2.412 rising |
+| 2026-09-05 | 4.5 ft 9 s S | 2.9 ft 9 s ENE | 11 kt ENE g21 | 5.2 ft 7/6 s NNE | 0.764-2.375 rising |
+| 2026-09-06 | 4.5 ft 9 s S | 3.0 ft 9 s ENE | 11 kt ENE g28 | 5.2 ft 9/6 s N | 0.322-2.509 rising |
+| 2026-09-08 | 8.8 ft 8 s SSW | 4.1 ft 9 s ESE | 11 kt SSW g24 | 7.8 ft 10/7 s NW | -0.049-2.588 rising |
+| 2026-09-09 | 4.9 ft 8 s SSW | 2.7 ft 9 s E | 7 kt NE | 5.2 ft 10/8 s N | -0.015-2.543 rising |
+| 2026-09-10 | 3.2 ft 8 s ESE | 2.4 ft 8 s SE | 9 kt E g19 | 4.8 ft 8/6 s NNE | 0.131-2.395 rising |
+| 2026-09-11 | 2.5 ft 7 s E | 1.6 ft 8 s ENE | 9 kt ENE g18 | 3.9 ft 8/5 s NNE | 0.352-2.238 rising |
+| 2026-09-13 | 2.4 ft 9 s ENE | 1.7 ft 9 s NE | 8 kt ENE | 3.5 ft 10/7 s NE | 0.851-1.859 slack/turning |
+| 2026-09-18 | 2.5 ft 12 s SE | 1.5 ft 9 s ESE | 11 kt ENE g24 | 4.0 ft 7/5 s NE | 1.342-1.89 slack/turning |
+| 2026-09-23 | 2.9 ft 8 s E | 2.1 ft 8 s E | 11 kt ENE g17 | 4.5 ft 10/6 s N | 0.281-2.291 rising |
+| 2026-09-28 | 4.4 ft 7 s S | 3.2 ft 9 s E | 9 kt E g20 | 6.1 ft 12/7 s N | 0.917-1.808 slack/turning |
+| 2026-09-29 | 3.4 ft 5 s E | 2.6 ft 7 s E | 8 kt E g17 | 4.9 ft 10/6 s NNW | 1.144-2.149 falling |
+| 2026-10-15 | 2.7 ft 9 s ESE | 1.7 ft 12 s SSE | 10 kt ENE g21 | 5.0 ft 12/6 s NW | 1.182-2.076 falling |
+| 2026-11-16 | 3.7 ft 7 s ENE | 2.8 ft 9 s NE | 10 kt ENE g21 | 9.3 ft 13/9 s N | 0.838-1.966 falling |
+| 2026-11-18 | 2.9 ft 7 s ENE | 2.0 ft 9 s ENE | 9 kt ENE g23 | 5.1 ft 10/7 s NNE | 0.574-1.896 falling |
